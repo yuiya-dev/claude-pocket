@@ -242,8 +242,9 @@ session), turn the desk sounds or the taskbar flash on or off, mute everything, 
 the desk sounds and the music. Your choices are kept per device, so your phone can show less than
 your computer.
 
-Drag any header button to put it somewhere else (on a phone, hold it a moment first); a normal
-click still just presses it. **Reset header order** in the gear menu puts them back.
+The same menu sets the header's order: drag a row by its ⋮⋮ grip. Rows above the **right side**
+line sit on the left, next to the office name; the rest sit on the right. **Reset header order**
+puts them back.
 
 When a desk raises a lightbulb or a book while the office is not the window in front, its taskbar
 button flashes until you look (on a Mac, a notification names the desk instead).
