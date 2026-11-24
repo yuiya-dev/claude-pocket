@@ -1,0 +1,20 @@
+# Personal data the office writes while it runs: session titles, prompts, replies, paths, PR lists
+state.json
+hidden.json
+credits.json
+merged.json
+todos.json
+calendar-link.txt
+meeting-acks.json
+clicks.log
+errors.log
+settings.json
+music/
+__pycache__/
+lan-key.txt
+phone-link.txt
+sounds/
+
+# Your own copies of these, made by you or the office
+stocks.json
+.claude/

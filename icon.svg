@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<g stroke="#161514" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="32" cy="40" rx="24.5" ry="6.5" fill="#262524"/>
+<ellipse cx="32" cy="29" rx="24.5" ry="7.5" fill="#262524"/>
+<path d="M7.5 29A24.5 24 0 0 1 56.5 29Q32 17.5 7.5 29Z" fill="#e3262a"/>
+</g>
+<path d="M51.5 14.5A24.5 24 0 0 1 56.5 29Q54 27.6 50.5 26.4A22 22 0 0 0 47 11.5Z" fill="#b81d21"/>
+<ellipse cx="19.5" cy="12.5" rx="4.6" ry="2.3" transform="rotate(-32 19.5 12.5)" fill="#fff" opacity=".45"/>
+<path d="M7.5 29A24.5 24 0 0 1 56.5 29Q32 17.5 7.5 29Z" fill="none" stroke="#161514" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="32" cy="19.5" r="6" fill="#262524" stroke="#161514" stroke-width="1.6"/>
+<circle cx="32" cy="19.5" r="3.7" fill="#fff"/>
+<circle cx="32" cy="19.5" r="2" fill="#fff" stroke="#161514" stroke-width="1.1"/>
+<g fill="#d97757" shape-rendering="crispEdges">
+<rect x="20" y="27" width="24" height="13"/><rect x="15.5" y="31.5" width="4.5" height="5"/><rect x="44" y="31.5" width="4.5" height="5"/>
+<rect x="22.5" y="40" width="3.2" height="8"/><rect x="27.9" y="40" width="3.2" height="8"/><rect x="32.9" y="40" width="3.2" height="8"/><rect x="38.3" y="40" width="3.2" height="8"/>
+</g>
+<g fill="#161514" shape-rendering="crispEdges"><rect x="25" y="30" width="3" height="3"/><rect x="36" y="30" width="3" height="3"/></g>
+<path d="M7.5 40Q32 50.5 56.5 40A24.5 22 0 0 1 7.5 40Z" fill="#fff" stroke="#161514" stroke-width="2.2" stroke-linejoin="round"/>
+<path d="M54.6 46.5A24.5 22 0 0 1 30 61.9A27 24 0 0 0 51.5 45.5Z" fill="#d8d6cf"/>
+<path d="M7.5 40Q32 50.5 56.5 40A24.5 22 0 0 1 7.5 40Z" fill="none" stroke="#161514" stroke-width="2.2" stroke-linejoin="round"/>
+</svg>

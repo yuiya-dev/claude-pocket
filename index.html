@@ -1,0 +1,1497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Office</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20stroke%3D%22%23161514%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Cellipse%20cx%3D%2232%22%20cy%3D%2240%22%20rx%3D%2224.5%22%20ry%3D%226.5%22%20fill%3D%22%23262524%22/%3E%3Cellipse%20cx%3D%2232%22%20cy%3D%2229%22%20rx%3D%2224.5%22%20ry%3D%227.5%22%20fill%3D%22%23262524%22/%3E%3Cpath%20d%3D%22M7.5%2029A24.5%2024%200%200%201%2056.5%2029Q32%2017.5%207.5%2029Z%22%20fill%3D%22%23e3262a%22/%3E%3C/g%3E%3Cpath%20d%3D%22M51.5%2014.5A24.5%2024%200%200%201%2056.5%2029Q54%2027.6%2050.5%2026.4A22%2022%200%200%200%2047%2011.5Z%22%20fill%3D%22%23b81d21%22/%3E%3Cellipse%20cx%3D%2219.5%22%20cy%3D%2212.5%22%20rx%3D%224.6%22%20ry%3D%222.3%22%20transform%3D%22rotate%28-32%2019.5%2012.5%29%22%20fill%3D%22%23fff%22%20opacity%3D%22.45%22/%3E%3Cpath%20d%3D%22M7.5%2029A24.5%2024%200%200%201%2056.5%2029Q32%2017.5%207.5%2029Z%22%20fill%3D%22none%22%20stroke%3D%22%23161514%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2219.5%22%20r%3D%226%22%20fill%3D%22%23262524%22%20stroke%3D%22%23161514%22%20stroke-width%3D%221.6%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2219.5%22%20r%3D%223.7%22%20fill%3D%22%23fff%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2219.5%22%20r%3D%222%22%20fill%3D%22%23fff%22%20stroke%3D%22%23161514%22%20stroke-width%3D%221.1%22/%3E%3Cg%20fill%3D%22%23d97757%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20x%3D%2220%22%20y%3D%2227%22%20width%3D%2224%22%20height%3D%2213%22/%3E%3Crect%20x%3D%2215.5%22%20y%3D%2231.5%22%20width%3D%224.5%22%20height%3D%225%22/%3E%3Crect%20x%3D%2244%22%20y%3D%2231.5%22%20width%3D%224.5%22%20height%3D%225%22/%3E%3Crect%20x%3D%2222.5%22%20y%3D%2240%22%20width%3D%223.2%22%20height%3D%228%22/%3E%3Crect%20x%3D%2227.9%22%20y%3D%2240%22%20width%3D%223.2%22%20height%3D%228%22/%3E%3Crect%20x%3D%2232.9%22%20y%3D%2240%22%20width%3D%223.2%22%20height%3D%228%22/%3E%3Crect%20x%3D%2238.3%22%20y%3D%2240%22%20width%3D%223.2%22%20height%3D%228%22/%3E%3C/g%3E%3Cg%20fill%3D%22%23161514%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20x%3D%2225%22%20y%3D%2230%22%20width%3D%223%22%20height%3D%223%22/%3E%3Crect%20x%3D%2236%22%20y%3D%2230%22%20width%3D%223%22%20height%3D%223%22/%3E%3C/g%3E%3Cpath%20d%3D%22M7.5%2040Q32%2050.5%2056.5%2040A24.5%2022%200%200%201%207.5%2040Z%22%20fill%3D%22%23fff%22%20stroke%3D%22%23161514%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M54.6%2046.5A24.5%2022%200%200%201%2030%2061.9A27%2024%200%200%200%2051.5%2045.5Z%22%20fill%3D%22%23d8d6cf%22/%3E%3Cpath%20d%3D%22M7.5%2040Q32%2050.5%2056.5%2040A24.5%2022%200%200%201%207.5%2040Z%22%20fill%3D%22none%22%20stroke%3D%22%23161514%22%20stroke-width%3D%222.2%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#1f1e1d; --panel:#2a2927; --panel2:#30302e; --line:#3f3e3a; --ink:#faf9f5; --dim:#b5b3aa; --faint:#85837b;
+    --mint:#8dc4a4; --amber:#e58e63; --violet:#d97757; --rose:#ff6b7a; --leaf:#7fc99a;
+    --wall-a:#2a2926; --wall-b:#34332f; --wood-a:#a58868; --wood-b:#846a50; --wood-c:#64503d; --wood-d:#4a3b2e;
+    --pix:Inter, "Segoe UI", system-ui, sans-serif; --mono:"JetBrains Mono", Consolas, monospace;
+    --wallh:clamp(190px, 27vh, 300px);
+  }
+  * { box-sizing:border-box; }
+  html { background:var(--bg); }
+  body { margin:0; min-height:100vh; color:var(--ink); font-family:Inter, "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  button { font:inherit; color:inherit; cursor:pointer; }
+
+  /* ---------- header ---------- */
+  header { position:sticky; top:0; z-index:30; display:flex; flex-wrap:wrap; align-items:center; gap:12px 16px; padding:10px 20px; min-height:64px;
+    background:linear-gradient(180deg, rgba(38,38,36,.97), rgba(33,33,31,.95)); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); box-shadow:0 4px 18px rgba(0,0,0,.3); }
+  .brand { display:flex; align-items:center; gap:10px; font-family:var(--pix); font-weight:600; font-size:17px; letter-spacing:0; white-space:nowrap; }
+  .logo { width:36px; height:36px; display:block; flex:none; }
+  .logo svg, .logo img { display:block; width:100%; height:100%; }
+  .logo img { object-fit:contain; transform:scale(1.18); }
+  .pills { display:flex; gap:8px; }
+  .pills .pill:not(.off) { display:none; }
+  .pill { display:flex; align-items:center; gap:7px; padding:5px 11px; border-radius:999px; background:var(--panel2); border:1px solid var(--line); font-size:12.5px; font-weight:500; color:var(--dim); white-space:nowrap; }
+  .pill b { color:var(--ink); font-weight:700; font-variant-numeric:tabular-nums; }
+  .pill.need.on { background:linear-gradient(180deg, #5a3423, #40261a); border-color:#b5674a; color:#f8d9c8; }
+  .pill.need.on b { color:#ffffff; }
+  .pill.off { color:var(--rose); border-color:#7a2d3a; }
+  .grow { flex:1; }
+  .btn { display:inline-flex; align-items:center; gap:7px; height:38px; padding:0 15px; border-radius:10px; border:1px solid var(--line); background:var(--panel2); font-size:13.5px; font-weight:600; transition:transform .08s, background .15s, border-color .15s; white-space:nowrap; }
+  .btn:hover { background:#3a3936; border-color:#56554f; }
+  .btn:active { transform:translateY(1px); }
+  .btn.primary { background:linear-gradient(180deg, #df8565, #d97757); border-color:#e39a80; color:#fff; }
+  .btn.primary:hover { background:linear-gradient(180deg, #e6957a, #de8263); }
+  .btn svg { width:15px; height:15px; }
+
+  /* stocks */
+  #stocks { display:flex; gap:8px; align-items:stretch; }
+  .stk { position:relative; display:flex; flex-direction:column; justify-content:center; min-width:150px; height:46px; padding:0 12px; border-radius:10px; background:var(--panel); border:1px solid var(--line); }
+  .stk .top { display:flex; align-items:center; gap:6px; font-size:11px; color:var(--dim); white-space:nowrap; }
+  .stk .sym { font-family:var(--mono); font-weight:700; color:var(--ink); font-size:12px; }
+  .stk .dot { width:6px; height:6px; border-radius:50%; background:#6b6962; flex:none; }
+  .stk .dot.live { background:var(--leaf); animation:ping 2s infinite; }
+  @keyframes ping { 0% { box-shadow:0 0 0 0 rgba(127,201,154,.6); } 70%, 100% { box-shadow:0 0 0 6px rgba(127,201,154,0); } }
+  .stk .bot { display:flex; align-items:baseline; gap:8px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .stk .px { font-size:15px; font-weight:700; }
+  .stk .chg { font-size:11.5px; font-weight:600; color:var(--dim); }
+  .stk .op { margin-left:auto; font-size:10.5px; color:var(--faint); }
+  .stk.up .px, .stk.up .chg { color:#f08a8a; } .stk.down .px, .stk.down .chg { color:#7fc99a; }
+  .stk .rm { position:absolute; top:-7px; right:-7px; width:18px; height:18px; border-radius:50%; border:1px solid var(--line); background:#3a3936; font-size:11px; line-height:1; display:none; padding:0; }
+  .stk:hover .rm { display:block; }
+  #stkadd { width:38px; height:46px; border-radius:10px; border:1px dashed #4a4944; background:transparent; color:var(--dim); font-size:18px; }
+  #stkadd:hover { color:var(--ink); border-color:var(--violet); }
+
+  /* dropdown */
+  .menuwrap { position:relative; }
+  #picker { display:none; position:absolute; top:46px; right:0; z-index:40; width:min(400px, 92vw); max-height:70vh; overflow:auto; padding:6px; border-radius:14px; background:var(--panel); border:1px solid #4a4944; box-shadow:0 24px 60px rgba(0,0,0,.45); }
+  #picker.open { display:block; animation:pop .14s ease-out; }
+  @keyframes pop { from { opacity:0; transform:translateY(-6px) scale(.98); } }
+  #picker .row { display:flex; align-items:center; gap:10px; padding:9px 11px; border-radius:9px; cursor:pointer; }
+  #picker .row:hover { background:var(--panel2); }
+  #picker .pm { width:44px; height:44px; flex:none; margin:-6px -2px -6px -6px; object-fit:contain; filter:drop-shadow(0 2px 2px rgba(0,0,0,.4)); }
+  #picker .t { flex:1; min-width:0; font-size:13.5px; font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  #picker .f { font-size:11px; color:var(--faint); font-weight:400; margin-top:1px; }
+  #picker .tag { font-size:10px; font-weight:600; color:var(--amber); background:rgba(229,142,99,.12); border-radius:5px; padding:2px 6px; }
+  #picker .plus { color:var(--mint); font-size:16px; opacity:0; } #picker .row:hover .plus { opacity:1; }
+  #picker .none { padding:14px; color:var(--dim); font-size:13px; }
+
+  /* ---------- scene ---------- */
+  #office { --ph:calc(var(--wallh) * .92 - 4.9 * var(--u) - 10px); position:relative; min-height:calc(100vh - 68px); overflow:hidden; --u:calc(min(96vw, 2000px) / 5 / 14.8);
+    background:
+      radial-gradient(120% 60% at 50% 0%, rgba(255,255,255,.03), transparent 60%),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.16) 0 2px, transparent 2px 9.5vw),
+      repeating-linear-gradient(180deg, rgba(255,255,255,.025) 0 1px, transparent 1px 46px),
+      linear-gradient(180deg, #3d352e 0%, #332c26 45%, #25211d 100%); }
+  .wall { position:absolute; inset:0 0 auto 0; height:var(--wallh); display:grid; grid-template-columns:repeat(5, 1fr); justify-items:center; align-items:start; padding:calc(var(--wallh) * .08) 2vw 0;
+    background:repeating-linear-gradient(90deg, rgba(255,255,255,.022) 0 1px, transparent 1px 7vw), linear-gradient(180deg, var(--wall-a), var(--wall-b)); pointer-events:none; }
+  .wall::after { content:""; position:absolute; left:0; right:0; bottom:0; height:16px; background:linear-gradient(180deg, #46443f, #34332f); box-shadow:0 10px 26px rgba(0,0,0,.55); }
+  .win { position:relative; width:76%; height:calc(var(--wallh) * .66); border-radius:10px 10px 4px 4px; border:6px solid #56544d; overflow:hidden; box-shadow:0 0 0 2px #1f1e1d, 0 0 60px var(--skyglow), inset 0 0 30px rgba(0,0,0,.35); background:var(--sky); }
+  .win::before { content:""; position:absolute; inset:0; background:var(--skyfx); }
+  .win::after { content:""; position:absolute; inset:0; background:
+      linear-gradient(#56544d, #56544d) 50% 0 / 5px 100% no-repeat, linear-gradient(#56544d, #56544d) 0 46% / 100% 5px no-repeat,
+      linear-gradient(115deg, rgba(255,255,255,.14) 0 18%, transparent 19% 100%); }
+  .city { position:absolute; left:0; right:0; bottom:0; height:52%; opacity:.9; background:
+      linear-gradient(var(--bld), var(--bld)) 4% 100% / 14% 70% no-repeat, linear-gradient(var(--bld), var(--bld)) 22% 100% / 11% 100% no-repeat,
+      linear-gradient(var(--bld), var(--bld)) 40% 100% / 16% 55% no-repeat, linear-gradient(var(--bld), var(--bld)) 62% 100% / 12% 86% no-repeat,
+      linear-gradient(var(--bld), var(--bld)) 82% 100% / 15% 62% no-repeat, linear-gradient(var(--bld), var(--bld)) 98% 100% / 9% 78% no-repeat; }
+  .city::after { content:""; position:absolute; inset:0; opacity:var(--lit); background:radial-gradient(circle, #ffd98a 0 1px, transparent 1.6px) 3px 4px / 9px 11px;
+    -webkit-mask:linear-gradient(#000, #000) 4% 100% / 14% 66% no-repeat, linear-gradient(#000, #000) 22% 100% / 11% 96% no-repeat, linear-gradient(#000, #000) 62% 100% / 12% 82% no-repeat, linear-gradient(#000, #000) 82% 100% / 15% 58% no-repeat; }
+  body[data-sky="night"] { --sky:linear-gradient(180deg, #070b24, #17245a 70%, #2b3a7a); --skyglow:rgba(90,110,170,.1); --bld:#0a0d24; --lit:.9;
+    --skyfx:radial-gradient(circle at 78% 22%, #fdf6d8 0 7%, rgba(253,246,216,.25) 8% 12%, transparent 13%), radial-gradient(circle, #fff 0 .7px, transparent 1.2px) 0 0 / 37px 29px, radial-gradient(circle, #cfd8ff 0 .6px, transparent 1px) 11px 17px / 53px 41px; }
+  body[data-sky="day"] { --sky:linear-gradient(180deg, #6f9dc0, #a9c6d8 70%, #d6e3e8); --skyglow:rgba(170,200,220,.12); --bld:#6f8496; --lit:0;
+    --skyfx:radial-gradient(ellipse at 28% 30%, rgba(255,255,255,.95) 0 9%, transparent 10%), radial-gradient(ellipse at 38% 34%, rgba(255,255,255,.9) 0 8%, transparent 9%), radial-gradient(ellipse at 74% 20%, rgba(255,255,255,.85) 0 7%, transparent 8%); }
+  body[data-sky="dusk"] { --sky:linear-gradient(180deg, #2b2a6b, #c05a8a 55%, #ffb36b); --skyglow:rgba(230,150,120,.12); --bld:#2a1d45; --lit:.7;
+    --skyfx:radial-gradient(circle at 50% 78%, #ffe2a8 0 9%, rgba(255,200,130,.35) 10% 18%, transparent 19%); }
+  .board, .clock { border-radius:12px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(180deg, #2a2927, #232220); box-shadow:0 14px 34px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06); font-family:var(--pix); }
+  .board { display:none; }
+  .board h4 { margin:0 0 3px; font-size:10px; letter-spacing:1.2px; color:var(--faint); font-weight:600; }
+  .board div { display:flex; align-items:center; gap:9px; font-size:12px; color:var(--dim); line-height:1.4; }
+  .board i { width:9px; height:9px; border-radius:3px; }
+  .board b { margin-left:auto; font-size:13px; color:var(--ink); }
+  .clock, .wx { height:var(--ph); border-radius:12px; border:2px solid #45433e; background:linear-gradient(180deg, #1b1a19, #121211); box-shadow:0 10px 24px rgba(0,0,0,.4), inset 0 0 18px rgba(0,0,0,.6); }
+  .clock { display:flex; flex-direction:column; justify-content:center; padding:0 calc(var(--ph) * .28); text-align:center; font-family:var(--mono); background:linear-gradient(180deg, #1b1a19, #121211); border:2px solid #45433e; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.4), inset 0 0 18px rgba(0,0,0,.6); }
+  .clock .t { font-size:calc(var(--ph) * .46); font-weight:700; letter-spacing:.04em; line-height:1.05; color:#f3c9a8; text-shadow:0 0 14px rgba(229,142,99,.45); line-height:1.05; }
+  .clock .d { margin-top:.3em; font-size:calc(var(--ph) * .13); color:var(--dim); letter-spacing:.12em; }
+  .wx { width:94%; display:flex; align-items:center; gap:calc(var(--ph) * .12); padding:0 calc(var(--ph) * .16); font-size:calc(var(--ph) * .13); color:var(--dim); overflow:hidden; }
+  .wx svg { display:block; }
+  /* The box's width follows the window while its text size follows the wall's height, so in a wide, short
+     window the text would not fit. Its contents shrink together to fit the box (13.4em of content plus
+     3.4em of padding and gap), and the description is shortened before anything overlaps. */
+  .wx { container-type:inline-size; }
+  .wx .now, .wx .days { font-size:clamp(.3em, calc((100cqw - 3.4em) / 13.4), 1em); }
+  .wx .now { display:flex; align-items:center; gap:.5em; flex:1 1 auto; min-width:0; }
+  .wx .now > div { min-width:4.6em; }
+  .wx .now svg { width:3.1em; height:3.1em; flex:none; }
+  .wx .temp { font-size:2.5em; font-weight:700; color:var(--ink); line-height:1; font-variant-numeric:tabular-nums; }
+  .wx .desc { margin-top:.25em; line-height:1.25; white-space:nowrap; max-width:min(8.5em, 100%); overflow:hidden; text-overflow:ellipsis; }
+  .wx .days { margin-left:auto; display:flex; gap:.7em; flex:none; }
+  .wx .day { display:flex; flex-direction:column; align-items:center; gap:.15em; font-size:.92em; white-space:nowrap; }
+  .wx .day svg { width:1.9em; height:1.9em; }
+  .wx .day b { color:var(--ink); font-weight:600; }
+  .wx-wait { margin:auto; }
+  @media (max-width:1000px) { .board, .clock, .wx { display:none; } }
+
+  .floor { position:relative; display:grid; grid-template-columns:repeat(5, 1fr); font-size:var(--u); padding:calc(var(--wallh) - 4.9em) 2vw 2em; row-gap:.6em; }
+  #empty { grid-column:1 / -1; margin-top:9em; text-align:center; font-size:max(15px, .8em); color:#e9d9c9; }
+  #empty b { display:block; font-family:var(--pix); font-size:1.6em; margin-bottom:.3em; color:#fff; }
+
+  /* ---------- a desk ---------- */
+  .desk { position:relative; display:flex; flex-direction:column; align-items:center; padding:0 .4em .5em; cursor:pointer; border-radius:1em; transition:filter .15s; }
+  .desk:hover { filter:brightness(1.08); }
+  .desk.dragging { opacity:.35; }
+  .desk.opening .pad img { animation:opening .5s ease-in-out infinite alternate !important; }
+  .desk.opening .plate { color:#f3c9a8; }
+  @keyframes opening { to { transform:translateY(-.5em) scale(1.04); } }
+  .desk.drop-l::before, .desk.drop-r::before { content:""; position:absolute; top:10%; bottom:6%; width:.3em; border-radius:.3em; background:var(--mint); box-shadow:0 0 1em var(--mint); }
+  .desk.drop-l::before { left:-.15em; } .desk.drop-r::before { right:-.15em; }
+
+  .rig { position:relative; width:11.8em; display:flex; flex-direction:column; align-items:center; }
+  .monitor { position:relative; width:7.4em; height:4.9em; border-radius:.42em; background:linear-gradient(160deg, #3d3c38, #161615); box-shadow:0 .5em 1em rgba(0,0,0,.5), inset 0 0 0 .06em rgba(255,255,255,.14); }
+  .monitor::after { content:""; position:absolute; left:50%; bottom:.1em; width:.22em; height:.22em; margin-left:-.11em; border-radius:50%; background:var(--led, #5a5852); box-shadow:0 0 .4em var(--led, transparent); }
+  .screen { position:absolute; inset:.3em .3em .46em; border-radius:.2em; overflow:hidden; background:#151514; transition:background .3s, box-shadow .3s; }
+  .screen::after { content:""; position:absolute; inset:0; background:linear-gradient(120deg, rgba(255,255,255,.1) 0 22%, transparent 23%), repeating-linear-gradient(180deg, rgba(0,0,0,.14) 0 1px, transparent 1px 3px); pointer-events:none; }
+  .code { position:absolute; inset:.38em .4em; display:none; flex-direction:column; gap:.3em; }
+  .code i { height:.2em; width:58%; border-radius:.1em; background:var(--mint); opacity:.9; transform-origin:left; animation:type 2.4s steps(9) infinite; }
+  .code i:nth-child(2) { background:#9db7cf; animation-delay:-.5s; width:70%; } .code i:nth-child(3) { background:var(--violet); animation-delay:-1.1s; width:86%; }
+  .code i:nth-child(4) { animation-delay:-1.6s; width:52%; } .code i:nth-child(5) { background:#d9a3a0; animation-delay:-.9s; width:64%; } .code i:nth-child(6) { background:#9db7cf; animation-delay:-2s; width:40%; }
+  @keyframes type { 0% { transform:scaleX(.08); } 60%, 100% { transform:scaleX(1); } }
+  .glyph { position:absolute; inset:0; display:none; align-items:center; justify-content:center; font-family:var(--mono); font-weight:700; font-size:2.6em; }
+  .prs { position:absolute; inset:0; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.16em; }
+  .prs:not(:empty) { background:rgba(21,21,20,.86); }
+  .prs a { display:flex; align-items:center; gap:.4em; padding:.12em .55em; border-radius:.5em; font-family:var(--mono); font-size:.6em; font-weight:700; line-height:1.3; text-decoration:none; color:#9fd4ff; background:rgba(255,255,255,.06); }
+  .prs a:hover { background:rgba(255,255,255,.18); color:#fff; }
+  .prs svg { width:1.15em; height:1.15em; flex:none; }
+  .prs a.pr-open { color:#56d364; } .prs a.pr-draft { color:#aab3bd; } .prs a.pr-merged { color:#c297ff; } .prs a.pr-closed { color:#ff7b72; }
+  .stand { width:1.1em; height:.55em; background:linear-gradient(90deg, #1f1e1d, #45433e, #1f1e1d); }
+  .foot { width:3em; height:.24em; border-radius:.2em .2em 0 0; background:#2f2e2b; }
+  .dtop { position:relative; width:100%; height:.95em; border-radius:.28em; background:linear-gradient(180deg, #b89b7d, var(--wood-a) 45%, var(--wood-b)); box-shadow:0 .1em 0 rgba(255,255,255,.25) inset, 0 .5em .9em rgba(0,0,0,.4); z-index:1; }
+  .front { position:relative; width:94%; height:2.5em; border-radius:0 0 .3em .3em; background:linear-gradient(180deg, #4f3f31 0 12%, var(--wood-c) 13%, var(--wood-d)); box-shadow:0 1.2em 1.4em -.4em rgba(0,0,0,.55); }
+  .front::before { content:""; position:absolute; right:8%; top:26%; width:30%; height:48%; border-radius:.15em; box-shadow:inset 0 0 0 .07em rgba(0,0,0,.35), inset 0 .1em 0 rgba(255,255,255,.07); }
+  .front::after { content:""; position:absolute; right:21%; top:45%; width:.7em; height:.18em; border-radius:.1em; background:#cdb89c; }
+  .mug { position:absolute; left:1em; bottom:3.45em; width:.72em; height:.8em; border-radius:.08em .08em .22em .22em; background:linear-gradient(90deg, #f0eee6, #c9c6ba); z-index:2; }
+  .mug::before { content:""; position:absolute; right:-.34em; top:.14em; width:.34em; height:.42em; border:.1em solid #d6d3c8; border-left:0; border-radius:0 .3em .3em 0; }
+  .mug::after { content:""; position:absolute; left:.2em; top:-.9em; width:.14em; height:.7em; border-radius:.1em; background:linear-gradient(transparent, rgba(255,255,255,.55)); opacity:0; }
+  .working .mug::after { animation:steam 2.2s ease-in-out infinite; }
+  @keyframes steam { 0% { opacity:0; transform:translateY(.3em) scaleX(1); } 40% { opacity:.8; } 100% { opacity:0; transform:translateY(-.5em) scaleX(1.8); } }
+  .plant { position:absolute; right:.9em; bottom:3.45em; width:.8em; height:.62em; border-radius:.06em .06em .2em .2em; background:linear-gradient(180deg, #cf8a6c, #a6654b); z-index:2; }
+  .plant::before, .plant::after { content:""; position:absolute; bottom:.5em; width:.5em; height:1.15em; border-radius:80% 10% 80% 10%; background:linear-gradient(160deg, #a3cdaa, #5c9470); }
+  .plant::before { left:-.12em; transform:rotate(-24deg); } .plant::after { right:-.12em; transform:rotate(24deg) scaleX(-1); }
+
+  .pad { position:relative; width:100%; height:7em; margin-top:-1.5em; display:flex; align-items:flex-end; justify-content:center; z-index:3; }
+  .pad::before { content:""; position:absolute; left:50%; bottom:-.35em; width:7.4em; height:1.5em; margin-left:-3.7em; border-radius:50%; background:radial-gradient(closest-side, rgba(0,0,0,.5), transparent); }
+  .pad::after { content:""; position:absolute; left:50%; bottom:-.9em; width:11em; height:2.8em; margin-left:-5.5em; border-radius:50%; background:radial-gradient(closest-side, var(--glow, transparent), transparent); opacity:.75; }
+  .px { image-rendering:pixelated; }  /* MapleStory sprites are small pixel art: scale them up crisply */
+  .pad img.px { height:auto; max-width:none; }  /* sized in pixels by fitMaple() */
+  .pad img { position:relative; height:6.2em; max-width:10.5em; object-fit:contain; filter:drop-shadow(0 .25em .3em rgba(0,0,0,.45)); transform-origin:50% 100%; }
+  .pad .fallback { position:relative; font-size:4.4em; line-height:1; }
+  .bubble { position:absolute; left:50%; top:-2.5em; margin-left:-1.35em; width:2.7em; height:2.5em; display:none; align-items:center; justify-content:center; border-radius:.9em; background:linear-gradient(180deg, #fffaf5, #fde3d3); box-shadow:0 0 0 .12em #e58e63, 0 0 1em rgba(229,142,99,.45), 0 .4em .8em rgba(0,0,0,.35); z-index:4; animation:bob 1.1s ease-in-out infinite alternate; }
+  .bubble::after { content:""; position:absolute; left:.95em; bottom:-.42em; width:.8em; height:.8em; background:#fde3d3; border-right:.12em solid #e58e63; border-bottom:.12em solid #e58e63; transform:rotate(45deg); border-radius:0 0 .2em 0; }
+  .bubble svg { position:relative; z-index:1; width:1.9em; height:1.9em; display:none; filter:drop-shadow(0 .06em .06em rgba(0,0,0,.25)); }
+  .needs_input .bubble .b-bulb, .done .bubble .b-book { display:block; }
+  .needs_input .bubble .b-bulb { animation:glow 1.4s ease-in-out infinite; }
+  @keyframes glow { 50% { filter:drop-shadow(0 0 .35em rgba(255,212,94,.95)); } }
+  .pill.done.on { background:linear-gradient(180deg, #4d4023, #382f1a); border-color:#a58a45; color:#f3e2b3; }
+  .pill.done.on b { color:#fff; }
+  .done { --led:#e3b866; --glow:rgba(227,184,102,.26); }
+  .done .screen { background:radial-gradient(120% 100% at 50% 40%, #4d4023, #201a0d); box-shadow:0 0 1em rgba(227,184,102,.22); }
+  .done .glyph { display:flex; color:#f0cf85; }
+  .done .bubble { display:flex; background:linear-gradient(180deg, #fffdf5, #f6e7bf); box-shadow:0 0 0 .12em #c9a04f, 0 0 1em rgba(227,184,102,.45), 0 .4em .8em rgba(0,0,0,.35); }
+  .done .bubble::after { background:#f6e7bf; border-color:#c9a04f; }
+  .done .pad img { animation:sway 2.6s ease-in-out infinite; }
+  @keyframes sway { 0%, 100% { transform:rotate(-1.5deg); } 50% { transform:rotate(1.5deg); } }
+  .done .chip { color:#f3dfa8; border-color:rgba(227,184,102,.5); background:rgba(66,54,26,.85); }
+  .done .plate { color:#fff4d6; }
+  @keyframes bob { to { transform:translateY(-.5em); } }
+  .marker { position:absolute; left:50%; top:-3.1em; display:none; z-index:4; transform:translateX(-50%); animation:mbob .8s ease-in-out infinite alternate; }
+  @keyframes mbob { from { transform:translate(-50%, 0); } to { transform:translate(-50%, -.5em); } }
+  .marker svg { display:block; }
+  .marker img.own { display:block; height:var(--mk, 88px); image-rendering:pixelated; filter:drop-shadow(0 3px 4px rgba(0,0,0,.35)); }
+  .marker:has(img.own) { top:auto; bottom:5.7em; animation:none; }
+  .needs_input .m-bulb, .done .m-book { display:block; }
+  .m-bulb svg { filter:drop-shadow(0 0 .3em rgba(255,210,60,.85)) drop-shadow(0 .15em .1em rgba(0,0,0,.4)); animation:tilt 1.6s ease-in-out infinite; transform-origin:50% 85%; }
+  @keyframes tilt { 0%, 100% { transform:rotate(-9deg); } 50% { transform:rotate(9deg); } }
+  .bub { position:relative; padding:.38em .5em .42em; background:#fff; border:.15em solid #2b2620; border-radius:.55em; box-shadow:0 .25em .5em rgba(0,0,0,.4); }
+  .bub::after { content:""; position:absolute; left:50%; bottom:-.5em; width:.7em; height:.7em; margin-left:-.35em; background:#fff; border-right:.15em solid #2b2620; border-bottom:.15em solid #2b2620; transform:rotate(45deg); }
+  .bub > svg { position:relative; z-index:1; }
+  .bub .mouse { position:absolute; right:-.6em; bottom:-.55em; z-index:2; animation:mclick 1s steps(1) infinite; }
+  @keyframes mclick { 50% { transform:translateY(.1em); filter:brightness(.82); } }
+  .zz { position:absolute; left:50%; top:.2em; margin-left:1.8em; display:none; font-family:var(--pix); font-weight:700; color:#c2c0b6; z-index:4; }
+  .zz i { position:absolute; font-style:normal; opacity:0; animation:zz 3s linear infinite; }
+  .zz i:nth-child(2) { animation-delay:1s; } .zz i:nth-child(3) { animation-delay:2s; }
+  @keyframes zz { 0% { opacity:0; transform:translate(0, 0) scale(.6); } 25% { opacity:.9; } 100% { opacity:0; transform:translate(1.2em, -2.2em) scale(1.4); } }
+
+  .plate { margin-top:.55em; max-width:13em; text-align:center; font-family:var(--pix); font-weight:600; font-size:.7em; line-height:1.25; color:#fff; text-shadow:0 .1em .3em rgba(0,0,0,.7); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .chip { display:inline-flex; align-items:center; gap:.5em; max-width:15em; margin-top:.45em; padding:.3em .8em; border-radius:99em; font-size:.56em; font-weight:600; letter-spacing:.02em; background:rgba(31,30,29,.82); border:1px solid rgba(255,255,255,.1); color:var(--dim); white-space:nowrap; }
+  .chip i { width:.55em; height:.55em; border-radius:50%; background:currentColor; flex:none; }
+  .chip span { overflow:hidden; text-overflow:ellipsis; }
+  .acts { position:absolute; top:-.3em; right:.3em; display:flex; gap:.3em; opacity:0; transition:opacity .15s; z-index:5; }
+  .desk:hover .acts { opacity:1; }
+  .acts button { width:1.9em; height:1.9em; padding:0; display:grid; place-items:center; border-radius:.5em; border:1px solid rgba(255,255,255,.16); background:rgba(31,30,29,.92); color:var(--dim); font-size:.62em; }
+  .acts button:hover { color:#fff; border-color:var(--violet); }
+  .acts .x:hover { border-color:var(--rose); color:var(--rose); }
+  .acts svg { width:1em; height:1em; }
+  /* a phone has no hover and no right-click: the desk buttons stay visible and one of them changes the character */
+  .acts .pk { display:none; }
+  .rc { display:none; position:absolute; inset:0; z-index:4; border-radius:1em; -webkit-tap-highlight-color:transparent; }
+  .remote .rc[href] { display:block; }
+  .remote .acts .pk { display:grid; }
+  .remote .acts { opacity:1; }
+  /* pull request links stay tappable above the desk's link; the rest of the monitor lets taps through to it */
+  .remote .monitor { z-index:5; pointer-events:none; } .remote .prs a { pointer-events:auto; }
+  @media (hover:none) { .acts { opacity:1; } .acts .pk { display:grid; } .stk .rm { display:block; } #picker .plus { opacity:1; } }
+  /* phone width: two desks to a row instead of five, and a header that wraps into rows */
+  @media (max-width:640px) {
+    header { gap:8px; padding:8px 10px; }
+    .grow { display:none; }
+    .btn { height:36px; padding:0 11px; font-size:13px; }
+    #stocks { order:9; width:100%; overflow-x:auto; padding:8px 2px 2px; }
+    .stk { flex:none; min-width:138px; }
+    #mu-vol { width:70px; }
+    #office { --u:calc(96vw / 2 / 14.8); }
+    .wall, .floor { grid-template-columns:repeat(2, 1fr); }
+    .wall .win ~ .win ~ .win { display:none; }
+    .acts { gap:.5em; } .acts button { font-size:.95em; }
+    #toast { width:max-content; max-width:88vw; text-align:center; }
+  }
+
+  /* states */
+  .working { --led:var(--mint); --glow:rgba(141,196,164,.12); }
+  .working .screen { background:radial-gradient(120% 100% at 30% 20%, #25352d, #171f1b); box-shadow:0 0 1em rgba(141,196,164,.16); }
+  .working .code { display:flex; }
+  .working .pad img { animation:work .62s ease-in-out infinite alternate; }
+  @keyframes work { to { transform:translateY(-.14em) rotate(-1.2deg); } }
+  .working .chip { color:var(--mint); border-color:rgba(141,196,164,.35); }
+  .working .chip i { animation:blink 1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity:.25; } }
+  .needs_input { --led:var(--amber); --glow:rgba(229,142,99,.3); }
+  .needs_input .screen { background:radial-gradient(120% 100% at 50% 40%, #5a3423, #26160f); box-shadow:0 0 1.2em rgba(229,142,99,.3); animation:alert 1.6s ease-in-out infinite; }
+  @keyframes alert { 50% { filter:brightness(1.35); } }
+  .needs_input .glyph { display:flex; color:#f6b594; }
+  .needs_input .bubble { display:flex; }
+  .needs_input .pad::after { animation:pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity:.3; transform:scale(.85); } }
+  .needs_input .pad img { animation:hop 2.2s ease-in-out infinite; }
+  @keyframes hop { 0%, 70%, 100% { transform:translateY(0); } 78% { transform:translateY(-.55em) scaleY(1.04); } 86% { transform:translateY(0) scaleY(.95); } 92% { transform:translateY(-.2em); } }
+  .needs_input .chip { color:#f8cdb6; border-color:rgba(229,142,99,.5); background:rgba(74,43,30,.85); }
+  .needs_input .plate { color:#ffe9dd; }
+  /* finished, pull request open for review: awake and waiting, not asleep */
+  .review { --led:#b79cf2; --glow:rgba(183,156,242,.14); }
+  .review .screen { background:radial-gradient(120% 100% at 50% 40%, #2c2640, #17141f); box-shadow:0 0 1em rgba(183,156,242,.16); }
+  .review .pad img { animation:sway 3.4s ease-in-out infinite; }
+  .review .chip { color:#cdbcf5; border-color:rgba(183,156,242,.45); background:rgba(40,33,60,.85); }
+  /* turn ended, only waiting on its own background job: awake and still, nothing typing */
+  .waiting .screen { background:#171716; }
+  .waiting .glyph { display:flex; font-size:1.2em; color:#6b6962; }
+  .waiting .pad img { animation:breathe 3.6s ease-in-out infinite; }
+  .waiting .plate { color:#c2c0b6; }
+  .resting .screen, .idle .screen { background:#171716; }
+  .resting .glyph, .idle .glyph { display:flex; font-size:1.3em; color:#4a4944; }
+  .resting .pad img, .idle .pad img { filter:grayscale(.45) brightness(.8) drop-shadow(0 .25em .3em rgba(0,0,0,.45)); animation:breathe 3.6s ease-in-out infinite; }
+  @keyframes breathe { 50% { transform:scaleY(.965); } }
+  .resting .zz { display:block; }
+  .resting .plate, .idle .plate { color:#c2c0b6; }
+  @media (prefers-reduced-motion:reduce) { * { animation:none !important; } }
+
+  /* ---------- dialog + toast ---------- */
+  #modal { position:fixed; inset:0; z-index:60; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); }
+  #modal.open { display:grid; }
+  #modal form { width:min(440px, 92vw); padding:22px; border-radius:16px; background:var(--panel); border:1px solid #4a4944; box-shadow:0 30px 80px rgba(0,0,0,.5); animation:pop .16s ease-out; }
+  #modal h3 { margin:0 0 6px; font-size:18px; font-weight:600; }
+  #modal p { margin:0 0 14px; font-size:13px; color:var(--dim); line-height:1.45; }
+  #modal input { width:100%; height:42px; padding:0 12px; border-radius:10px; border:1px solid var(--line); background:#1f1e1d; color:var(--ink); font:inherit; font-size:15px; outline:none; }
+  #modal input:focus { border-color:var(--violet); box-shadow:0 0 0 3px rgba(217,119,87,.25); }
+  #modal .chk { display:flex; align-items:center; gap:9px; margin-top:12px; font-size:13.5px; cursor:pointer; }
+  #modal .chk[hidden] { display:none; }
+  #modal .chk input { width:16px; height:16px; padding:0; flex:none; accent-color:var(--violet); box-shadow:none; }
+  #modal .btns { display:flex; justify-content:flex-end; gap:8px; margin-top:16px; }
+  /* phone: where to start a session that runs on the computer (see NOTES.md) */
+  #launch { position:fixed; inset:0; z-index:60; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); }
+  #launch.open { display:grid; }
+  #launch form { width:min(440px, 92vw); max-height:92vh; overflow:auto; padding:20px; border-radius:16px; background:var(--panel); border:1px solid #4a4944; box-shadow:0 30px 80px rgba(0,0,0,.5); }
+  #launch h3 { margin:0 0 6px; font-size:18px; font-weight:600; }
+  #launch p { margin:0 0 12px; font-size:13px; color:var(--dim); line-height:1.45; }
+  #launch ol { margin:0 0 12px; padding-left:20px; font-size:14px; line-height:1.6; }
+  #launch .btns { display:flex; justify-content:flex-end; gap:8px; margin-top:16px; }
+  .stk { cursor:pointer; transition:border-color .15s; } .stk:hover { border-color:#56554f; }
+  #music { align-items:center; gap:6px; }
+  #mu-name { max-width:9em; overflow:hidden; text-overflow:ellipsis; }
+  #mu-play.on { border-color:var(--violet); }
+  #mu-next { padding:0 11px; }
+  #mu-vol { width:70px; accent-color:var(--violet); }
+  #chart { position:fixed; inset:0; z-index:60; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); }
+  #chart.open { display:grid; }
+  .ck-card { width:min(820px, 94vw); max-height:94vh; overflow:auto; padding:22px 24px; border-radius:16px; background:var(--panel); border:1px solid #4a4944; box-shadow:0 30px 80px rgba(0,0,0,.5); animation:pop .16s ease-out; }
+  .ck-head { display:flex; align-items:flex-start; gap:12px; }
+  .ck-head h3 { margin:0; font-size:21px; font-weight:500; }
+  .ck-sub { margin-top:3px; font-size:12px; color:var(--dim); }
+  .ck-head .btn { margin-left:auto; flex:none; }
+  .ck-quote { display:flex; align-items:baseline; flex-wrap:wrap; gap:10px; margin-top:14px; font-variant-numeric:tabular-nums; }
+  .ck-price { font-size:34px; font-weight:500; line-height:1; }
+  .ck-cur { font-size:14px; color:var(--dim); }
+  .ck-pct { align-self:center; padding:3px 9px; border-radius:7px; font-size:14px; font-weight:600; color:#1f1e1d; }
+  .ck-chg { font-size:14px; }
+  .ck-asof { margin-top:6px; font-size:11.5px; color:var(--faint); }
+  .ck-tabs { display:flex; margin:14px 0 8px; border-bottom:1px solid var(--line); }
+  .ck-tabs button { flex:1; height:34px; border:0; border-bottom:2px solid transparent; background:none; color:var(--dim); font-size:13px; font-weight:600; }
+  .ck-tabs button:hover { color:var(--ink); }
+  .ck-tabs button.on { color:var(--ink); border-bottom-color:var(--violet); }
+  .ck-plot { position:relative; height:300px; }
+  .ck-plot svg { display:block; width:100%; height:100%; cursor:crosshair; }
+  .ck-plot text { font-size:11px; fill:#85837b; font-variant-numeric:tabular-nums; }
+  .ck-tip { position:absolute; top:0; display:none; padding:4px 8px; border-radius:7px; background:#1f1e1d; border:1px solid var(--line); font-size:12px; white-space:nowrap; pointer-events:none; font-variant-numeric:tabular-nums; }
+  .ck-note { display:grid; place-items:center; height:100%; color:var(--dim); font-size:13px; }
+  .ck-stats { display:grid; grid-template-columns:repeat(3, 1fr); gap:7px 32px; margin-top:14px; font-size:13px; }
+  .ck-stats div { display:flex; justify-content:space-between; gap:10px; }
+  .ck-stats span { color:var(--dim); } .ck-stats b { font-weight:500; font-variant-numeric:tabular-nums; }
+  #merged { position:fixed; inset:0; z-index:60; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); }
+  #merged.open { display:grid; }
+  .mg-card { width:min(780px, 94vw); height:86vh; }
+  .mg-count { flex:1; font-size:13px; color:var(--dim); }
+  .mg-list { flex:1; overflow:auto; padding-right:4px; }
+  .mg-day { position:sticky; top:0; z-index:1; padding:10px 6px 6px; font-size:11px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); background:var(--panel); }
+  #todo { position:fixed; inset:0; z-index:60; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); }
+  #todo.open { display:grid; }
+  .td-card { width:min(560px, 94vw); height:min(640px, 86vh); }
+  .td-badge { min-width:18px; padding:0 5px; border-radius:999px; background:var(--violet); color:#fff; font-size:11px; line-height:18px; text-align:center; font-variant-numeric:tabular-nums; }
+  .td-add { display:flex; gap:8px; margin-bottom:10px; }
+  .td-add input { flex:1; min-width:0; height:38px; padding:0 12px; border-radius:10px; border:1px solid var(--line); background:#1f1e1d; color:var(--ink); font:inherit; font-size:14px; outline:none; }
+  .td-add input:focus { border-color:var(--violet); box-shadow:0 0 0 3px rgba(217,119,87,.25); }
+  .td-row { display:flex; align-items:center; gap:10px; padding:7px 10px; border-radius:9px; font-size:14px; }
+  .td-row:hover { background:var(--panel2); }
+  .td-row input { flex:none; width:17px; height:17px; margin:0; accent-color:var(--violet); cursor:pointer; }
+  .td-row { cursor:grab; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+  .td-row .ti { flex:1; min-width:0; overflow-wrap:anywhere; }
+  .td-row.done .ti { color:var(--faint); text-decoration:line-through; }
+  .td-row .rm { flex:none; width:28px; height:28px; border:0; border-radius:7px; background:none; color:var(--faint); font-size:18px; line-height:1; cursor:pointer; }
+  .td-row .rm:hover { background:#4a2a2f; color:var(--rose); }
+  .td-row .cp { flex:none; height:26px; padding:0 9px; border:1px solid var(--line); border-radius:7px; background:none; color:var(--faint); font:inherit; font-size:12px; cursor:pointer; white-space:nowrap; }
+  .td-row .cp:hover { color:var(--ink); background:var(--panel2); }
+  .td-row .cp.ok { color:var(--violet); border-color:var(--violet); }
+  .td-row .grip { flex:none; width:16px; height:28px; display:grid; place-items:center; color:var(--faint); cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none; font-size:14px; letter-spacing:-3px; }
+  .td-row.drag { background:var(--panel2); box-shadow:0 4px 14px rgba(0,0,0,.35); position:relative; z-index:1; }
+  .td-row.drag .grip { cursor:grabbing; }
+  #td-list.dragging { user-select:none; -webkit-user-select:none; cursor:grabbing; }
+  .td-sec + .td-sec { margin-top:12px; }
+  .td-head { display:flex; align-items:center; gap:8px; padding:4px 10px 6px; font-size:11.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--faint); }
+  .td-head .n { font-variant-numeric:tabular-nums; font-weight:500; }
+  .td-sec[data-s="progress"] .td-head { color:var(--violet); }
+  .td-rows { min-height:8px; }
+  .td-empty { padding:10px; border:1px dashed var(--line); border-radius:9px; color:var(--faint); font-size:12.5px; text-align:center; }
+  .td-rows:has(.td-row) .td-empty { display:none; }
+  #td-list.dragging .td-empty { border-color:var(--violet); }
+  @media (hover:hover) { .td-row .rm, .td-row .cp { opacity:0; } .td-row:hover .rm, .td-row .rm:focus-visible, .td-row:hover .cp, .td-row .cp:focus-visible, .td-row .cp.ok { opacity:1; } }
+  .mg-day { display:flex; justify-content:space-between; gap:10px; }
+  .mg-day .n { text-transform:none; letter-spacing:0; font-variant-numeric:tabular-nums; }
+  .mg-row { display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:9px; color:var(--ink); text-decoration:none; font-size:13.5px; }
+  .mg-row:hover { background:var(--panel2); }
+  .mg-row .tm { flex:none; width:40px; font-size:12px; color:var(--faint); font-variant-numeric:tabular-nums; }
+  .mg-row .num { flex:none; min-width:54px; font-weight:600; color:#b79cf2; }
+  .mg-row .ti { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .mg-row .repo { flex:none; font-size:11.5px; color:var(--faint); }
+  .mg-row img { flex:none; width:30px; height:30px; margin:-6px -3px; object-fit:contain; }
+  .mg-note { padding:16px; text-align:center; font-size:13px; color:var(--dim); }
+  .mg-more { display:flex; margin:12px auto 6px; }
+  #monpick { position:fixed; inset:0; z-index:60; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); }
+  #monpick.open { display:grid; }
+  .mp-card { width:min(880px, 94vw); max-height:86vh; display:flex; flex-direction:column; padding:18px; border-radius:16px; background:var(--panel); border:1px solid #4a4944; box-shadow:0 30px 80px rgba(0,0,0,.5); animation:pop .16s ease-out; }
+  .mp-head { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+  .mp-head h3 { margin:0; font-size:17px; font-weight:600; white-space:nowrap; }
+  .mp-head input { flex:1; height:38px; padding:0 12px; border-radius:10px; border:1px solid var(--line); background:#1f1e1d; color:var(--ink); font:inherit; font-size:14px; outline:none; }
+  .mp-head input:focus { border-color:var(--violet); box-shadow:0 0 0 3px rgba(217,119,87,.25); }
+  .mp-gens { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+  .mp-gens button { height:30px; padding:0 12px; border-radius:8px; border:1px solid var(--line); background:var(--panel2); color:var(--dim); font-size:12.5px; font-weight:600; }
+  .mp-gens button:hover { color:var(--ink); }
+  .mp-gens button.on { background:rgba(217,119,87,.16); border-color:var(--violet); color:var(--ink); }
+  .mp-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(86px, 1fr)); gap:6px; overflow-y:auto; overflow-x:hidden; padding-right:4px; }
+  .mp-cell { min-width:0; overflow-wrap:anywhere; display:flex; flex-direction:column; align-items:center; gap:2px; padding:8px 4px 6px; border-radius:10px; border:1px solid transparent; background:none; color:var(--dim); font-size:11px; }
+  .mp-cell[hidden] { display:none; }
+  .mp-cell:hover { background:var(--panel2); color:var(--ink); border-color:var(--line); }
+  .mp-cell.cur { border-color:var(--violet); background:rgba(217,119,87,.12); color:var(--ink); }
+  .mp-cell img { width:60px; height:60px; object-fit:contain; }
+  #mtg { position:fixed; inset:0; z-index:60; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter:blur(4px); }
+  #mtg.open { display:grid; }
+  .mt-card { width:min(600px, 94vw); height:min(720px, 86vh); }
+  .mt-day { margin-bottom:14px; border:1px solid var(--line); border-radius:12px; background:#252422; overflow:hidden; }
+  .mt-day.today { border-color:rgba(229,142,99,.55); }
+  .mt-dh { display:flex; align-items:baseline; gap:10px; padding:10px 14px; background:var(--panel2); border-bottom:1px solid var(--line); }
+  .mt-dh b { font-size:16px; font-weight:700; color:var(--ink); }
+  .mt-dh .dt { font-size:14px; font-weight:500; color:var(--dim); }
+  .mt-dh em { padding:1px 8px; border-radius:999px; background:rgba(229,142,99,.18); color:var(--amber); font-size:11.5px; font-style:normal; font-weight:600; }
+  .mt-dh .n { margin-left:auto; font-size:12px; color:var(--faint); }
+  .mt-row { display:flex; align-items:baseline; gap:14px; padding:9px 14px; font-size:14.5px; }
+  .mt-row + .mt-row { border-top:1px solid #34332f; }
+  .mt-row .tm { flex:none; min-width:150px; white-space:nowrap; font-size:14px; font-weight:600; color:#d9b48f; font-variant-numeric:tabular-nums; }
+  .mt-row .tm i { margin-left:6px; font-style:normal; font-weight:400; color:var(--faint); }
+  .mt-row .ti { flex:1; min-width:0; overflow-wrap:anywhere; color:var(--ink); }
+  .mt-row.now { background:rgba(229,142,99,.1); }
+  .mt-row.now .tm { color:var(--amber); }
+  .mt-link { margin-top:14px; padding-top:12px; border-top:1px solid var(--line); font-size:12.5px; color:var(--dim); }
+  .mt-link form { margin:8px 0 0; }
+  .mt-link[hidden] { display:none; }
+  .mt-err { margin-bottom:8px; color:var(--rose); }
+  #mtg-alert { position:fixed; inset:0; z-index:90; display:none; place-items:center; background:rgba(10,8,6,.78); backdrop-filter:blur(6px); }
+  #mtg-alert.open { display:grid; }
+  .ma-card { width:min(460px, 92vw); padding:26px 26px 22px; border-radius:18px; background:var(--panel); border:2px solid var(--amber); box-shadow:0 0 0 6px rgba(229,142,99,.18), 0 30px 80px rgba(0,0,0,.6); animation:pop .16s ease-out, ma-pulse 1.6s ease-in-out infinite; }
+  @keyframes ma-pulse { 50% { box-shadow:0 0 0 14px rgba(229,142,99,.08), 0 30px 80px rgba(0,0,0,.6); } }
+  .ma-when { font-size:13px; font-weight:600; letter-spacing:.04em; color:var(--amber); text-transform:uppercase; }
+  .ma-title { margin:10px 0 6px; font-size:22px; font-weight:600; line-height:1.3; overflow-wrap:anywhere; }
+  .ma-where { font-size:13px; color:var(--dim); overflow-wrap:anywhere; }
+  .ma-more { margin-top:6px; font-size:12px; color:var(--faint); }
+  .ma-btns { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .ma-btns .btn { height:44px; padding:0 20px; font-size:15px; text-decoration:none; color:var(--ink); }
+  .ma-btns .btn.primary { color:#fff; }
+  .ma-btns [hidden] { display:none; }
+  #toast { position:fixed; left:50%; bottom:26px; transform:translate(-50%, 20px); z-index:70; padding:10px 16px; border-radius:10px; background:#1f1e1d; border:1px solid #4a4944; font-size:13px; opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; }
+  #toast.on { opacity:1; transform:translate(-50%, 0); }
+</style>
+</head>
+<body data-sky="night">
+<header>
+  <div class="brand"><span class="logo" style="visibility:hidden"><img id="logo-maple" alt="" style="display:none"><svg viewBox="0 0 64 64"><g stroke="#161514" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="40" rx="24.5" ry="6.5" fill="#262524"/><ellipse cx="32" cy="29" rx="24.5" ry="7.5" fill="#262524"/><path d="M7.5 29A24.5 24 0 0 1 56.5 29Q32 17.5 7.5 29Z" fill="#e3262a"/></g><path d="M51.5 14.5A24.5 24 0 0 1 56.5 29Q54 27.6 50.5 26.4A22 22 0 0 0 47 11.5Z" fill="#b81d21"/><ellipse cx="19.5" cy="12.5" rx="4.6" ry="2.3" transform="rotate(-32 19.5 12.5)" fill="#fff" opacity=".45"/><path d="M7.5 29A24.5 24 0 0 1 56.5 29Q32 17.5 7.5 29Z" fill="none" stroke="#161514" stroke-width="2.2" stroke-linejoin="round"/><circle cx="32" cy="19.5" r="6" fill="#262524" stroke="#161514" stroke-width="1.6"/><circle cx="32" cy="19.5" r="3.7" fill="#fff"/><circle cx="32" cy="19.5" r="2" fill="#fff" stroke="#161514" stroke-width="1.1"/><g fill="#d97757" shape-rendering="crispEdges"><rect x="20" y="27" width="24" height="13"/><rect x="15.5" y="31.5" width="4.5" height="5"/><rect x="44" y="31.5" width="4.5" height="5"/><rect x="22.5" y="40" width="3.2" height="8"/><rect x="27.9" y="40" width="3.2" height="8"/><rect x="32.9" y="40" width="3.2" height="8"/><rect x="38.3" y="40" width="3.2" height="8"/></g><g fill="#161514" shape-rendering="crispEdges"><rect x="25" y="30" width="3" height="3"/><rect x="36" y="30" width="3" height="3"/></g><path d="M7.5 40Q32 50.5 56.5 40A24.5 22 0 0 1 7.5 40Z" fill="#fff" stroke="#161514" stroke-width="2.2" stroke-linejoin="round"/><path d="M54.6 46.5A24.5 22 0 0 1 30 61.9A27 24 0 0 0 51.5 45.5Z" fill="#d8d6cf"/><path d="M7.5 40Q32 50.5 56.5 40A24.5 22 0 0 1 7.5 40Z" fill="none" stroke="#161514" stroke-width="2.2" stroke-linejoin="round"/></svg></span><span id="brand-name"></span></div>
+  <button class="btn" id="todo-btn" title="Your to-do list (T)">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 1.8h6.2l2.8 2.8v9.6h-9z"/><path d="M9.5 1.8v3h3M5.6 8h4.8M5.6 10.8h3.4"/></svg>To-do<b class="td-badge" id="td-badge" hidden></b></button>
+  <button class="btn" id="mtg-btn" title="Your meetings and their reminders">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3"/></svg><span id="mtg-next">Meetings</span></button>
+  <div class="pills">
+    <span class="pill" id="p-all"><b>0</b> sessions</span>
+    <span class="pill need" id="p-need"><b>0</b> need you</span>
+    <span class="pill done" id="p-done"><b>0</b> to review</span>
+  </div>
+  <span class="grow"></span>
+  <div id="stocks"></div>
+  <div class="menuwrap">
+    <button class="btn" id="pick" title="Put a session from the Claude app on a desk">Add existing
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div id="picker"></div>
+  </div>
+  <div id="music" style="display:none">
+    <button type="button" class="btn" id="mu-play" title="Play background music"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12.5V3.5l7-1.5v9"/><circle cx="4.2" cy="12.5" r="1.8"/><circle cx="11.2" cy="11" r="1.8"/></svg><span id="mu-name">Music</span></button>
+    <button type="button" class="btn" id="mu-next" title="Next track"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 3.5l6 4.5-6 4.5zM12.5 3.5v9"/></svg></button>
+    <input type="range" id="mu-vol" min="0" max="100" value="40" title="Volume">
+  </div>
+  <button class="btn" id="theme-btn" title="Switch the office between Pokémon and MapleStory monsters">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 5.5h10M10 3l2.5 2.5L10 8M13.5 10.5h-10M6 8l-2.5 2.5L6 13"/></svg><span id="theme-name">Pokémon</span></button>
+  <button class="btn" id="merged-btn" title="Your merged pull requests">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="3.5" r="1.7"/><circle cx="4" cy="12.5" r="1.7"/><circle cx="12" cy="9" r="1.7"/><path d="M4 5.2v5.6M4 5.2c0 2.6 2.4 3.8 6.3 3.8"/></svg>Merged PRs</button>
+  <button class="btn primary" id="add" title="Start a new session in the Claude app">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg>New session</button>
+</header>
+
+<main id="office">
+  <div class="wall">
+    <div class="board"><h4>FLOOR STATUS</h4>
+      <div><i style="background:var(--mint)"></i>Working<b id="b-work">0</b></div>
+      <div><i style="background:var(--amber)"></i>Needs you<b id="b-need">0</b></div>
+      <div><i style="background:#e3b866"></i>To review<b id="b-done">0</b></div>
+      <div><i style="background:#b79cf2"></i>In review<b id="b-review">0</b></div>
+      <div><i style="background:#85837b"></i>Resting<b id="b-rest">0</b></div></div>
+    <div class="win"><div class="city"></div></div>
+    <div class="win"><div class="city"></div></div>
+    <div class="win"><div class="city"></div></div>
+    <div class="wx" id="weather"><div class="wx-wait">Weather…</div></div>
+    <div class="clock"><div class="t" id="c-time">--:--</div><div class="d" id="c-date"></div></div>
+  </div>
+  <div class="floor" id="floor">
+    <div id="empty"><b>The office is quiet</b>Send a message in any Claude Code session and it will walk in.</div>
+  </div>
+</main>
+
+<div id="modal"><form>
+  <h3></h3><p></p><input autocomplete="off" spellcheck="false">
+  <label class="chk" id="m-chk" hidden><input type="checkbox" id="m-check"><span></span></label>
+  <div class="btns"><button type="button" class="btn" id="m-cancel">Cancel</button><button class="btn primary" id="m-ok">Save</button></div>
+</form></div>
+<div id="launch"><form>
+  <h3>New session on the computer</h3>
+  <p>Start it in the Claude app, which is the only place that can:</p>
+  <ol><li>Open the <b>Code</b> tab and start a new session.</li>
+    <li>Tap the environment button above the message box.</li>
+    <li>Under <b>Remote Control</b>, pick the folder, then <b>New session</b>.</li></ol>
+  <p>It runs in the Claude app on the computer and gets a desk here. A folder shows up there once it is listed in the computer's Claude app, under Settings, Code, Remote Control.</p>
+  <div class="btns"><button type="button" class="btn primary" id="ln-cancel">Close</button></div>
+</form></div>
+<div id="monpick"><div class="mp-card">
+  <div class="mp-head"><h3 id="mp-title">Choose a Pokémon</h3><input id="mp-search" placeholder="Search by name or number" autocomplete="off" spellcheck="false"><button type="button" class="btn" id="mp-random" title="Pick one at random from the Pokémon shown">Random</button><button type="button" class="btn" id="mp-close">Cancel</button></div>
+  <div class="mp-gens" id="mp-gens"></div>
+  <div class="mp-grid" id="mp-grid"></div>
+</div></div>
+<div id="chart"><div class="ck-card">
+  <div class="ck-head"><div><h3 id="ck-name"></h3><div class="ck-sub" id="ck-sub"></div></div><button type="button" class="btn" id="ck-close">Close</button></div>
+  <div class="ck-quote"><span class="ck-price" id="ck-price">—</span><span class="ck-cur" id="ck-cur"></span><span class="ck-pct" id="ck-pct"></span><span class="ck-chg" id="ck-chg"></span></div>
+  <div class="ck-asof" id="ck-asof"></div>
+  <div class="ck-tabs" id="ck-tabs"></div>
+  <div class="ck-plot" id="ck-plot"></div>
+  <div class="ck-stats" id="ck-stats"></div>
+</div></div>
+<div id="merged"><div class="mp-card mg-card">
+  <div class="mp-head"><h3>Merged PRs</h3><span class="mg-count" id="mg-count"></span><button type="button" class="btn" id="mg-close">Close</button></div>
+  <div class="mg-list" id="mg-list"></div>
+</div></div>
+<div id="todo"><div class="mp-card td-card">
+  <div class="mp-head"><h3>To-do</h3><span class="mg-count" id="td-count"></span><button type="button" class="btn" id="td-close">Close</button></div>
+  <form class="td-add" id="td-form"><input id="td-input" placeholder="Add a to-do" autocomplete="off" maxlength="300"><button class="btn primary">Add</button></form>
+  <div class="mg-list" id="td-list"></div>
+</div></div>
+<div id="mtg"><div class="mp-card mt-card">
+  <div class="mp-head"><h3>Meetings</h3><span class="mg-count" id="mt-count"></span><button type="button" class="btn" id="mt-close">Close</button></div>
+  <div class="mg-list" id="mt-list"></div>
+  <div class="mt-link" id="mt-link"></div>
+</div></div>
+<div id="mtg-alert" role="alertdialog" aria-modal="true" aria-labelledby="ma-title"><div class="ma-card">
+  <div class="ma-when" id="ma-when"></div>
+  <div class="ma-title" id="ma-title"></div>
+  <div class="ma-where" id="ma-where"></div>
+  <div class="ma-more" id="ma-more"></div>
+  <div class="ma-btns"><a class="btn" id="ma-join" target="_blank" rel="noopener">Join in Teams</a><button type="button" class="btn primary" id="ma-ok">Got it</button></div>
+</div></div>
+<div id="toast"></div>
+
+<script>
+const SPRITES = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+// Pokemon GO's 3D model icons (256px), with the old pixel sprite as a fallback.
+const GO_ICON = n => `https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon%20-%20256x256/Addressable%20Assets/pm${n}.icon.png`;
+const HOME_ICON = n => `${SPRITES}other/home/${n}.png`;
+const $ = id => document.getElementById(id);
+// The GO icons have empty margins and very different scales, so crop each one to its visible pixels.
+const trimmed = new Map();
+function trimIcon(n) {
+  if (!trimmed.has(n)) trimmed.set(n, new Promise(resolve => {
+    const im = new Image();
+    im.crossOrigin = "anonymous";
+    const urls = [GO_ICON(n), HOME_ICON(n)]; let k = 0;
+    im.onerror = () => { k++; if (k < urls.length) im.src = urls[k]; else resolve(null); };
+    im.onload = () => {
+      try {
+        const w = im.naturalWidth, hgt = im.naturalHeight, c = document.createElement("canvas");
+        c.width = w; c.height = hgt;
+        const ctx = c.getContext("2d", { willReadFrequently: true });
+        ctx.drawImage(im, 0, 0);
+        const d = ctx.getImageData(0, 0, w, hgt).data;
+        let x0 = w, y0 = hgt, x1 = -1, y1 = -1;
+        for (let y = 0; y < hgt; y++) for (let x = 0; x < w; x++) if (d[(y * w + x) * 4 + 3] > 24) {
+          if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y;
+        }
+        if (x1 < 0) return resolve(im.src);
+        const out = document.createElement("canvas");
+        out.width = x1 - x0 + 1; out.height = y1 - y0 + 1;
+        out.getContext("2d").drawImage(c, x0, y0, out.width, out.height, 0, 0, out.width, out.height);
+        resolve(out.toDataURL("image/png"));
+      } catch { resolve(im.src); }
+    };
+    im.src = urls[0];
+  }));
+  return trimmed.get(n);
+}
+/* ----- this edition of the office (office.json, through /config): its name, its casts, stocks on or off ----- */
+let APP = { name: "Office", themes: ["pokemon", "maple"], stocks: true };
+function applyConfig(c) {
+  if (c && c.name) APP = c;
+  // remote: this page is open on another device (a phone), where a desk opens Remote Control instead
+  document.documentElement.classList.toggle("remote", !!APP.remote);
+  $("brand-name").textContent = APP.name;
+  $("stocks").style.display = APP.stocks ? "" : "none";
+  $("theme-btn").style.display = APP.themes.length > 1 ? "" : "none";  // nothing to switch to with a single cast
+}
+
+/* ----- themes: the same desks, a different cast ----- */
+let theme = "pokemon";
+// [id, name, level, boss]. These ten are only a stand-in until the full list arrives from /maple (maple.json).
+let MAPLE = [[100100, "Snail"], [100101, "Blue Snail"], [120100, "Spore"], [1210100, "Pig"], [1210102, "Orange Mushroom"],
+  [1110100, "Green Mushroom"], [2220100, "Blue Mushroom"], [2230101, "Zombie Mushroom"], [5130101, "Stone Golem"], [9300003, "King Slime"]];
+const MAPLE_IMG = id => `https://maplestory.io/api/GMS/255/mob/${id}/render/stand`;  // animated; a community-run service
+const NOUN = () => theme === "maple" ? "monster" : "Pokémon";
+// every desk keeps one of each cast: its Pokémon (s.mon) and its monster (s.maple, or one chosen from its id)
+let maplePool = MAPLE;          // what a desk is given automatically: ordinary monsters, no bosses
+let mapleIds = null;            // ids in the full list, once it has loaded; a saved pick that is no longer listed is ignored
+const mapleBad = new Set();     // ids whose picture failed to load this visit; not every monster has a standing sprite
+const mapleOf = s => {
+  if (s.maple && !mapleBad.has(s.maple) && (!mapleIds || mapleIds.has(s.maple))) return s.maple;
+  let i = [...String(s.sid || s.id || "")].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7) % maplePool.length;
+  for (let n = 0; n < 20 && mapleBad.has(maplePool[i][0]); n++) i = (i + 1) % maplePool.length;  // step past the broken ones
+  return maplePool[i][0];
+};
+let mapleLoaded = false;
+async function loadMaple() {
+  if (mapleLoaded) return;
+  mapleLoaded = true;
+  try {
+    const list = await (await fetch("/maple")).json();
+    if (!Array.isArray(list) || !list.length) return;
+    MAPLE = list; maplePool = list.filter(m => !m[3]); mapleIds = new Set(list.map(m => m[0]));
+    if (!maplePool.length) maplePool = list;
+    if (theme === "maple") applyTheme("maple");  // redraw with monsters from the full list
+  } catch { mapleLoaded = false; }
+}
+/* Pokémon on desks are sized by their real height (decimetres, from the Pokédex), on a compressed scale:
+   0.3 m and under is the smallest, 3 m and over the largest, so an Azurill no longer stands as tall as a Reshiram. */
+const POKE_H = [7,10,20,6,11,17,5,10,16,3,7,11,3,6,10,3,11,15,3,7,3,12,20,35,4,8,6,10,4,8,13,5,9,14,6,13,6,11,5,10,8,16,5,8,12,3,10,10,15,2,7,4,10,8,17,5,10,7,19,6,10,13,9,13,15,8,15,16,7,10,17,9,16,4,10,14,10,17,12,16,3,10,8,14,18,11,17,9,12,3,15,13,16,15,88,10,16,4,13,5,12,4,20,4,10,15,14,12,6,12,10,19,11,10,22,4,12,6,13,8,11,13,15,14,11,13,15,14,9,65,25,3,3,10,8,9,8,4,10,5,13,18,21,17,16,20,18,40,22,20,4,9,12,18,5,9,17,6,11,23,8,18,7,16,10,14,5,11,18,5,12,3,3,3,3,6,2,15,6,8,14,4,4,8,12,11,4,6,8,8,3,8,12,4,14,9,10,5,20,7,5,13,15,6,12,15,11,92,6,14,5,18,6,15,9,6,18,7,8,4,11,6,6,9,9,21,17,6,14,18,5,11,6,14,12,7,14,4,6,7,12,15,19,21,20,6,12,20,52,38,6,5,9,17,4,9,19,4,7,15,5,10,4,5,3,6,10,7,12,5,12,15,5,10,13,3,7,6,12,4,8,16,5,8,4,12,8,14,20,5,8,8,6,10,15,10,23,2,10,6,11,5,6,4,9,21,6,13,6,15,4,4,7,6,3,4,17,8,18,20,145,7,19,5,7,9,11,7,11,20,4,13,4,11,13,27,10,12,4,9,6,11,5,15,10,15,7,15,6,62,3,10,6,11,8,16,20,6,12,6,7,15,8,11,14,4,17,18,10,6,6,11,15,6,12,16,17,18,19,14,20,45,35,70,3,17,4,11,22,5,9,12,4,8,17,3,6,12,5,10,3,10,5,9,14,2,9,9,16,5,13,2,5,9,3,12,4,7,11,4,5,3,9,12,4,12,4,12,9,9,5,10,2,4,10,5,13,5,6,6,5,10,7,14,19,6,7,12,8,20,8,13,7,13,14,4,12,10,10,22,11,12,17,24,20,18,16,15,19,10,8,20,25,9,16,14,22,13,3,3,3,3,54,42,17,37,45,15,4,3,15,2,32,4,6,8,33,5,10,16,5,8,15,5,11,4,9,12,4,11,6,11,6,10,6,10,6,11,3,6,12,8,16,4,9,17,4,9,3,7,11,6,12,14,5,8,15,13,14,3,5,12,4,12,25,3,7,5,11,10,7,10,15,6,13,10,3,14,6,11,14,5,17,7,12,5,14,6,19,7,16,4,5,4,7,15,3,6,10,5,13,4,11,13,6,19,4,5,10,2,6,12,22,12,1,8,6,10,3,6,6,2,12,21,5,10,3,6,10,6,10,18,5,26,11,4,8,7,9,14,16,10,28,5,16,16,5,15,5,12,14,3,8,14,18,11,16,21,19,20,15,15,32,29,15,30,14,6,15,4,7,16,4,10,15,3,6,15,4,10,3,7,12,3,3,12,6,15,1,2,11,9,17,6,21,12,3,6,8,8,17,2,8,4,8,4,15,5,13,5,18,5,13,5,10,8,25,13,27,10,8,2,3,3,8,20,2,4,15,4,9,10,20,5,15,30,58,50,7,5,17,3,7,16,4,7,18,4,6,18,3,6,11,4,7,4,5,15,6,17,6,1,2,5,8,2,4,7,10,25,3,18,3,9,2,10,6,12,5,21,3,7,12,1,15,20,5,20,5,13,3,19,23,3,4,20,3,2,9,30,39,6,12,16,18,12,19,13,2,1,34,40,12,24,18,38,92,3,55,24,10,7,6,36,55,18,15,2,25];
+const pokeEm = n => { const h = (POKE_H[n - 1] || 10) / 10, t = Math.max(0, Math.min(1, Math.log(h / .3) / Math.log(10))); return (3.6 + 3.4 * t).toFixed(2); };
+const monKey = s => theme === "maple" ? "m" + mapleOf(s) : String(s.mon);  // what to draw for this desk in the current theme
+const setIcon = (img, key) => {
+  const maple = String(key)[0] === "m";
+  img.classList.toggle("px", maple);
+  if (maple) { img.onload = () => fitMaple(img); img.src = MAPLE_IMG(String(key).slice(1)); }
+  else { img.onload = null; img.style.width = img.style.imageRendering = ""; img.style.height = img.closest(".pad") ? pokeEm(+key) + "em" : ""; trimIcon(+key).then(src => { if (src) img.src = src; else img.onerror && img.onerror(); }); }
+};
+/* MapleStory sprites on desks are all drawn at the same whole-number magnification, so their pixels are the
+   same size and a Snail is smaller than a Golem, as in the game. One that would not fit its desk steps down
+   to a smaller whole number, and only below 1x is it shrunk smoothly. */
+function fitMaple(img) {
+  if (!img.classList.contains("px") || !img.closest(".pad") || !img.naturalWidth) return;
+  const u = parseFloat(getComputedStyle(floor).fontSize) || 20, w = img.naturalWidth, h = img.naturalHeight;
+  let k = u < 15 ? 1 : u < 28 ? 2 : 3;
+  while (k > 1 && (h * k > 9.2 * u || w * k > 12.5 * u)) k--;
+  const s = k > 1 ? k : Math.min(1, 9.2 * u / h, 12.5 * u / w);
+  img.style.width = w * s + "px"; img.style.height = h * s + "px";
+  img.style.imageRendering = s === Math.round(s) ? "" : "auto";
+}
+addEventListener("resize", () => document.querySelectorAll(".pad img.px").forEach(fitMaple));
+const floor = $("floor");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+const folder = p => (p || "").split(/[\\/]/).filter(Boolean).pop() || "session";
+const nameOf = s => s.custom_name || s.app_title || s.title || folder(s.cwd);
+const post = (path, body) => fetch(path, { method: "POST", body: JSON.stringify(body) });
+const svg = d => `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const NODES = '<circle cx="4" cy="3.5" r="1.8"/><circle cx="4" cy="12.5" r="1.8"/>';
+const PR_ICON = {
+  open: svg(NODES + '<circle cx="12" cy="12.5" r="1.8"/><path d="M4 5.5v5M12 10.5V7a2 2 0 0 0-2-2H8"/>'),
+  draft: svg(NODES + '<circle cx="12" cy="12.5" r="1.8"/><path d="M4 5.5v5"/><path d="M12 10.5V7a2 2 0 0 0-2-2H8" stroke-dasharray="1.5 2.5"/>'),
+  merged: svg(NODES + '<circle cx="12" cy="8" r="1.8"/><path d="M4 5.5v5M4 5.5c0 2.5 3 2.5 6 2.5"/>'),
+  closed: svg(NODES + '<path d="M4 5.5v5M9.5 5.5l5 5M14.5 5.5l-5 5"/>'),
+  unknown: svg(NODES + '<path d="M4 5.5v5"/>'),
+};
+const ICON_MON = svg('<circle cx="8" cy="8" r="5.5"/><path d="M2.5 8h3.5M10 8h3.5"/><circle cx="8" cy="8" r="2"/>');
+const ICON_EDIT =svg('<path d="M10.5 2.5l3 3L6 13l-3.5.5L3 10z"/>');
+const ICON_BULB = '<svg class="b-bulb" viewBox="0 0 24 24"><path d="M12 2.2a6.8 6.8 0 0 0-3.9 12.4V17h7.8v-2.4A6.8 6.8 0 0 0 12 2.2z" fill="#ffd45e" stroke="#a8700f" stroke-width="1.2" stroke-linejoin="round"/><path d="M9.3 8.6c.5-1.6 1.6-2.5 3.2-2.7" stroke="#fff8dc" stroke-width="1.3" fill="none" stroke-linecap="round"/><rect x="8.8" y="18" width="6.4" height="1.9" rx=".9" fill="#8a8578"/><rect x="10" y="20.6" width="4" height="1.6" rx=".8" fill="#6d695e"/></svg>';
+const ICON_BOOK = '<svg class="b-book" viewBox="0 0 24 24"><path d="M2.5 8.2l12.3-4.4 6.7 3.1v8.6L9.2 19.9l-6.7-3.1z" fill="#b5713c" stroke="#5a3214" stroke-width="1.2" stroke-linejoin="round"/><path d="M2.5 16.8l6.7 3.1 12.3-4.4" stroke="#f6ead3" stroke-width="1.7" fill="none" stroke-linejoin="round"/><path d="M9.2 11.3v8.6" stroke="#5a3214" stroke-width="1.1"/><path d="M12 11.6l2 1.7 3.9-4.3" stroke="#ffe9a8" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+// Pixel-art quest markers, drawn from small character maps (one character = one pixel).
+function pix(rows, pal, hEm) {
+  const w = rows[0].length, hgt = rows.length;
+  let r = "";
+  rows.forEach((row, y) => [...row].forEach((ch, x) => { if (pal[ch]) r += `<rect x="${x}" y="${y}" width="1.03" height="1.03" fill="${pal[ch]}"/>`; }));
+  return `<svg viewBox="0 0 ${w} ${hgt}" shape-rendering="crispEdges" style="height:${hEm}em;width:${(hEm * w / hgt).toFixed(3)}em">${r}</svg>`;
+}
+const PIX_BULB = pix([
+  "....kkkk....", "..kkyyyykk..", ".kyylllyyyk.", ".kylwwlyyyk.", "kyylwlyyyyok", "kyyllyyyyyok", "kyyyyyyyyyok", "kyyyyyyyyook",
+  ".kyyyyyyyok.", ".kyyyyyyook.", "..kyyyyook..", "...kyyook...", "...kggggk...", "...kdgggk...", "...kggddk...", "....kddk....", ".....kk.....",
+], { k: "#3a2a12", y: "#ffd23c", l: "#fff3a6", w: "#ffffff", o: "#f0a41c", g: "#c3c3cc", d: "#74747f" }, 3.3);
+const PIX_BOOK = pix([
+  "......kkkkkkkk..", "....kkhhhhhhbkk.", "..kkhhbbbbbbbbbk", ".khhbbbbeebbbbbk", "khbbbbbeeeebbbkk", "kbbbbbeeeeeebkck", "kbbbbbbeeeebkcck",
+  "kbbbbbbbeebkcckk", "kkbbbbbbbbkcckk.", "kckkbbbbbkcckk..", "kcccckkkkcckk...", ".kkccccccckk....", "...kkkkkkkk.....",
+], { k: "#3b2210", b: "#b4703a", h: "#d69456", c: "#f6ead0", e: "#f7cf52" }, 1.9);
+const PIX_MOUSE = pix([
+  ".kkkkk.", "krrkwwk", "krrkwwk", "kkkkkkk", "kwwwwwk", "kwwwwwk", "kwwwwwk", "kwwwwwk", ".kkkkk.",
+], { k: "#2b2620", r: "#e5484d", w: "#ffffff" }, 1.25);
+const MARK = { bulb: PIX_BULB, book: `<div class="bub">${PIX_BOOK}<span class="mouse">${PIX_MOUSE}</span></div>` };
+// If you put your own images in a "markers" folder next to server.py (bulb.gif/png, book.gif/png), they are used instead.
+for (const name of ["bulb", "book"]) for (const ext of ["gif", "png"]) {
+  const im = new Image();
+  im.onload = () => { if (!MARK[name].startsWith("<img")) { MARK[name] = `<img class="own" alt="" draggable="false" src="/markers/${name}.${ext}">`; document.querySelectorAll(".m-" + name).forEach(m => m.innerHTML = MARK[name]); } };
+  im.src = `/markers/${name}.${ext}`;
+}
+const ICON_X = svg('<path d="M4 4l8 8M12 4l-8 8"/>');
+const STATUS = { waiting: "Waiting · background", review: "Waiting for review", working: "Working", needs_input: "Needs you", done: "Done · click to review", resting: "No input needed", idle: "Idle" };
+const GLYPH = { waiting: "…", needs_input: "?", done: "✓", resting: "zz", idle: "··" };
+const toolName = t => (t || "").replace(/^mcp__/, "").split("__").pop().replace(/_/g, " ");
+
+/* ----- small dialog and toast, instead of browser pop-ups ----- */
+function ask({ title, hint, value = "", placeholder = "", ok = "Save", check = null }) {  // check: { label, on } adds a checkbox; read $("m-check").checked afterwards
+  const m = $("modal"), form = m.querySelector("form"), input = m.querySelector("input");
+  m.querySelector("h3").textContent = title; m.querySelector("p").textContent = hint;
+  input.value = value; input.placeholder = placeholder; $("m-ok").textContent = ok;
+  $("m-chk").hidden = !check; $("m-chk").querySelector("span").textContent = check ? check.label : ""; $("m-check").checked = !!(check && check.on);
+  m.classList.add("open"); input.focus(); input.select();
+  return new Promise(resolve => {
+    const done = v => { m.classList.remove("open"); form.onsubmit = m.onclick = $("m-cancel").onclick = document.onkeydown = null; resolve(v); };
+    form.onsubmit = e => { e.preventDefault(); done(input.value.trim()); };
+    $("m-cancel").onclick = () => done(null);
+    m.onclick = e => { if (e.target === m) done(null); };
+    document.onkeydown = e => { if (e.key === "Escape") done(null); };
+  });
+}
+let toastTimer;
+function toast(text) { const t = $("toast"); t.textContent = text; t.classList.add("on"); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("on"), 3200); }
+
+/* marker sprites are drawn at a whole multiple of their 44px size so the pixels stay crisp */
+function fitMarkers() {
+  const u = parseFloat(getComputedStyle(floor).fontSize) || 20;
+  document.documentElement.style.setProperty("--mk", (u >= 23 ? 88 : 44) + "px");
+}
+fitMarkers(); addEventListener("resize", fitMarkers);
+
+/* ----- right-click a desk to choose its Pokémon ----- */
+const MON_NAMES = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran♀", "Nidorina", "Nidoqueen", "Nidoran♂", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo", "Mew", "Chikorita", "Bayleef", "Meganium", "Cyndaquil", "Quilava", "Typhlosion", "Totodile", "Croconaw", "Feraligatr", "Sentret", "Furret", "Hoothoot", "Noctowl", "Ledyba", "Ledian", "Spinarak", "Ariados", "Crobat", "Chinchou", "Lanturn", "Pichu", "Cleffa", "Igglybuff", "Togepi", "Togetic", "Natu", "Xatu", "Mareep", "Flaaffy", "Ampharos", "Bellossom", "Marill", "Azumarill", "Sudowoodo", "Politoed", "Hoppip", "Skiploom", "Jumpluff", "Aipom", "Sunkern", "Sunflora", "Yanma", "Wooper", "Quagsire", "Espeon", "Umbreon", "Murkrow", "Slowking", "Misdreavus", "Unown", "Wobbuffet", "Girafarig", "Pineco", "Forretress", "Dunsparce", "Gligar", "Steelix", "Snubbull", "Granbull", "Qwilfish", "Scizor", "Shuckle", "Heracross", "Sneasel", "Teddiursa", "Ursaring", "Slugma", "Magcargo", "Swinub", "Piloswine", "Corsola", "Remoraid", "Octillery", "Delibird", "Mantine", "Skarmory", "Houndour", "Houndoom", "Kingdra", "Phanpy", "Donphan", "Porygon2", "Stantler", "Smeargle", "Tyrogue", "Hitmontop", "Smoochum", "Elekid", "Magby", "Miltank", "Blissey", "Raikou", "Entei", "Suicune", "Larvitar", "Pupitar", "Tyranitar", "Lugia", "Ho-Oh", "Celebi", "Treecko", "Grovyle", "Sceptile", "Torchic", "Combusken", "Blaziken", "Mudkip", "Marshtomp", "Swampert", "Poochyena", "Mightyena", "Zigzagoon", "Linoone", "Wurmple", "Silcoon", "Beautifly", "Cascoon", "Dustox", "Lotad", "Lombre", "Ludicolo", "Seedot", "Nuzleaf", "Shiftry", "Taillow", "Swellow", "Wingull", "Pelipper", "Ralts", "Kirlia", "Gardevoir", "Surskit", "Masquerain", "Shroomish", "Breloom", "Slakoth", "Vigoroth", "Slaking", "Nincada", "Ninjask", "Shedinja", "Whismur", "Loudred", "Exploud", "Makuhita", "Hariyama", "Azurill", "Nosepass", "Skitty", "Delcatty", "Sableye", "Mawile", "Aron", "Lairon", "Aggron", "Meditite", "Medicham", "Electrike", "Manectric", "Plusle", "Minun", "Volbeat", "Illumise", "Roselia", "Gulpin", "Swalot", "Carvanha", "Sharpedo", "Wailmer", "Wailord", "Numel", "Camerupt", "Torkoal", "Spoink", "Grumpig", "Spinda", "Trapinch", "Vibrava", "Flygon", "Cacnea", "Cacturne", "Swablu", "Altaria", "Zangoose", "Seviper", "Lunatone", "Solrock", "Barboach", "Whiscash", "Corphish", "Crawdaunt", "Baltoy", "Claydol", "Lileep", "Cradily", "Anorith", "Armaldo", "Feebas", "Milotic", "Castform", "Kecleon", "Shuppet", "Banette", "Duskull", "Dusclops", "Tropius", "Chimecho", "Absol", "Wynaut", "Snorunt", "Glalie", "Spheal", "Sealeo", "Walrein", "Clamperl", "Huntail", "Gorebyss", "Relicanth", "Luvdisc", "Bagon", "Shelgon", "Salamence", "Beldum", "Metang", "Metagross", "Regirock", "Regice", "Registeel", "Latias", "Latios", "Kyogre", "Groudon", "Rayquaza", "Jirachi", "Deoxys", "Turtwig", "Grotle", "Torterra", "Chimchar", "Monferno", "Infernape", "Piplup", "Prinplup", "Empoleon", "Starly", "Staravia", "Staraptor", "Bidoof", "Bibarel", "Kricketot", "Kricketune", "Shinx", "Luxio", "Luxray", "Budew", "Roserade", "Cranidos", "Rampardos", "Shieldon", "Bastiodon", "Burmy", "Wormadam", "Mothim", "Combee", "Vespiquen", "Pachirisu", "Buizel", "Floatzel", "Cherubi", "Cherrim", "Shellos", "Gastrodon", "Ambipom", "Drifloon", "Drifblim", "Buneary", "Lopunny", "Mismagius", "Honchkrow", "Glameow", "Purugly", "Chingling", "Stunky", "Skuntank", "Bronzor", "Bronzong", "Bonsly", "Mime Jr.", "Happiny", "Chatot", "Spiritomb", "Gible", "Gabite", "Garchomp", "Munchlax", "Riolu", "Lucario", "Hippopotas", "Hippowdon", "Skorupi", "Drapion", "Croagunk", "Toxicroak", "Carnivine", "Finneon", "Lumineon", "Mantyke", "Snover", "Abomasnow", "Weavile", "Magnezone", "Lickilicky", "Rhyperior", "Tangrowth", "Electivire", "Magmortar", "Togekiss", "Yanmega", "Leafeon", "Glaceon", "Gliscor", "Mamoswine", "Porygon-Z", "Gallade", "Probopass", "Dusknoir", "Froslass", "Rotom", "Uxie", "Mesprit", "Azelf", "Dialga", "Palkia", "Heatran", "Regigigas", "Giratina", "Cresselia", "Phione", "Manaphy", "Darkrai", "Shaymin", "Arceus", "Victini", "Snivy", "Servine", "Serperior", "Tepig", "Pignite", "Emboar", "Oshawott", "Dewott", "Samurott", "Patrat", "Watchog", "Lillipup", "Herdier", "Stoutland", "Purrloin", "Liepard", "Pansage", "Simisage", "Pansear", "Simisear", "Panpour", "Simipour", "Munna", "Musharna", "Pidove", "Tranquill", "Unfezant", "Blitzle", "Zebstrika", "Roggenrola", "Boldore", "Gigalith", "Woobat", "Swoobat", "Drilbur", "Excadrill", "Audino", "Timburr", "Gurdurr", "Conkeldurr", "Tympole", "Palpitoad", "Seismitoad", "Throh", "Sawk", "Sewaddle", "Swadloon", "Leavanny", "Venipede", "Whirlipede", "Scolipede", "Cottonee", "Whimsicott", "Petilil", "Lilligant", "Basculin", "Sandile", "Krokorok", "Krookodile", "Darumaka", "Darmanitan", "Maractus", "Dwebble", "Crustle", "Scraggy", "Scrafty", "Sigilyph", "Yamask", "Cofagrigus", "Tirtouga", "Carracosta", "Archen", "Archeops", "Trubbish", "Garbodor", "Zorua", "Zoroark", "Minccino", "Cinccino", "Gothita", "Gothorita", "Gothitelle", "Solosis", "Duosion", "Reuniclus", "Ducklett", "Swanna", "Vanillite", "Vanillish", "Vanilluxe", "Deerling", "Sawsbuck", "Emolga", "Karrablast", "Escavalier", "Foongus", "Amoonguss", "Frillish", "Jellicent", "Alomomola", "Joltik", "Galvantula", "Ferroseed", "Ferrothorn", "Klink", "Klang", "Klinklang", "Tynamo", "Eelektrik", "Eelektross", "Elgyem", "Beheeyem", "Litwick", "Lampent", "Chandelure", "Axew", "Fraxure", "Haxorus", "Cubchoo", "Beartic", "Cryogonal", "Shelmet", "Accelgor", "Stunfisk", "Mienfoo", "Mienshao", "Druddigon", "Golett", "Golurk", "Pawniard", "Bisharp", "Bouffalant", "Rufflet", "Braviary", "Vullaby", "Mandibuzz", "Heatmor", "Durant", "Deino", "Zweilous", "Hydreigon", "Larvesta", "Volcarona", "Cobalion", "Terrakion", "Virizion", "Tornadus", "Thundurus", "Reshiram", "Zekrom", "Landorus", "Kyurem", "Keldeo", "Meloetta", "Genesect", "Chespin", "Quilladin", "Chesnaught", "Fennekin", "Braixen", "Delphox", "Froakie", "Frogadier", "Greninja", "Bunnelby", "Diggersby", "Fletchling", "Fletchinder", "Talonflame", "Scatterbug", "Spewpa", "Vivillon", "Litleo", "Pyroar", "Flabébé", "Floette", "Florges", "Skiddo", "Gogoat", "Pancham", "Pangoro", "Furfrou", "Espurr", "Meowstic", "Honedge", "Doublade", "Aegislash", "Spritzee", "Aromatisse", "Swirlix", "Slurpuff", "Inkay", "Malamar", "Binacle", "Barbaracle", "Skrelp", "Dragalge", "Clauncher", "Clawitzer", "Helioptile", "Heliolisk", "Tyrunt", "Tyrantrum", "Amaura", "Aurorus", "Sylveon", "Hawlucha", "Dedenne", "Carbink", "Goomy", "Sliggoo", "Goodra", "Klefki", "Phantump", "Trevenant", "Pumpkaboo", "Gourgeist", "Bergmite", "Avalugg", "Noibat", "Noivern", "Xerneas", "Yveltal", "Zygarde", "Diancie", "Hoopa", "Volcanion", "Rowlet", "Dartrix", "Decidueye", "Litten", "Torracat", "Incineroar", "Popplio", "Brionne", "Primarina", "Pikipek", "Trumbeak", "Toucannon", "Yungoos", "Gumshoos", "Grubbin", "Charjabug", "Vikavolt", "Crabrawler", "Crabominable", "Oricorio", "Cutiefly", "Ribombee", "Rockruff", "Lycanroc", "Wishiwashi", "Mareanie", "Toxapex", "Mudbray", "Mudsdale", "Dewpider", "Araquanid", "Fomantis", "Lurantis", "Morelull", "Shiinotic", "Salandit", "Salazzle", "Stufful", "Bewear", "Bounsweet", "Steenee", "Tsareena", "Comfey", "Oranguru", "Passimian", "Wimpod", "Golisopod", "Sandygast", "Palossand", "Pyukumuku", "Type: Null", "Silvally", "Minior", "Komala", "Turtonator", "Togedemaru", "Mimikyu", "Bruxish", "Drampa", "Dhelmise", "Jangmo-o", "Hakamo-o", "Kommo-o", "Tapu Koko", "Tapu Lele", "Tapu Bulu", "Tapu Fini", "Cosmog", "Cosmoem", "Solgaleo", "Lunala", "Nihilego", "Buzzwole", "Pheromosa", "Xurkitree", "Celesteela", "Kartana", "Guzzlord", "Necrozma", "Magearna", "Marshadow", "Poipole", "Naganadel", "Stakataka", "Blacephalon", "Zeraora", "Meltan", "Melmetal"];
+function pickMon(s) {
+  const box = $("monpick"), grid = $("mp-grid"), search = $("mp-search"), maple = theme === "maple", cur = maple ? mapleOf(current(s)) : current(s).mon;
+  $("mp-title").textContent = "Choose a " + NOUN();
+  if (grid.dataset.theme !== theme + MAPLE.length) {  // rebuilt when the theme changes or the full monster list arrives
+    grid.dataset.theme = theme + MAPLE.length;
+    grid.innerHTML = maple
+      ? MAPLE.map(([id, n, lv, boss]) => `<button type="button" class="mp-cell" data-n="${id}" data-t="${boss ? 5 : lv <= 30 ? 1 : lv <= 60 ? 2 : lv <= 100 ? 3 : 4}" data-q="${esc((n + " " + id).toLowerCase())}" title="${esc(n)}${lv ? " · Lv " + lv : ""}"><img class="px" loading="lazy" alt="" src="${MAPLE_IMG(id)}" onerror="this.parentNode.remove()"><span>${esc(n)}</span></button>`).join("")
+      : MON_NAMES.map((n, i) => `<button type="button" class="mp-cell" data-n="${i + 1}" data-q="${esc((n + " " + (i + 1)).toLowerCase())}" title="#${i + 1} ${esc(n)}"><img loading="lazy" alt="" src="${GO_ICON(i + 1)}" onerror="this.onerror=null;this.src=HOME_ICON(${i + 1})"><span>${esc(n)}</span></button>`).join("");
+  }
+  const close = () => { box.classList.remove("open"); document.removeEventListener("keydown", onKey); };
+  const onKey = e => { if (e.key === "Escape") close(); };
+  grid.querySelectorAll(".mp-cell").forEach(c => {
+    c.classList.toggle("cur", +c.dataset.n === cur);
+    c.onclick = async () => { close(); await post("/setmon", maple ? { id: s.id, maple: +c.dataset.n } : { id: s.id, mon: +c.dataset.n }); poll(); };
+  });
+  // MapleStory tabs go by level; each cell carries its tab number in data-t
+  const GENS = maple ? [["All", 0, 99], ["Lv 1–30", 1, 1], ["31–60", 2, 2], ["61–100", 3, 3], ["101+", 4, 4], ["Bosses", 5, 5]] : [["All", 1, 809], ["Kanto", 1, 151], ["Johto", 152, 251], ["Hoenn", 252, 386], ["Sinnoh", 387, 493], ["Unova", 494, 649], ["Kalos", 650, 721], ["Alola", 722, 809]];
+  let gen = maple ? +((grid.querySelector(`.mp-cell[data-n="${cur}"]`) || { dataset: {} }).dataset.t || 1) : Math.max(1, GENS.findIndex((g, i) => i && cur >= g[1] && cur <= g[2]));
+  const apply = () => {
+    const q = search.value.trim().toLowerCase(), [, lo, hi] = q ? GENS[0] : GENS[gen];  // a search looks across every generation
+    grid.querySelectorAll(".mp-cell").forEach(c => { const n = +(maple ? c.dataset.t : c.dataset.n); c.hidden = n < lo || n > hi || (!!q && !c.dataset.q.includes(q)); });
+    $("mp-gens").querySelectorAll("button").forEach((b, i) => b.classList.toggle("on", !q && i === gen));
+  };
+  $("mp-gens").innerHTML = GENS.map(g => `<button type="button">${g[0]}</button>`).join("");
+  $("mp-gens").querySelectorAll("button").forEach((b, i) => b.onclick = () => { gen = i; search.value = ""; apply(); grid.scrollTop = 0; });
+  $("mp-random").onclick = () => {  // one of the Pokémon currently shown, never the one the desk already has
+    const pool = [...grid.querySelectorAll(".mp-cell:not([hidden])")].filter(c => +c.dataset.n !== cur);
+    if (pool.length) pool[Math.floor(Math.random() * pool.length)].click();
+  };
+  search.oninput = apply;
+  $("mp-close").onclick = close;
+  box.onclick = e => { if (e.target === box) close(); };
+  document.addEventListener("keydown", onKey);
+  search.value = "";
+  apply();
+  box.classList.add("open"); search.focus();
+  const sel = grid.querySelector(".cur"); if (sel) sel.scrollIntoView({ block: "center" });
+}
+
+/* ----- wall: clock and sky ----- */
+function tick() {
+  const now = new Date(), h = now.getHours();
+  $("c-time").textContent = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+  $("c-date").textContent = now.toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" }).toUpperCase();
+  document.body.dataset.sky = h >= 6 && h < 16 ? "day" : h >= 16 && h < 19 ? "dusk" : "night";
+}
+tick(); setInterval(tick, 15000);
+
+/* ----- weather (Open-Meteo, no account needed) ----- */
+const wsvg = d => `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const CLOUD = '<path d="M7 18.5h10a4 4 0 0 0 .7-7.94A5.5 5.5 0 0 0 7.2 9.1 4.72 4.72 0 0 0 7 18.5z" stroke="#c9c6ba" fill="#3a3936"/>';
+const SUN = (cx, cy, r) => `<circle cx="${cx}" cy="${cy}" r="${r}" fill="#f3c26b" stroke="#f3c26b"/>` + [0, 45, 90, 135, 180, 225, 270, 315].map(a => { const t = a * Math.PI / 180, c = Math.cos(t), s = Math.sin(t); return `<path stroke="#f3c26b" d="M${(cx + c * (r + 2)).toFixed(1)} ${(cy + s * (r + 2)).toFixed(1)}L${(cx + c * (r + 4)).toFixed(1)} ${(cy + s * (r + 4)).toFixed(1)}"/>`; }).join("");
+const WX_ICON = {
+  sun: wsvg(SUN(12, 12, 4.5)),
+  partly: wsvg(SUN(8, 8, 3) + CLOUD),
+  cloud: wsvg(CLOUD),
+  fog: wsvg('<path stroke="#c9c6ba" d="M4 9h16M6 13h14M4 17h13"/>'),
+  rain: wsvg(CLOUD.replace("18.5", "15.5").replace("18.5", "15.5").replace(/M7 /, "M7 ").replace("-7.94", "-7.94") + '<path stroke="#7fb2e0" d="M9 18.5l-1 3M13 18.5l-1 3M17 18.5l-1 3"/>'),
+  snow: wsvg(CLOUD + '<path stroke="#e6eef5" d="M9 21h.01M13 21h.01M17 21h.01"/>'),
+  storm: wsvg(CLOUD + '<path stroke="#f3c26b" fill="#f3c26b" d="M13 13l-3 4.5h3l-1.5 4 4-5.5h-3z"/>'),
+};
+const wxKind = c => c === 0 ? ["sun", "Clear"] : c <= 2 ? ["partly", "Partly cloudy"] : c === 3 ? ["cloud", "Cloudy"] : c <= 48 ? ["fog", "Fog"]
+  : c <= 57 ? ["rain", "Drizzle"] : c <= 67 || (c >= 80 && c <= 82) ? ["rain", "Rain"] : c <= 77 || c === 85 || c === 86 ? ["snow", "Snow"] : ["storm", "Thunderstorm"];
+let wxPlace = null;
+async function wxWhere() {
+  if (wxPlace) return wxPlace;
+  const city = (Intl.DateTimeFormat().resolvedOptions().timeZone || "").split("/").pop().replace(/_/g, " ");
+  try {  // the browser asks once for permission; coordinates are rounded to about a kilometre
+    const pos = await new Promise((ok, no) => navigator.geolocation.getCurrentPosition(ok, no, { timeout: 8000, maximumAge: 3600000 }));
+    wxPlace = { lat: pos.coords.latitude.toFixed(2), lon: pos.coords.longitude.toFixed(2), name: city };
+  } catch {  // no permission: fall back to the city your time zone is named after
+    const g = await (await fetch("https://geocoding-api.open-meteo.com/v1/search?count=1&name=" + encodeURIComponent(city))).json();
+    const r = g.results[0];
+    wxPlace = { lat: r.latitude.toFixed(2), lon: r.longitude.toFixed(2), name: r.name };
+  }
+  return wxPlace;
+}
+async function pollWeather() {
+  const box = $("weather");
+  try {
+    const w = await wxWhere();
+    const d = await (await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${w.lat}&longitude=${w.lon}&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=4`)).json();
+    const [kind, label] = wxKind(d.current.weather_code);
+    const days = d.daily.time.slice(1, 4).map((t, i) => {
+      const k = wxKind(d.daily.weather_code[i + 1])[0], day = new Date(t + "T12:00").toLocaleDateString([], { weekday: "short" });
+      return `<div class="day" title="${esc(wxKind(d.daily.weather_code[i + 1])[1])}"><span>${esc(day)}</span>${WX_ICON[k]}<b>${Math.round(d.daily.temperature_2m_max[i + 1])}°</b><span>${Math.round(d.daily.temperature_2m_min[i + 1])}°</span></div>`;
+    }).join("");
+    box.title = `${w.name} · today ${Math.round(d.daily.temperature_2m_max[0])}° / ${Math.round(d.daily.temperature_2m_min[0])}° · updates every 15 minutes`;
+    box.innerHTML = `<div class="now">${WX_ICON[kind]}<div><div class="temp">${Math.round(d.current.temperature_2m)}°</div><div class="desc">${esc(label)}<br>${esc(w.name)}</div></div></div><div class="days">${days}</div>`;
+  } catch { if (!box.querySelector(".now")) box.innerHTML = '<div class="wx-wait">Weather unavailable</div>'; }
+}
+pollWeather(); setInterval(pollWeather, 15 * 60 * 1000);
+
+/* ----- stocks ----- */
+const fmt = v => v == null ? "—" : Number(v).toFixed(2);
+async function pollStocks() {
+  if (!APP.stocks) return;
+  let list;
+  try { list = await (await fetch("/stocks")).json(); } catch { return; }
+  const box = $("stocks");
+  box.innerHTML = list.map(q => {
+    const base = q.prev || q.open;  // the day's change, as the graph shows it: against the previous close
+    const d = base && q.price != null ? (q.price - base) / base * 100 : null;
+    const cls = d == null || d === 0 ? "" : d > 0 ? "up" : "down";
+    const chg = d == null ? "" : `${d > 0 ? "▲" : d < 0 ? "▼" : ""} ${Math.abs(d).toFixed(2)}%`;
+    return `<div class="stk ${cls}" title="${esc(q.live ? "Market open" : "Market closed")} · as of ${esc(q.as_of || "?")} · change is vs the previous close">
+      <button class="rm" data-s="${esc(q.symbol)}" title="Remove">×</button>
+      <div class="top"><i class="dot ${q.live ? "live" : ""}"></i><span class="sym">${esc(q.symbol)}</span><span>${esc((q.name || "").slice(0, 10))}</span></div>
+      <div class="bot"><span class="px">${fmt(q.price)}</span><span class="chg">${chg}</span><span class="op">open ${fmt(q.open)}</span></div></div>`;
+  }).join("") + '<button id="stkadd" title="Add a stock">+</button>';
+  box.querySelectorAll(".rm").forEach(b => b.onclick = async e => { e.stopPropagation(); await post("/stocks/remove", { symbol: b.dataset.s }); pollStocks(); });
+  box.querySelectorAll(".stk").forEach(el => el.onclick = () => openChart(el.querySelector(".rm").dataset.s));
+  $("stkadd").onclick = async () => {
+    const sym = await ask({ title: "Add a stock", hint: "Taiwan: just the code (2330, 0056). Anything else: its Yahoo Finance symbol (AAPL, NVDA, ^GSPC).", placeholder: "e.g. 2330", ok: "Add" });
+    if (!sym) return;
+    await post("/stocks/add", { symbol: sym });
+    setTimeout(pollStocks, 500); setTimeout(pollStocks, 18000);
+  };
+}
+pollStocks(); setInterval(pollStocks, 30000);
+
+/* ----- stock chart: click a stock in the header ----- */
+const CK_UP = "#f08a8a", CK_DOWN = "#7fc99a";  // same as the header tiles: red is up, green is down
+const CK_RANGES = [["1d", "1D", "today"], ["5d", "5D", "past 5 days"], ["1mo", "1M", "past month"], ["6mo", "6M", "past 6 months"], ["ytd", "YTD", "year to date"], ["1y", "1Y", "past year"], ["5y", "5Y", "past 5 years"], ["max", "Max", "all time"]];
+const CK_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const ck = { sym: "", range: "1d", data: null, day: null, seq: 0, timer: 0 };
+/* times are shown in the exchange's own time zone, whatever this PC is set to */
+function ckWhen(t, off, range, long) {
+  const d = new Date((t + off) * 1000), y = d.getUTCFullYear(), mon = CK_MONTHS[d.getUTCMonth()], md = mon + " " + d.getUTCDate();
+  const hm = String(d.getUTCHours()).padStart(2, "0") + ":" + String(d.getUTCMinutes()).padStart(2, "0");
+  if (range === "1d") return long ? md + ", " + hm : hm;
+  if (range === "5d") return long ? md + ", " + hm : md;
+  if (range === "1mo") return long ? md + ", " + y : md;
+  if (range === "5y" || range === "max") return long ? md + ", " + y : String(y);
+  return long ? md + ", " + y : mon + " " + y;
+}
+function ckHead(price, base, when) {
+  const chg = price - base, pct = base ? chg / base * 100 : 0, col = chg > 0 ? CK_UP : chg < 0 ? CK_DOWN : "#b5b3aa";
+  $("ck-price").textContent = fmt(price);
+  $("ck-pct").textContent = `${chg > 0 ? "↑" : chg < 0 ? "↓" : ""} ${Math.abs(pct).toFixed(2)}%`; $("ck-pct").style.background = col;
+  $("ck-chg").textContent = `${chg > 0 ? "+" : chg < 0 ? "−" : ""}${fmt(Math.abs(chg))} ${CK_RANGES.find(r => r[0] === ck.range)[2]}`; $("ck-chg").style.color = col;
+  $("ck-asof").textContent = when;
+}
+function drawChart() {
+  const d = ck.data, plot = $("ck-plot");
+  if (!d || !d.points.length) { plot.innerHTML = `<div class="ck-note">${d ? "No prices for this range. Try another one." : "Could not load this chart."}</div>`; return; }
+  const pts = d.points, n = pts.length, off = d.gmtoffset || 0, one = ck.range === "1d";
+  const base = one && d.prev != null ? d.prev : pts[0][1], cur = d.price ?? pts[n - 1][1], col = cur >= base ? CK_UP : CK_DOWN;
+  const W = plot.clientWidth || 760, H = 300, L = 46, R = 14, T = 12, B = 24;
+  let lo = Math.min(base, ...pts.map(p => p[1])), hi = Math.max(base, ...pts.map(p => p[1]));
+  if (hi === lo) { hi += 1; lo -= 1; }
+  const raw = (hi - lo) / 4, mag = 10 ** Math.floor(Math.log10(raw)), step = [1, 2, 2.5, 5, 10].find(m => m * mag >= raw) * mag;
+  const y0 = Math.floor(lo / step) * step, y1 = Math.ceil(hi / step) * step;
+  // today is drawn against the whole trading session, so a half-finished day leaves the rest empty;
+  // longer ranges are spaced evenly, which skips nights and weekends
+  const s = d.session, timed = one && s && s[1] > s[0] && pts[0][0] >= s[0] - 60 && pts[n - 1][0] <= s[1] + 900;
+  const X = i => L + (timed ? Math.min(1, (pts[i][0] - s[0]) / (s[1] - s[0])) : n > 1 ? i / (n - 1) : .5) * (W - L - R);
+  const Y = v => T + (y1 - v) / (y1 - y0) * (H - T - B);
+  let g = "";
+  for (let v = y0; v <= y1 + step / 2; v += step) g += `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="#3f3e3a"/><text x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${+v.toFixed(2)}</text>`;
+  if (timed) for (let t = Math.ceil(s[0] / 3600) * 3600; t <= s[1]; t += 3600) g += `<text x="${L + (t - s[0]) / (s[1] - s[0]) * (W - L - R)}" y="${H - 6}" text-anchor="middle">${ckWhen(t, off, "1d")}</text>`;
+  else for (let k = 0, seen = ""; k < 5; k++) { const i = Math.round(k * (n - 1) / 5), text = ckWhen(pts[i][0], off, ck.range); if (text !== seen) g += `<text x="${X(i)}" y="${H - 6}">${text}</text>`; seen = text; }
+  const line = pts.map((p, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(p[1]).toFixed(1)).join("");
+  const prev = one && d.prev != null ? `<line x1="${L}" x2="${W - R}" y1="${Y(d.prev)}" y2="${Y(d.prev)}" stroke="#85837b" stroke-dasharray="2 4"/><text x="${W - R}" y="${Y(d.prev) - 6}" text-anchor="end">Previous close ${fmt(d.prev)}</text>` : "";
+  plot.innerHTML = `<svg viewBox="0 0 ${W} ${H}"><defs><linearGradient id="ck-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".3"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>${g}
+    <path d="${line}L${X(n - 1).toFixed(1)} ${H - B}L${X(0).toFixed(1)} ${H - B}Z" fill="url(#ck-fill)"/><path d="${line}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${prev}
+    <line id="ck-vl" y1="${T}" y2="${H - B}" stroke="#b5b3aa" stroke-width="1" visibility="hidden"/><circle id="ck-dot" r="4.5" fill="${col}" stroke="#2a2927" stroke-width="2" visibility="hidden"/></svg><div class="ck-tip" id="ck-tip"></div>`;
+  const svgEl = plot.querySelector("svg"), vl = $("ck-vl"), dot = $("ck-dot"), tip = $("ck-tip");
+  const rest = () => { vl.setAttribute("visibility", "hidden"); dot.setAttribute("visibility", "hidden"); tip.style.display = "none"; ckHead(cur, base, d.time ? ckWhen(d.time, off, "1d", true) + ` GMT${off < 0 ? "−" : "+"}${Math.abs(off) / 3600} · ${d.exchange || ""}` : ""); };
+  svgEl.onmousemove = e => {
+    const box = svgEl.getBoundingClientRect(), mx = (e.clientX - box.left) / box.width * W;
+    let i = 0; for (let j = 1; j < n; j++) if (Math.abs(X(j) - mx) < Math.abs(X(i) - mx)) i = j;
+    const x = X(i), y = Y(pts[i][1]), when = ckWhen(pts[i][0], off, ck.range, true);
+    vl.setAttribute("x1", x); vl.setAttribute("x2", x); vl.setAttribute("visibility", "visible");
+    dot.setAttribute("cx", x); dot.setAttribute("cy", y); dot.setAttribute("visibility", "visible");
+    tip.textContent = `${fmt(pts[i][1])} · ${when}`; tip.style.display = "block";
+    tip.style.left = Math.max(0, Math.min(box.width - tip.offsetWidth, x / W * box.width - tip.offsetWidth / 2)) + "px";
+    ckHead(pts[i][1], base, when);
+  };
+  svgEl.onmouseleave = rest;
+  rest();
+}
+async function loadChart(range, quiet) {
+  ck.range = range;
+  $("ck-tabs").querySelectorAll("button").forEach((b, i) => b.classList.toggle("on", CK_RANGES[i][0] === range));
+  const seq = ++ck.seq;
+  if (!quiet) $("ck-plot").innerHTML = '<div class="ck-note">Loading…</div>';
+  let r = null;
+  try { r = await (await fetch(`/chart?symbol=${encodeURIComponent(ck.sym)}&range=${range}`)).json(); } catch {}
+  if (seq !== ck.seq) return;  // a newer click won
+  if (quiet && !(r && r.ok)) return;  // a failed background refresh keeps what is on screen
+  ck.data = r && r.ok ? r : null;
+  if (ck.data) {
+    $("ck-name").textContent = r.name; $("ck-sub").textContent = [r.exchange, r.symbol].filter(Boolean).join(": "); $("ck-cur").textContent = r.currency;
+    if (range === "1d") ck.day = r;  // the day's figures under the graph come from the 1D answer
+    const v = ck.day || r, row = (k, x) => `<div><span>${k}</span><b>${x == null ? "—" : fmt(x)}</b></div>`;
+    $("ck-stats").innerHTML = row("Open", v.open) + row("Prev close", v.prev_close) + row("52-wk high", v.hi52) + row("High", v.high) + row("Low", v.low) + row("52-wk low", v.lo52);
+  }
+  drawChart();
+}
+function openChart(sym) {
+  const box = $("chart"), close = () => { box.classList.remove("open"); clearInterval(ck.timer); document.removeEventListener("keydown", onKey); removeEventListener("resize", drawChart); ck.seq++; };
+  const onKey = e => { if (e.key === "Escape") close(); };
+  Object.assign(ck, { sym, data: null, day: null });
+  $("ck-name").textContent = sym; $("ck-sub").textContent = ""; $("ck-cur").textContent = ""; $("ck-price").textContent = "—"; $("ck-pct").textContent = ""; $("ck-chg").textContent = ""; $("ck-asof").textContent = ""; $("ck-stats").innerHTML = "";
+  $("ck-tabs").innerHTML = CK_RANGES.map(r => `<button type="button">${r[1]}</button>`).join("");
+  $("ck-tabs").querySelectorAll("button").forEach((b, i) => b.onclick = () => loadChart(CK_RANGES[i][0]));
+  $("ck-close").onclick = close; box.onclick = e => { if (e.target === box) close(); };
+  document.addEventListener("keydown", onKey); addEventListener("resize", drawChart);
+  box.classList.add("open");
+  loadChart("1d");
+  clearInterval(ck.timer); ck.timer = setInterval(() => loadChart(ck.range, true), 60000);  // keeps a live day moving
+}
+
+/* ----- to-do list (kept by the server in todos.json, so every device sees the same list) ----- */
+let todos = [];
+const TD_SECS = [  // the sections, top to bottom: [status, heading, what an empty one says]
+  ["progress", "In Progress", "Drag a task here when you start on it."],
+  ["queued", "Queued", "Nothing queued. Type above and press Enter to add one."],
+  ["done", "Done", "Tick a task, or drag it here, when it is finished."]];
+function drawTodos() {
+  const n = s => todos.filter(t => t.status === s).length, open = todos.length - n("done");
+  $("td-badge").hidden = !open; $("td-badge").textContent = open;
+  $("td-count").textContent = todos.length ? `${n("progress")} in progress · ${n("queued")} queued · ${n("done")} done` : "";
+  $("td-list").innerHTML = TD_SECS.map(([s, name, empty]) => {
+    const rows = todos.filter(t => t.status === s);  // in the saved (dragged) order
+    return `<div class="td-sec" data-s="${s}"><div class="td-head">${name}<span class="n">${rows.length || ""}</span></div>
+      <div class="td-rows">${rows.map(t => `<div class="td-row${s === "done" ? " done" : ""}" data-id="${esc(t.id)}">
+        <span class="grip" title="Drag to reorder or move to another section">⋮⋮</span>
+        <input type="checkbox"${s === "done" ? " checked" : ""} title="${s === "done" ? "Move back to Queued" : "Mark as done"}">
+        <span class="ti">${esc(t.text)}</span><button type="button" class="cp" title="Copy the text">Copy</button>
+        <button type="button" class="rm" title="Remove">×</button></div>`).join("")}<div class="td-empty">${empty}</div></div></div>`;
+  }).join("");
+}
+async function todoCall(path, body) {
+  try {
+    const r = await (body ? post(path, body) : fetch(path));
+    if (!r.ok) throw 0;
+    todos = await r.json();
+  } catch { toast("Could not reach the office server for the to-do list."); }
+  drawTodos();
+}
+$("td-form").onsubmit = e => {
+  e.preventDefault();
+  const text = $("td-input").value.trim();
+  if (text) { $("td-input").value = ""; todoCall("/todos/add", { text }); }
+  $("td-input").focus();
+};
+$("td-list").onclick = e => {
+  const row = e.target.closest(".td-row"); if (!row) return;
+  const t = todos.find(x => x.id === row.dataset.id); if (!t) return;
+  if (e.target.closest(".rm")) todoCall("/todos/remove", { id: t.id });
+  else if (e.target.closest(".cp")) copyTodo(t.text, e.target.closest(".cp"));
+  else if (e.target.matches("input"))  // only the checkbox; clicking the text does nothing
+    todoCall("/todos/status", { id: t.id, status: t.status === "done" ? "queued" : "done" });
+};
+async function copyTodo(text, btn) {
+  let ok = false;
+  try { await navigator.clipboard.writeText(text); ok = true; } catch {}
+  if (!ok) {  // a phone on plain http has no clipboard API; the old way still works there
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", ""); ta.style.cssText = "position:fixed;opacity:0;top:0;left:0";
+    document.body.appendChild(ta); ta.select();
+    try { ok = document.execCommand("copy"); } catch {}
+    ta.remove();
+  }
+  if (!ok) return toast("Could not copy - the browser blocked the clipboard.");
+  btn.textContent = "Copied!"; btn.classList.add("ok");
+  clearTimeout(btn._t);
+  btn._t = setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("ok"); }, 1500);
+}
+/* drag a row to reorder it, or into another section to change its status. With a mouse, press anywhere on
+   the row (not its checkbox or buttons) and move; on a touch screen, press and hold, so a swipe still scrolls.
+   The grip starts a drag at once either way. */
+let tdDragging = false;
+$("td-list").onpointerdown = e => {
+  const row = e.target.closest(".td-row");
+  if (!row || e.button > 0 || e.target.closest("input, button")) return;
+  const id = e.pointerId, x0 = e.clientX, y0 = e.clientY;
+  if (e.target.closest(".grip")) { e.preventDefault(); return tdDrag(row, id); }
+  const touch = e.pointerType === "touch";
+  if (!touch) e.preventDefault();  // no text selection while dragging with a mouse
+  let timer = touch && setTimeout(() => { stop(); tdDrag(row, id); navigator.vibrate?.(15); }, 250);
+  const move = ev => {
+    if (ev.pointerId !== id) return;
+    const far = Math.hypot(ev.clientX - x0, ev.clientY - y0) > (touch ? 8 : 5);
+    if (!far) return;
+    stop();
+    if (!touch) tdDrag(row, id, ev);  // a moved finger before the hold is a scroll, not a drag
+  };
+  const stop = () => {
+    clearTimeout(timer);
+    removeEventListener("pointermove", move); removeEventListener("pointerup", stop); removeEventListener("pointercancel", stop);
+  };
+  addEventListener("pointermove", move); addEventListener("pointerup", stop); addEventListener("pointercancel", stop);
+};
+// while a touch drag is on, stop the page from scrolling under the finger (needs a non-passive listener)
+$("td-list").addEventListener("touchmove", e => { if (tdDragging) e.preventDefault(); }, { passive: false });
+$("td-list").addEventListener("contextmenu", e => { if (e.target.closest(".td-row")) e.preventDefault(); });
+function tdDrag(row, pointerId, firstMove) {
+  const e = { pointerId }, list = $("td-list");
+  tdDragging = true;
+  const groups = () => Object.fromEntries([...list.querySelectorAll(".td-sec")].map(sec =>
+    [sec.dataset.s, [...sec.querySelectorAll(".td-row")].map(r => r.dataset.id)]));
+  const before = JSON.stringify(groups());
+  // listen on the window, not the grip: moving the row in the page drops any pointer capture on it
+  row.classList.add("drag"); list.classList.add("dragging");
+  const move = ev => {
+    if (ev.pointerId !== e.pointerId) return;
+    const secs = [...list.querySelectorAll(".td-sec")];
+    const sec = secs.find(s => ev.clientY < s.getBoundingClientRect().bottom) || secs[secs.length - 1];
+    const box = sec.querySelector(".td-rows");
+    const next = [...box.querySelectorAll(".td-row")].find(r => {
+      if (r === row) return false;
+      const b = r.getBoundingClientRect(); return ev.clientY < b.top + b.height / 2;
+    }) || box.querySelector(".td-empty");  // the empty-area note always sits last, so this means "at the end"
+    if (row.nextElementSibling !== next) box.insertBefore(row, next);
+    row.classList.toggle("done", sec.dataset.s === "done");
+  };
+  const end = ev => {
+    if (ev.pointerId !== e.pointerId) return;
+    removeEventListener("pointermove", move); removeEventListener("pointerup", end); removeEventListener("pointercancel", end);
+    row.classList.remove("drag"); list.classList.remove("dragging"); tdDragging = false;
+    const now = groups();
+    if (JSON.stringify(now) === before) return;
+    // show the new sections and order at once; the server answers with the same
+    const where = {};
+    Object.entries(now).forEach(([s, ids]) => ids.forEach(id => where[id] = [s, Object.keys(where).length]));
+    todos.forEach(t => { if (where[t.id]) t.status = where[t.id][0]; });
+    todos.sort((a, b) => (where[a.id]?.[1] ?? 1e9) - (where[b.id]?.[1] ?? 1e9));
+    drawTodos();
+    todoCall("/todos/order", { groups: now });
+  };
+  addEventListener("pointermove", move); addEventListener("pointerup", end); addEventListener("pointercancel", end);
+  if (firstMove) move(firstMove);
+}
+$("todo-btn").onclick = () => {
+  const box = $("todo"), close = () => { box.classList.remove("open"); document.removeEventListener("keydown", onKey); };
+  const onKey = e => { if (e.key === "Escape") close(); };
+  $("td-close").onclick = close; box.onclick = e => { if (e.target === box) close(); };
+  document.addEventListener("keydown", onKey);
+  box.classList.add("open"); drawTodos(); todoCall("/todos");
+  if (matchMedia("(hover:hover)").matches) $("td-input").focus();  // no surprise keyboard on a phone
+};
+// T opens the to-do list, unless you are typing somewhere or another panel or prompt is already open
+document.addEventListener("keydown", e => {
+  if (e.key.toLowerCase() !== "t" || e.ctrlKey || e.altKey || e.metaKey || e.repeat) return;
+  if (e.target.closest?.("input, textarea, select, [contenteditable]")) return;
+  if (document.querySelector("#picker.open, #modal.open, #launch.open, #chart.open, #merged.open, #todo.open, #monpick.open, #mtg.open, #mtg-alert.open")) return;
+  e.preventDefault();  // so the "t" is not typed into the add box that is about to get focus
+  $("todo-btn").click();
+});
+todoCall("/todos");  // fills the count on the button
+
+/* ----- meetings: read by the server from your published Outlook calendar (meetings.py) ----- */
+let mtg = { meetings: [], alerts: [] }, mtgOpen = false;
+const hm = t => new Date(t * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+function dayOf(t) {
+  const d = new Date(t * 1000), today = new Date(); today.setHours(0, 0, 0, 0);
+  const n = Math.round((new Date(d).setHours(0, 0, 0, 0) - today) / 864e5);
+  return n === 0 ? "" : n === 1 ? "Tomorrow " : d.toLocaleDateString([], { weekday: "short" }) + " ";
+}
+// On another device (a phone) the page rings the alarm itself until Got it. On this computer the
+// pop-up window rings it, so the page stays quiet rather than ring twice. A browser only lets a page
+// play sound once it has been tapped or clicked since it loaded.
+const alarm = new Audio("/alarm"); alarm.loop = true; alarm.preload = "none";
+function ring(on) {
+  if (!APP.remote) return;
+  if (on && alarm.paused) alarm.play().catch(() => {});
+  if (!on && !alarm.paused) { alarm.pause(); alarm.currentTime = 0; }
+}
+function drawAlert() {
+  const box = $("mtg-alert"), a = mtg.alerts[0];
+  ring(!!a);
+  if (!a) { box.classList.remove("open"); return; }
+  const left = Math.ceil((a.start - Date.now() / 1000) / 60);
+  $("ma-when").textContent = (left <= 0 ? "Starting now" : `Starts in ${left} minute${left === 1 ? "" : "s"}`) + " · " + hm(a.start);
+  $("ma-title").textContent = a.title;
+  $("ma-where").textContent = a.where && !/https?:|teams meeting/i.test(a.where) ? a.where : "";
+  $("ma-more").textContent = mtg.alerts.length > 1 ? `+${mtg.alerts.length - 1} more reminder${mtg.alerts.length > 2 ? "s" : ""}` : "";
+  const join = $("ma-join"); join.hidden = !a.join; if (a.join) join.href = a.join;
+  if (!box.classList.contains("open") || box.dataset.key !== a.key) { box.dataset.key = a.key; box.classList.add("open"); $("ma-ok").focus(); }
+}
+async function ackAlert() {
+  const a = mtg.alerts[0]; if (!a) return;
+  mtg.alerts = mtg.alerts.filter(x => x.key !== a.key); drawAlert();
+  try { await fetch("/meetings/ack", { method: "POST", body: JSON.stringify({ key: a.key }) }); } catch {}
+}
+$("ma-ok").onclick = ackAlert;
+$("ma-join").onclick = () => setTimeout(ackAlert, 0);  // joining counts as seeing it
+function drawMeetings() {
+  const now = Date.now() / 1000, next = mtg.meetings.find(m => m.start > now - 300);
+  const short = t => t.length > 22 ? t.slice(0, 21) + "…" : t;
+  $("mtg-next").textContent = next && next.start - now < 12 * 3600 ? `${dayOf(next.start)}${hm(next.start)} · ${short(next.title)}` : "Meetings";
+  if (!mtgOpen) return;
+  $("mt-count").textContent = mtg.linked && mtg.updated ? "Updated " + hm(mtg.updated) : "";
+  const days = new Map();  // one heading per day, meetings in time order under it
+  for (const m of mtg.meetings) {
+    const d = new Date(m.start * 1000), key = d.toDateString();
+    const rel = dayOf(m.start);
+    if (!days.has(key)) days.set(key, { wd: d.toLocaleDateString([], { weekday: "long" }), date: d.toLocaleDateString([], { month: "short", day: "numeric" }),
+      tag: rel === "" ? "Today" : rel === "Tomorrow " ? "Tomorrow" : "", items: [] });
+    days.get(key).items.push(m);
+  }
+  $("mt-list").innerHTML = !mtg.linked ? `<div class="mg-note">No calendar linked yet.</div>`
+    : !mtg.meetings.length ? `<div class="mg-note">${mtg.updated ? "No meetings in the next 7 days." : "Reading your calendar…"}</div>`
+    : [...days.values()].map(g => `<section class="mt-day${g.tag === "Today" ? " today" : ""}"><div class="mt-dh"><b>${esc(g.wd)}</b><span class="dt">${esc(g.date)}</span>${g.tag ? `<em>${g.tag}</em>` : ""}<span class="n">${g.items.length} meeting${g.items.length === 1 ? "" : "s"}</span></div>`
+      + g.items.map(m => `<div class="mt-row${m.start <= now && m.end > now ? " now" : ""}"><span class="tm">${esc(hm(m.start))}<i>– ${esc(hm(m.end))}</i></span><span class="ti">${esc(m.title)}</span></div>`).join("") + `</section>`).join("");
+  const link = $("mt-link");
+  if (link.contains(document.activeElement)) return;  // don't redraw under someone typing the link
+  link.hidden = mtg.linked && !mtg.error;  // the link box is only needed until it works, or once it stops working
+  if (link.hidden) return link.innerHTML = "";
+  const intro = "Reminders pop up 10, 5 and 1 minutes before each meeting.";
+  link.innerHTML = (mtg.error ? `<div class="mt-err">Couldn't read the calendar: ${esc(mtg.error)}</div>` : "")
+    + (mtg.can_link ? `${intro} Paste your published Outlook calendar's ICS link here:
+      <form class="td-add" id="mt-form"><input id="mt-input" placeholder="https://outlook.office365.com/owa/calendar/…/calendar.ics" autocomplete="off"><button class="btn primary">${mtg.linked ? "Replace" : "Save"}</button></form>`
+      : `${intro} The calendar link is set on the computer that runs the office.`);
+  const f = $("mt-form");
+  if (f) f.onsubmit = async e => {
+    e.preventDefault();
+    const url = $("mt-input").value.trim(); if (!url) return;
+    const out = await (await fetch("/meetings/link", { method: "POST", body: JSON.stringify({ url }) })).json().catch(() => ({}));
+    if (out.error) return toast(out.error);
+    $("mt-input").value = ""; document.activeElement.blur(); toast("Calendar linked. Reading it now…");
+    setTimeout(pollMeetings, 1500);
+  };
+}
+async function pollMeetings() {
+  try { mtg = await (await fetch("/meetings")).json(); } catch { return; }
+  drawAlert(); drawMeetings();
+}
+$("mtg-btn").onclick = () => {
+  const box = $("mtg"), close = () => { mtgOpen = false; box.classList.remove("open"); document.removeEventListener("keydown", onKey); };
+  const onKey = e => { if (e.key === "Escape") close(); };
+  $("mt-close").onclick = close; box.onclick = e => { if (e.target === box) close(); };
+  document.addEventListener("keydown", onKey);
+  mtgOpen = true; box.classList.add("open"); $("mt-link").innerHTML = ""; drawMeetings(); pollMeetings();
+};
+pollMeetings(); setInterval(pollMeetings, 3000);
+
+/* ----- merged pull requests ----- */
+const mg = { week: 0, items: [], total: null, before: "", busy: false, err: false };
+function drawMerged() {
+  const today = new Date().toDateString(), yesterday = new Date(Date.now() - 864e5).toDateString();
+  let html = "", day = "";
+  const perDay = {};  // how many were merged on each day, shown on that day's heading
+  for (const p of mg.items) { const k = new Date(p.merged).toDateString(); perDay[k] = (perDay[k] || 0) + 1; }
+  for (const p of mg.items) {
+    const d = new Date(p.merged), key = d.toDateString();
+    // the Pokémon whose sessions worked on this pull request, the one that opened it first
+    const who = (p.credits || []).map(c => `<img alt="" onerror="this.remove()" data-mon="${esc(monKey(c))}" title="${esc((c.created ? "Opened by " : "Helped: ") + (c.name || "a session no longer in the Claude app"))}">`).join("");
+    if (key !== day) { day = key; html += `<div class="mg-day">${key === today ? "Today" : key === yesterday ? "Yesterday" : esc(d.toLocaleDateString([], { weekday: "short", month: "short", day: "numeric", year: "numeric" }))}<span class="n">${perDay[key]} ${perDay[key] === 1 ? "PR" : "PRs"}</span></div>`; }
+    html += `<a class="mg-row" href="${esc(p.url)}" target="_blank" rel="noopener" title="${esc(p.title)}"><span class="tm">${esc(d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false }))}</span><span class="num">#${esc(p.number)}</span><span class="ti">${esc(p.title)}</span>${who}<span class="repo">${esc(p.repo)}</span></a>`;
+  }
+  const more = mg.total == null || mg.items.length < mg.total;
+  if (mg.busy) html += '<div class="mg-note">Loading from GitHub…</div>';
+  else if (mg.err) html += '<div class="mg-note">Could not reach GitHub. Check that the gh command is signed in.</div><button type="button" class="btn mg-more">Try again</button>';
+  else if (more) html += (mg.items.length ? "" : '<div class="mg-note">Nothing merged since ' + esc(mg.before) + '.</div>') + `<button type="button" class="btn mg-more">Load older (before ${esc(mg.before)})</button>`;
+  $("mg-count").textContent = (mg.total == null ? "" : `${mg.items.length} of ${mg.total} shown`) + (mg.indexing ? " · still reading session history for the credits, reopen in a minute" : "");
+  const list = $("mg-list"), top = list.scrollTop;
+  list.innerHTML = html; list.scrollTop = top;
+  list.querySelectorAll("img[data-mon]").forEach(i => setIcon(i, i.dataset.mon));
+  const b = list.querySelector(".mg-more"); if (b) b.onclick = loadMerged;
+}
+async function loadMerged() {  // one more week, older than what is shown
+  if (mg.busy) return;
+  mg.busy = true; drawMerged();
+  try {
+    const r = await (await fetch("/merged?week=" + mg.week)).json();
+    mg.err = !r.ok; mg.indexing = r.indexed === false;
+    if (r.ok) { const have = new Set(mg.items.map(p => p.url)); mg.week++; mg.items.push(...r.items.filter(p => !have.has(p.url))); mg.before = r.from; if (r.total != null) mg.total = r.total; }
+  } catch { mg.err = true; }
+  mg.busy = false; drawMerged();
+}
+$("merged-btn").onclick = async () => {
+  const box = $("merged"), close = () => { box.classList.remove("open"); document.removeEventListener("keydown", onKey); };
+  const onKey = e => { if (e.key === "Escape") close(); };
+  $("mg-close").onclick = close; box.onclick = e => { if (e.target === box) close(); };
+  document.addEventListener("keydown", onKey);
+  $("mg-list").scrollTop = 0; box.classList.add("open");
+  if (mg.items.length) {  // already loaded once: show it at once, then quietly pick up anything newly merged
+    mg.err = false; drawMerged();
+    try {
+      const r = await (await fetch("/merged?week=0")).json();
+      if (r.ok) {
+        const fresh = new Map(r.items.map(p => [p.url, p])), have = new Set(mg.items.map(p => p.url));
+        mg.items = [...r.items.filter(p => !have.has(p.url)), ...mg.items.map(p => fresh.get(p.url) || p)].sort((a, b) => a.merged < b.merged ? 1 : -1);
+        if (r.total != null) mg.total = r.total;
+        mg.indexing = r.indexed === false; drawMerged();
+      }
+    } catch {}
+    return;
+  }
+  // a quiet week should not leave the list looking empty: keep going back until there is a screenful
+  do await loadMerged(); while (box.classList.contains("open") && !mg.err && mg.items.length < 30 && mg.week < 6 && (mg.total == null || mg.items.length < mg.total));
+};
+
+/* ----- background music, MapleStory mode only: plays whatever you have put in the music folder ----- */
+const mu = { tracks: [], order: [], i: 0, audio: new Audio(), want: false };
+const muGet = (k, d) => { try { const v = localStorage.getItem(k); return v == null ? d : v; } catch { return d; } };
+const muSet = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
+mu.audio.volume = Math.max(0, Math.min(1, +muGet("office-music-vol", 40) / 100)); $("mu-vol").value = Math.round(mu.audio.volume * 100);
+mu.want = muGet("office-music-on", "0") === "1";  // whether you left it playing last time
+function muDraw() {
+  $("music").style.display = theme === "maple" && mu.tracks.length ? "flex" : "none";  // nothing to show without files
+  const playing = !mu.audio.paused, name = (mu.order[mu.i] || "").replace(/\.[^.]+$/, "");
+  $("mu-play").classList.toggle("on", playing);
+  $("mu-name").textContent = playing ? name : "Music";
+  $("mu-play").title = playing ? "Pause · " + name : "Play background music";
+}
+function muStart() {
+  if (!mu.order.length) return;
+  const url = "/music/" + encodeURIComponent(mu.order[mu.i % mu.order.length]);
+  if (!mu.audio.src.endsWith(url)) mu.audio.src = url;
+  // browsers refuse sound until the page has been clicked: if so, start on the next click
+  mu.audio.play().catch(() => addEventListener("pointerdown", () => { if (mu.want && theme === "maple" && mu.audio.paused) muStart(); }, { once: true })).then(muDraw);
+}
+function muShuffle(opening) {  // a new even order of every track; the one that just played never comes first
+  const last = mu.order[mu.i], a = [...mu.tracks];
+  for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; }
+  if (a.length > 1 && a[0] === last) { const j = 1 + Math.floor(Math.random() * (a.length - 1)); [a[0], a[j]] = [a[j], a[0]]; }
+  // the very first order opens with the track named "Login BGM", when the folder has one
+  const login = opening ? a.findIndex(n => /^login bgm\.[^.]+$/i.test(n)) : -1;
+  if (login > 0) a.unshift(a.splice(login, 1)[0]);
+  mu.order = a; mu.i = 0;
+}
+function muNext() {  // every track plays once, then the list is shuffled afresh
+  if (!mu.order.length) return;
+  if (mu.i + 1 >= mu.order.length) muShuffle(); else mu.i++;
+  muStart();
+}
+mu.audio.onended = muNext; mu.audio.onplay = mu.audio.onpause = muDraw;
+async function muSync() {  // on every theme change: refresh the track list, and stop outside MapleStory mode
+  try { mu.tracks = await (await fetch("/music")).json(); } catch { mu.tracks = []; }
+  if (mu.tracks.join("|") !== [...mu.order].sort().join("|")) muShuffle(true);
+  if (theme !== "maple" || !mu.tracks.length) mu.audio.pause();
+  else if (mu.want && mu.audio.paused) muStart();
+  muDraw();
+}
+$("mu-play").onclick = () => { mu.want = mu.audio.paused; if (mu.want) muStart(); else mu.audio.pause(); muSet("office-music-on", mu.want ? "1" : "0"); };
+$("mu-next").onclick = () => { mu.want = true; muSet("office-music-on", "1"); muNext(); };
+$("mu-vol").oninput = e => { mu.audio.volume = e.target.value / 100; muSet("office-music-vol", e.target.value); };
+
+/* ----- the logo follows the theme: a mushroom (logo-maple.png) for MapleStory, the drawn ball otherwise ----- */
+const LOGO = { icon: document.querySelector('link[rel="icon"]'), ball: document.querySelector('link[rel="icon"]').href, img: $("logo-maple"), missing: false };
+LOGO.img.onerror = () => { LOGO.missing = true; setLogo(); };  // no such file: keep the ball
+function setLogo() {
+  const maple = theme === "maple" && !LOGO.missing;
+  if (maple && !LOGO.img.getAttribute("src")) LOGO.img.src = "/logo-maple.png";
+  LOGO.img.style.display = maple ? "" : "none";  // not the hidden attribute: the stylesheet's display would override it
+  LOGO.img.nextElementSibling.style.display = maple ? "none" : "";
+  LOGO.icon.href = maple ? "/logo-maple.png" : LOGO.ball;
+  LOGO.img.parentElement.style.visibility = "";  // hidden until the theme is known, so the wrong logo never flashes
+}
+
+/* ----- theme switch ----- */
+function applyTheme(t) {
+  theme = t === "maple" ? "maple" : "pokemon";
+  if (theme === "maple") loadMaple();
+  $("theme-name").textContent = theme === "maple" ? "MapleStory" : "Pokémon";
+  setLogo();
+  for (const el of desks.values()) el.remove();  // rebuild every desk with the other cast
+  desks.clear();
+  render();
+  if ($("merged").classList.contains("open")) drawMerged();
+  muSync();
+}
+$("theme-btn").onclick = async () => { const next = theme === "maple" ? "pokemon" : "maple"; if (!APP.themes.includes(next)) return; applyTheme(next); await post("/theme", { theme: next }); };
+applyConfig();
+fetch("/config").then(r => r.json()).then(applyConfig).catch(() => {}).then(() => fetch("/theme")).then(r => r.json()).then(r => applyTheme(APP.themes.includes(r.theme) ? r.theme : APP.themes[0])).catch(() => setLogo());
+
+/* ----- header buttons ----- */
+$("add").onclick = () => { if (APP.remote) openLaunch(); else location.href = "claude://code/new"; };
+
+/* ----- phone: a new session on the computer -----
+   This page cannot start one. The Claude phone app can, for the folders listed in the computer's
+   Claude app under Settings > Code > Remote Control, so the button only explains where to tap. */
+function openLaunch() { $("launch").classList.add("open"); }
+$("ln-cancel").onclick = () => $("launch").classList.remove("open");
+$("launch").onclick = e => { if (e.target === $("launch")) $("launch").classList.remove("open"); };
+const picker = $("picker");
+async function openPicker() {
+  const list = await (await fetch("/available")).json();
+  picker.innerHTML = list.length ? "" : '<div class="none">Every recent session in the Claude app already has a desk.</div>';
+  for (const r of list) {
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `<img class="pm" alt=""><div class="t">${esc(r.title)}<div class="f">${esc(folder(r.cwd))}</div></div>${r.removed ? '<span class="tag">removed</span>' : ""}<span class="plus">+</span>`;
+    setIcon(row.querySelector(".pm"), monKey(r));
+    row.onclick = async () => { await post("/add", { id: r.id }); row.remove(); poll(); };
+    picker.appendChild(row);
+  }
+  picker.classList.add("open");
+}
+$("pick").onclick = e => { e.stopPropagation(); picker.classList.contains("open") ? picker.classList.remove("open") : openPicker(); };
+picker.onclick = e => e.stopPropagation();
+document.addEventListener("click", () => picker.classList.remove("open"));
+
+/* ----- desks ----- */
+let dragId = null, latest = [], lastOpen = 0;
+const desks = new Map();
+const current = s => latest.find(x => x.id === s.id) || s;
+// a desk put to sleep still shows when its session is working, but never the lightbulb, the book or "in review"
+const bgWait = s => s.state === "working" && s.tool === "background task";  // stopped; a background job will wake it
+const shown = s => s.asleep ? (s.state === "working" && !bgWait(s) ? "working" : "resting") : bgWait(s) ? "waiting" : s.state === "resting" && (s.waiting_pr || []).length ? "review" : s.state;
+
+function makeDesk(s) {
+  const el = document.createElement("div");
+  el.innerHTML = `
+    <a class="rc" target="_blank" rel="noopener" draggable="false" aria-label="Open in Claude"></a>
+    <div class="acts"><button class="pk" title="Change this desk's character">${ICON_MON}</button><button class="rn" title="Rename this desk">${ICON_EDIT}</button><button class="x" title="Remove from the office">${ICON_X}</button></div>
+    <div class="rig">
+      <div class="monitor"><div class="screen"><div class="code"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="glyph"></div><div class="prs"></div></div></div>
+      <div class="stand"></div><div class="foot"></div>
+      <div class="dtop"></div><div class="front"></div>
+      <div class="mug"></div><div class="plant"></div>
+    </div>
+    <div class="pad"><div class="marker m-bulb">${MARK.bulb}</div><div class="marker m-book">${MARK.book}</div><div class="zz"><i>z</i><i>z</i><i>z</i></div><img alt=""></div>
+    <div class="plate"></div><div class="chip"><i></i><span></span></div>`;
+  const img = el.querySelector(".pad > img");
+  img.draggable = false;
+  img.onerror = () => {
+    if (theme === "maple" && (img.dataset.tries = (+img.dataset.tries || 0) + 1) <= 5) { mapleBad.add(+String(el.dataset.mon).slice(1)); el.dataset.mon = monKey(current(s)); setIcon(img, el.dataset.mon); }
+    else if (theme !== "maple" && !img.dataset.png) { img.dataset.png = 1; img.src = `${SPRITES}${s.mon}.png`; }
+    else img.outerHTML = '<span class="fallback">🧑‍💻</span>';
+  };
+  el.dataset.mon = monKey(s); setIcon(img, monKey(s));
+  el.oncontextmenu = e => { e.preventDefault(); pickMon(s); };
+  el.dataset.id = s.id;
+  el.onclick = () => {
+    const cur = current(s);
+    // The Claude app needs a few seconds to switch sessions. Extra clicks in that time each queue
+    // another switch and make it jump around, so ignore them and show that the first one registered.
+    if (Date.now() - lastOpen < 4000) return;
+    if (cur.state === "done") post("/ack", { id: s.id }).then(poll);  // claimed: the book goes away
+    if (APP.remote) {
+      // On a phone the tap lands on the desk's own link (a.rc, kept up to date in render), which opens
+      // the session's Remote Control page in the Claude app. Nothing is asked of the computer.
+      toast(cur.rc_id ? "Opening “" + nameOf(cur) + "” in Claude…"
+        : cur.app_id ? "Remote Control has not been turned on for this session, so it cannot be opened from here."
+        : "This is a terminal session, so there is nothing to open in the Claude app.");
+      return;
+    }
+    if (!cur.app_id && cur.rc_id) {
+      // a command-line session with Remote Control (one started from the phone): the desktop app
+      // cannot show it while it runs, so open its Remote Control page in the browser
+      lastOpen = Date.now();
+      toast("Opening “" + nameOf(cur) + "” in your browser…");
+      window.open("https://claude.ai/code/" + cur.rc_id, "_blank", "noopener");
+      return;
+    }
+    if (!cur.app_id) toast("This is a terminal session without Remote Control, so there is nothing to open.");
+    if (cur.app_id) {
+      lastOpen = Date.now();
+      el.classList.add("opening"); setTimeout(() => el.classList.remove("opening"), 4000);
+      toast("Opening “" + nameOf(cur) + "” in Claude…");
+      const t0 = Date.now();
+      navigator.sendBeacon("/clicklog", JSON.stringify({ what: "click", app_id: cur.app_id, t: t0 }));
+      addEventListener("blur", () => navigator.sendBeacon("/clicklog", JSON.stringify({ what: "browser lost focus", app_id: cur.app_id, after_ms: Date.now() - t0 })), { once: true });
+      // The office server sends Claude the session link, which also brings its window forward,
+      // and then watches that the switch really shows (see open_when_visible in server.py).
+      navigator.sendBeacon("/open", JSON.stringify({ app_id: cur.app_id }));
+    }
+  };
+  el.draggable = true;
+  el.ondragstart = e => { dragId = s.id; e.dataTransfer.effectAllowed = "move"; el.classList.add("dragging"); };
+  el.ondragend = () => { dragId = null; el.classList.remove("dragging"); document.querySelectorAll(".drop-l,.drop-r").forEach(d => d.classList.remove("drop-l", "drop-r")); };
+  const leftHalf = e => { const r = el.getBoundingClientRect(); return e.clientX < r.left + r.width / 2; };
+  el.ondragover = e => {
+    if (!dragId || dragId === s.id) return;
+    e.preventDefault();
+    const left = leftHalf(e);
+    el.classList.toggle("drop-l", left); el.classList.toggle("drop-r", !left);
+  };
+  el.ondragleave = () => el.classList.remove("drop-l", "drop-r");
+  el.ondrop = async e => {
+    e.preventDefault();
+    if (!dragId || dragId === s.id) return;
+    const ids = latest.map(x => x.id).filter(id => id !== dragId);
+    ids.splice(ids.indexOf(s.id) + (leftHalf(e) ? 0 : 1), 0, dragId);
+    await post("/reorder", { ids });
+    poll();
+  };
+  el.querySelector(".prs").onclick = e => e.stopPropagation();
+  el.querySelector(".pk").onclick = e => { e.stopPropagation(); pickMon(current(s)); };
+  el.querySelector(".rn").onclick = async e => {
+    e.stopPropagation();
+    const cur = current(s), own = cur.app_title || cur.title || folder(cur.cwd);
+    const name = await ask({ title: "Rename this desk", hint: "This changes the name in the office only. Clear it to go back to the session's own title.", value: nameOf(cur), placeholder: own,
+      check: { label: "Put this " + NOUN() + " to sleep (hides its lightbulb or book until the session next works)", on: !!cur.asleep } });
+    if (name === null) return;
+    await post("/rename", { id: s.id, name: name === own ? "" : name });
+    if ($("m-check").checked !== !!cur.asleep) await post("/sleep", { id: s.id, asleep: $("m-check").checked });
+    poll();
+  };
+  el.querySelector(".x").onclick = async e => { e.stopPropagation(); await post("/dismiss", { id: s.id }); poll(); };
+  floor.appendChild(el);
+  return el;
+}
+
+// A MapleStory sound the moment a desk raises a lightbulb (QuestAlert) or a book (Invite), going by
+// what the desk shows, so an asleep desk or one held in review stays quiet. Desks already showing one
+// when the page opens make no sound, and several at once sound once. A browser only lets the page
+// play sound after it has been clicked once since it loaded.
+const MARK_SOUND = { needs_input: "GMS/255/Sound/Game.img/QuestAlert", done: "GMS/255/Sound/UI.img/Invite" };
+const markAudio = {}, deskWas = new Map();
+let deskWasReady = false;
+function markSounds() {
+  const raised = new Set();
+  for (const s of latest) {
+    const st = shown(s), was = deskWas.get(s.id);
+    if (deskWasReady && MARK_SOUND[st] && st !== was) raised.add(st);
+    deskWas.set(s.id, st);
+  }
+  deskWasReady = true;
+  for (const st of ["needs_input", "done"]) if (raised.has(st)) {  // a lightbulb first if both
+    const a = markAudio[st] ||= Object.assign(new Audio("/sound?id=" + encodeURIComponent(MARK_SOUND[st])), { volume: 0.2 });  // quiet: the clips are loud at full volume
+    setTimeout(() => { a.currentTime = 0; a.play().catch(() => {}); }, st === "done" && raised.has("needs_input") ? 1200 : 0);
+  }
+}
+
+function render() {
+  markSounds();
+  $("empty").style.display = latest.length ? "none" : "";
+  const ids = new Set(latest.map(s => s.id));
+  for (const [id, el] of desks) if (!ids.has(id)) { el.remove(); desks.delete(id); }
+  for (const s of latest) {
+    if (!desks.has(s.id)) desks.set(s.id, makeDesk(s));
+    const el = desks.get(s.id);
+    const st = shown(s), cls = "desk " + st + (s.id === dragId ? " dragging" : "");
+    if (el.dataset.cls !== cls) {
+      const keep = [...el.classList].filter(c => c === "drop-l" || c === "drop-r" || c === "opening").join(" ");
+      el.className = cls + (keep ? " " + keep : ""); el.dataset.cls = cls;
+    }
+    if (el.dataset.mon !== monKey(s)) { el.dataset.mon = monKey(s); const im = el.querySelector(".pad > img"); if (im) setIcon(im, monKey(s)); }
+    const plate = el.querySelector(".plate"), name = nameOf(s);
+    if (plate.textContent !== name) plate.textContent = name;
+    plate.title = (s.app_id ? "Click to open in Claude · " : "") + (s.cwd || "");
+    const rc = el.querySelector(".rc"), href = APP.remote && s.rc_id ? "https://claude.ai/code/" + s.rc_id : "";
+    if ((rc.getAttribute("href") || "") !== href) href ? rc.setAttribute("href", href) : rc.removeAttribute("href");
+    const prs = el.querySelector(".prs"), key = (s.prs || []).map(p => p.url + p.status).join("|");
+    if (prs.dataset.key !== key) {
+      prs.dataset.key = key;
+      prs.innerHTML = (s.prs || []).map(p => `<a href="${esc(p.url)}" target="_blank" rel="noopener" class="pr-${esc(p.status || "unknown")}" title="${esc((p.status ? p.status.toUpperCase() + " · " : "") + (p.title || p.url))}">${PR_ICON[p.status] || PR_ICON.unknown}${esc(p.label)}</a>`).join("");
+    }
+    el.querySelector(".glyph").textContent = GLYPH[st] || "";
+    const text = s.asleep && st !== "working" ? "Asleep" : st === "review" ? "In review · " + s.waiting_pr.map(u => "#" + u.split("/").pop()).join(" ") : (STATUS[st] || st) + (st === "working" && s.tool ? " · " + toolName(s.tool) : "");
+    const chip = el.querySelector(".chip span");
+    if (chip.textContent !== text) chip.textContent = text;
+  }
+  const want = latest.map(s => s.id).join("|");
+  const have = [...floor.querySelectorAll(".desk")].map(d => d.dataset.id).join("|");
+  if (want !== have) for (const s of latest) floor.appendChild(desks.get(s.id));
+  const count = st => latest.filter(s => shown(s) === st).length;
+  const need = count("needs_input");
+  $("p-all").className = "pill";
+  $("p-all").innerHTML = `<b>${latest.length}</b> session${latest.length === 1 ? "" : "s"}`;
+  $("p-need").className = "pill need" + (need ? " on" : "");
+  $("p-need").innerHTML = `<b>${need}</b> need${need === 1 ? "s" : ""} you`;
+  const rev = count("done");
+  $("p-done").className = "pill done" + (rev ? " on" : "");
+  $("p-done").innerHTML = `<b>${rev}</b> to review`;
+  $("b-work").textContent = count("working"); $("b-need").textContent = need; $("b-done").textContent = count("done"); $("b-rest").textContent = count("resting") + count("idle") + count("waiting"); $("b-review").textContent = count("review");
+  document.title = mtg.alerts.length && Date.now() % 2000 < 1000 ? "⏰ Meeting soon!" : (need ? `(${need}) 💡 ` : rev ? `(${rev}) 📖 ` : "") + APP.name;
+}
+
+async function poll() {
+  try { latest = await (await fetch("/state")).json(); render(); }
+  catch { $("p-all").className = "pill off"; $("p-all").textContent = "server not reachable"; }
+}
+poll(); setInterval(poll, 1000);
+</script>
+</body>
+</html>
