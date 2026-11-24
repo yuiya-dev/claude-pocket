@@ -4,6 +4,7 @@
     powershell -ExecutionPolicy Bypass -File .\install.ps1              install and start the office
     powershell -ExecutionPolicy Bypass -File .\install.ps1 -Startup     also start it when you sign in to Windows
     powershell -ExecutionPolicy Bypass -File .\install.ps1 -NoDesktop   no shortcut on the desktop (Start menu only)
+    powershell -ExecutionPolicy Bypass -File .\install.ps1 -Yes         install Python without asking, if it is missing
     powershell -ExecutionPolicy Bypass -File .\install.ps1 -Uninstall   take the hooks and the shortcuts out again
   (Install.cmd runs the first one when you double-click it.)
 
@@ -16,7 +17,7 @@
     4. Adds Claude Pocket to the Start menu and the desktop, and starts the office.
   Running it again is safe: it never adds the same hook twice.
 #>
-param([switch]$Startup, [switch]$NoDesktop, [switch]$Uninstall, [switch]$NoStart)
+param([switch]$Startup, [switch]$NoDesktop, [switch]$Yes, [switch]$Uninstall, [switch]$NoStart)
 $ErrorActionPreference = "Stop"
 
 $here     = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -110,7 +111,14 @@ if ($Uninstall) {
 $python = Find-Python
 if (-not $python -and (Get-Command winget -ErrorAction SilentlyContinue)) {
   Say "Python 3 is not installed. Claude Pocket needs it (nothing else)." "Yellow"
-  $answer = Read-Host "Install Python 3.12 now with winget? [Y/n]"
+  # Someone at the keyboard is asked. When no one can answer (an AI assistant ran this, or the
+  # input is not a console), it stops instead, so the person can be asked and run it again with -Yes.
+  if ($Yes) { $answer = "y" }
+  elseif ([Console]::IsInputRedirected -or -not [Environment]::UserInteractive) {
+    Stop-With ("Python 3 is not installed, and no one is here to answer whether to install it.`n" +
+      "Ask the user, and if they agree, run this again with -Yes to install Python 3.12 with winget.")
+  }
+  else { $answer = Read-Host "Install Python 3.12 now with winget? [Y/n]" }
   if ($answer -notmatch '^(n|no)$') {
     winget install --id Python.Python.3.12 --exact --scope user --silent --accept-package-agreements --accept-source-agreements
     $env:Path = [Environment]::GetEnvironmentVariable("Path", "User") + ";" + [Environment]::GetEnvironmentVariable("Path", "Machine")
