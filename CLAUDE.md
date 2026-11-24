@@ -16,7 +16,7 @@ plain chat with no command access, give the user the one-command install from th
    missing rather than install it.
 3. **Tell the user what will change, then install.** The installer copies one hook script into
    `%USERPROFILE%\.claude\hooks`, adds it to `%USERPROFILE%\.claude\settings.json` (keeping every
-   other setting, with a backup in `settings.json.bak`), installs the app into
+   other setting; a copy from before the first install is kept as `settings.json.claude-pocket.bak`), installs the app into
    `%LOCALAPPDATA%\Programs\Claude Pocket`, adds Start menu and desktop shortcuts, and opens the
    office. Do not edit `settings.json` yourself; the installer does it safely. Run, in PowerShell:
 

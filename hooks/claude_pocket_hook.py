@@ -1,4 +1,4 @@
-"""Forwards a Claude Code hook event to the Session Office server.
+"""Forwards a Claude Code hook event to the Claude Pocket server.
 
 Always exits 0 and stays silent, so sessions are unaffected when the server is not running.
 """

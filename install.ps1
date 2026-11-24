@@ -11,9 +11,10 @@
   What it does:
     1. Checks that Python 3 and Claude (the desktop app or Claude Code) are installed, and offers to
        install Python with winget when it is missing.
-    2. Copies hooks\office_hook.py to %USERPROFILE%\.claude\hooks\.
+    2. Copies hooks\claude_pocket_hook.py to %USERPROFILE%\.claude\hooks\.
     3. Adds that hook to %USERPROFILE%\.claude\settings.json for the seven events the office listens to,
-       keeping every other setting and hook you already have. The old file is saved as settings.json.bak.
+       keeping every other setting and hook you already have. Before the first change, a copy is kept as
+       settings.json.claude-pocket.bak, and later runs never overwrite it.
     4. Adds Claude Pocket to the Start menu and the desktop, and starts the office.
   Running it again is safe: it never adds the same hook twice.
 #>
@@ -23,7 +24,7 @@ $ErrorActionPreference = "Stop"
 $here     = Split-Path -Parent $MyInvocation.MyCommand.Path
 $claude   = Join-Path $HOME ".claude"
 $hookDir  = Join-Path $claude "hooks"
-$hookFile = Join-Path $hookDir "office_hook.py"
+$hookFile = Join-Path $hookDir "claude_pocket_hook.py"
 $settings = Join-Path $claude "settings.json"
 $launcher = Join-Path $here "Start Claude Pocket.vbs"
 function Get-Folder($kind, $fallback) {
@@ -41,7 +42,8 @@ function Say($text, $color = "Gray") { Write-Host $text -ForegroundColor $color 
 function Stop-With($text) { Say ""; Say $text "Red"; Say ""; exit 1 }
 
 function Write-Settings($obj) {
-  if (Test-Path $settings) { Copy-Item $settings "$settings.bak" -Force }
+  # The first copy is the one worth keeping: your settings from before Claude Pocket touched them.
+  if ((Test-Path $settings) -and -not (Test-Path "$settings.claude-pocket.bak")) { Copy-Item $settings "$settings.claude-pocket.bak" }
   $json = $obj | ConvertTo-Json -Depth 32
   [IO.File]::WriteAllText($settings, $json, (New-Object Text.UTF8Encoding $false))  # no BOM
 }
@@ -81,9 +83,9 @@ function Find-Python {
 # time the launcher runs. These are the files you chose to install, so take the mark off.
 Get-ChildItem $here -Recurse -File | Unblock-File -ErrorAction SilentlyContinue
 
-function Is-OfficeHook($group) {
+function Is-PocketHook($group) {
   foreach ($h in @($group.hooks)) {
-    if ("$($h.command) $($h.args -join ' ')" -like "*office_hook.py*") { return $true }
+    if ("$($h.command) $($h.args -join ' ')" -like "*claude_pocket_hook.py*") { return $true }
   }
   return $false
 }
@@ -94,7 +96,7 @@ if ($Uninstall) {
   if ($s.PSObject.Properties["hooks"]) {
     foreach ($e in $events) {
       if ($s.hooks.PSObject.Properties[$e]) {
-        $keep = @(@($s.hooks.$e) | Where-Object { -not (Is-OfficeHook $_) })
+        $keep = @(@($s.hooks.$e) | Where-Object { -not (Is-PocketHook $_) })
         if ($keep.Count) { $s.hooks.$e = $keep } else { $s.hooks.PSObject.Properties.Remove($e) }
       }
     }
@@ -152,7 +154,7 @@ Say "Claude:  $claude" "Green"
 
 # ---------- 3. the hook ----------
 New-Item -ItemType Directory -Force $hookDir | Out-Null
-Copy-Item (Join-Path $here "hooks\office_hook.py") $hookFile -Force
+Copy-Item (Join-Path $here "hooks\claude_pocket_hook.py") $hookFile -Force
 Say "Hook:    $hookFile" "Green"
 
 $s = Read-Settings
@@ -163,7 +165,7 @@ $added = 0
 foreach ($e in $events) {
   $groups = @()
   if ($s.hooks.PSObject.Properties[$e]) { $groups = @($s.hooks.$e) }
-  if ($groups | Where-Object { Is-OfficeHook $_ }) { continue }
+  if ($groups | Where-Object { Is-PocketHook $_ }) { continue }
   $groups += $entry
   $s.hooks | Add-Member -Force $e $groups
   $added++

@@ -18,10 +18,10 @@ hidden, the stock loop never starts and the stock endpoints answer empty.
 ## How it works
 
 - **Hooks → server.** `~/.claude/settings.json` has a `hooks` section that runs
-  `~/.claude/hooks/office_hook.py` on SessionStart, UserPromptSubmit, PreToolUse, PostToolUse,
+  `~/.claude/hooks/claude_pocket_hook.py` on SessionStart, UserPromptSubmit, PreToolUse, PostToolUse,
   Notification, Stop and SessionEnd. The hook POSTs the event JSON to `http://127.0.0.1:4545/event`
   and gives up silently after 0.3 s if the server is down. A copy of the script is kept in
-  `hooks/office_hook.py`; the one Claude actually runs is the copy under `~/.claude/hooks`.
+  `hooks/claude_pocket_hook.py`; the one Claude actually runs is the copy under `~/.claude/hooks`.
 - **`server.py`** keeps one record per session (`state.json`) and serves `index.html`. Background
   loops:
   - `resolve_loop`: maps hook session ids to the desktop app's ids and titles by reading the app's

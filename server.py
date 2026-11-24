@@ -1,7 +1,7 @@
 """Shows every local Claude Code session as a character in an office.
 
 Run:  python server.py     then open http://localhost:4545
-Claude Code hooks POST their event JSON to /event (see ~/.claude/hooks/office_hook.py).
+Claude Code hooks POST their event JSON to /event (see ~/.claude/hooks/claude_pocket_hook.py).
 """
 import glob
 import hashlib

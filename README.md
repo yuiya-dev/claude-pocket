@@ -52,7 +52,7 @@ plain chat with no command access, give the user the one-command install above i
    missing rather than install it.
 3. **Tell the user what will change, then install.** The installer copies one hook script into
    `%USERPROFILE%\.claude\hooks`, adds it to `%USERPROFILE%\.claude\settings.json` (keeping every
-   other setting, with a backup in `settings.json.bak`), installs the app into
+   other setting; a copy from before the first install is kept as `settings.json.claude-pocket.bak`), installs the app into
    `%LOCALAPPDATA%\Programs\Claude Pocket`, adds Start menu and desktop shortcuts, and opens the
    office. Do not edit `settings.json` yourself; the installer does it safely. Run, in PowerShell:
 
@@ -229,9 +229,10 @@ What the installer does, step by step, and what to do if something stops it.
    `winget` is not available, install Python from [python.org](https://www.python.org/downloads/)
    (tick **Add python.exe to PATH**) and run the installer again.
 
-3. **The hook.** The installer copies `hooks\office_hook.py` into your `.claude\hooks` folder and adds
-   it to your Claude `settings.json`, keeping everything else there (the old file is saved as
-   `settings.json.bak`). This is how sessions report to the office.
+3. **The hook.** The installer copies `hooks\claude_pocket_hook.py` into your `.claude\hooks` folder and adds
+   it to your Claude `settings.json`, keeping everything else there. Your settings from before the
+   first install are kept as `settings.json.claude-pocket.bak`. This is how sessions report to the
+   office.
 
 4. **Shortcuts.** **Claude Pocket** goes into the Start menu and onto the desktop. To also start it
    when you sign in to Windows, run the installer with `-Startup` from the app's folder:
@@ -285,7 +286,7 @@ shortcuts. Then quit the office from its tray icon and delete the folder.
 ## How it works
 
 ```
-Claude Code session ──hook event──▶ office_hook.py ──POST /event──▶ server.py ◀──poll /state── index.html
+Claude Code session ──hook event──▶ claude_pocket_hook.py ──POST /event──▶ server.py ◀──poll /state── index.html
 ```
 
 - **The hook** forwards each Claude Code event to the server on `127.0.0.1:4545`. It gives up
@@ -346,7 +347,7 @@ start. Windows Firewall asks once to allow Python on private networks.
 | `install.ps1` | Installs (or with `-Uninstall` removes) the hook and shortcuts, and starts the office |
 | `Install.cmd` | Double-click to run `install.ps1` |
 | `get.ps1` | The one-command download and install |
-| `hooks/office_hook.py` | The hook script to copy into `.claude/hooks` |
+| `hooks/claude_pocket_hook.py` | The hook script to copy into `.claude/hooks` |
 | `Start Claude Pocket.vbs` | Launcher for Windows |
 | `maple.json` | The MapleStory monster list |
 | `icon.png`, `icon.svg`, `icon.ico` | The app's icon (tray, page and shortcuts) |
