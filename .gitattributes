@@ -1,3 +1,6 @@
 *.cmd text eol=crlf
 *.ps1 text eol=crlf
 *.vbs text eol=crlf
+*.sh text eol=lf
+claude-pocket text eol=lf
+*.command text eol=lf

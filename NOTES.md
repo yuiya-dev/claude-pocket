@@ -1,6 +1,6 @@
 # Claude Pocket — notes for whoever works on this next
 
-A local dashboard at http://localhost:4545 that shows every Claude Code session on this PC as a
+A local dashboard at http://localhost:4545 that shows every Claude Code session on this computer as a
 Pokémon at a desk. Pure Python standard library, one page, no build step.
 
 ## Settings (`office.json`)
@@ -313,3 +313,27 @@ list); a "launcher" session that starts others (the app refuses to start a sessi
 that arrives over Remote Control); the app's `claude://code/new?folder=&q=` link (only fills in
 the message box); adopting a command-line session with `claude://resume?session=` (not connected
 to Remote Control).
+
+## macOS
+
+The server, the hook and the page are the same on both systems; `os.name != "nt"` picks the Mac
+paths. **None of it has been run on a real Mac yet.**
+
+- **Session records.** `APP_SESSIONS` looks under `~/Library/Application Support/Claude*/` for the
+  same `claude-code-sessions/*/*/local_*.json` layout the Windows app uses (`app_session_files()`).
+  Where the Mac app really keeps them is not confirmed. With nothing found, desks still work from
+  hook events, but titles fall back to the first prompt and Add existing and desk clicks find nothing.
+- **Opening a session.** `open_when_visible` just runs `open claude://claude.ai/epitaxy/<id>`; the
+  window watching and poking (`look`, `raise_claude`, ...) is Windows only.
+- **No tray.** `tray.start` does nothing; `tray.show` (`/show`) opens the page in the default
+  browser. `claude-pocket` (bash) starts the server with the Python saved in `python-path.txt`,
+  opens the page, and stops it through `/quit`.
+- **Meeting reminders.** `MacPopup` runs an AppleScript `display dialog` (no default button, so
+  Enter cannot dismiss it) and loops `afplay` on `/System/Library/Sounds/Sosumi.aiff` until it
+  closes. `wait()` returns 7 when a button was pressed, like the Windows pop-up's exit code.
+- **Installer.** `install.sh` mirrors `install.ps1`; the settings edit is `pocket_hooks.py`, so it is
+  plain Python. The app in `~/Applications` is an `osacompile`d one-liner that runs
+  `claude-pocket open`; `--startup` adds a LaunchAgent (`com.claude-pocket.office`) that runs the
+  server at login. Shell scripts must keep LF line endings (`.gitattributes`) and their executable
+  bit (`git update-index --chmod=+x`).
+

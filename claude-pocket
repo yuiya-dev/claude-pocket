@@ -1,0 +1,33 @@
+#!/bin/bash
+# Claude Pocket on macOS.
+#
+#   claude-pocket          open the office in your browser (starting it first if needed)
+#   claude-pocket start    start it without opening anything
+#   claude-pocket stop     stop it
+#   claude-pocket status   say whether it is running
+here="$(cd "$(dirname "$0")" && pwd)"
+port=4545
+py="$(cat "$here/python-path.txt" 2>/dev/null)"
+[ -x "$py" ] || py="$(command -v python3)"
+
+up() { curl -s -m 2 -o /dev/null "http://127.0.0.1:$port/config"; }
+
+start() {
+  up && return 0
+  (cd "$here" && nohup "$py" "$here/server.py" >/dev/null 2>&1 &)
+  for _ in $(seq 1 40); do
+    up && return 0
+    sleep 0.25
+  done
+  echo "Claude Pocket did not start. Try: \"$py\" \"$here/server.py\" to see why." >&2
+  return 1
+}
+
+case "${1:-open}" in
+  open)   start && open "http://localhost:$port/" ;;
+  start)  start ;;
+  stop)   curl -s -m 2 -o /dev/null -X POST -H "Content-Type: application/json" -d "{}" "http://127.0.0.1:$port/quit"
+          echo "Claude Pocket stopped." ;;
+  status) if up; then echo "Claude Pocket is running at http://localhost:$port/"; else echo "Claude Pocket is not running."; fi ;;
+  *)      sed -n '2,8p' "$0"; exit 1 ;;
+esac

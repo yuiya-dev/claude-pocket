@@ -23,7 +23,10 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 LINK_FILE = os.path.join(ROOT, "calendar-link.txt")
 ACKS_FILE = os.path.join(ROOT, "meeting-acks.json")
 LEADS = (10, 5, 1)  # minutes before the start at which a reminder shows; each one replaces the last
-ALARM = os.path.join(os.environ.get("SystemRoot", r"C:\Windows"), "Media", "Alarm01.wav")
+if os.name == "nt":
+    ALARM = os.path.join(os.environ.get("SystemRoot", r"C:\Windows"), "Media", "Alarm01.wav")
+else:  # macOS
+    ALARM = "/System/Library/Sounds/Sosumi.aiff"
 AHEAD = 7 * 86400  # how far ahead meetings are worked out (and listed in the page)
 
 lock = threading.Lock()
@@ -481,14 +484,66 @@ exit 3
 """
 
 
+# macOS: a dialog that only a click closes (no default button, so a stray Enter cannot dismiss it).
+MAC_POPUP = r"""
+on run argv
+  set {meetingTitle, lead, hhmm, joinURL} to argv
+  activate
+  if joinURL is "" then
+    set choices to {"Got it"}
+  else
+    set choices to {"Join in Teams", "Got it"}
+  end if
+  set picked to button returned of (display dialog ("Starts in " & lead & " · " & hhmm & return & return & meetingTitle) ¬
+    with title ("Meeting in " & lead) buttons choices with icon caution)
+  if picked is "Join in Teams" then open location joinURL
+end run
+"""
+
+
+class MacPopup:
+    """The macOS reminder: the dialog above, and the alarm looping with afplay until it closes.
+    Behaves like the Windows pop-up's process: wait() gives 7 once a button was pressed."""
+
+    def __init__(self, r, lead):
+        self.p = subprocess.Popen(["osascript", "-e", MAC_POPUP, r["title"], lead,
+                                   datetime.fromtimestamp(r["start"]).strftime("%H:%M"), r["join"] or ""],
+                                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        threading.Thread(target=self.ring, daemon=True).start()
+
+    def ring(self):
+        while self.p.poll() is None:
+            try:
+                a = subprocess.Popen(["afplay", ALARM])
+            except OSError:
+                return
+            while a.poll() is None and self.p.poll() is None:
+                time.sleep(0.2)
+            if a.poll() is None:
+                a.kill()
+
+    def poll(self):
+        return self.p.poll()
+
+    def kill(self):
+        self.p.kill()
+
+    def wait(self):
+        return 7 if self.p.wait() == 0 else 3
+
+
 def show_popup(r):
     """Opens the always-on-top window for a reminder; pressing Got it there acknowledges it."""
-    env = dict(os.environ, MTG_TITLE=r["title"], MTG_LEAD="%d minute%s" % (r["lead"], "" if r["lead"] == 1 else "s"),
-               MTG_TIME=datetime.fromtimestamp(r["start"]).strftime("%H:%M"), MTG_JOIN=r["join"], MTG_SOUND=ALARM)
+    lead = "%d minute%s" % (r["lead"], "" if r["lead"] == 1 else "s")
     try:
-        code = base64.b64encode(POPUP.encode("utf-16-le")).decode()
-        p = subprocess.Popen(["powershell", "-NoProfile", "-STA", "-EncodedCommand", code],
-                             env=env, creationflags=0x08000000)
+        if os.name != "nt":
+            p = MacPopup(r, lead)
+        else:
+            env = dict(os.environ, MTG_TITLE=r["title"], MTG_LEAD=lead, MTG_TIME=datetime.fromtimestamp(r["start"]).strftime("%H:%M"),
+                       MTG_JOIN=r["join"], MTG_SOUND=ALARM)
+            code = base64.b64encode(POPUP.encode("utf-16-le")).decode()
+            p = subprocess.Popen(["powershell", "-NoProfile", "-STA", "-EncodedCommand", code],
+                                 env=env, creationflags=0x08000000)
     except OSError:
         return
     with lock:

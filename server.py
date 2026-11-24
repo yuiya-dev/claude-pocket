@@ -59,8 +59,18 @@ ASKING_TOOLS = {"AskUserQuestion", "ExitPlanMode"}
 STATE_FILE = os.path.join(ROOT, "state.json")
 # The Claude desktop app keeps one JSON record per session; it maps the Claude Code
 # session id (what hooks report) to the app's own id, which its claude:// links use.
-APP_SESSIONS = os.path.join(os.environ.get("LOCALAPPDATA", ""), "Claude-Data", "*",
-                            "claude-code-sessions", "*", "*", "local_*.json")
+if os.name == "nt":
+    APP_SESSIONS = [os.path.join(os.environ.get("LOCALAPPDATA", ""), "Claude-Data", "*",
+                                 "claude-code-sessions", "*", "*", "local_*.json")]
+else:  # macOS: the app keeps its data under Application Support (folder name not confirmed on a Mac)
+    _support = os.path.join(os.path.expanduser("~"), "Library", "Application Support")
+    APP_SESSIONS = [os.path.join(_support, "Claude*", "claude-code-sessions", "*", "*", "local_*.json"),
+                    os.path.join(_support, "Claude*", "*", "claude-code-sessions", "*", "*", "local_*.json")]
+
+
+def app_session_files():
+    """The desktop app's session records, wherever this system keeps them (none: an empty list)."""
+    return sorted({p for g in APP_SESSIONS for p in glob.glob(g)})
 
 sessions = {}
 lock = threading.Lock()
@@ -182,7 +192,7 @@ def resolve_loop():
                 if sid in sessions and not sessions[sid].get("app_id") and sessions[sid].get("rc_id") != cli[sid]:
                     sessions[sid]["rc_id"] = cli[sid]
                     save()
-        files = sorted(glob.glob(APP_SESSIONS), key=mtime, reverse=True)[:60]
+        files = sorted(app_session_files(), key=mtime, reverse=True)[:60]
         for path in files:
             try:
                 with open(path, encoding="utf-8") as f:
@@ -681,7 +691,7 @@ def session_titles():
     """Session id -> title, from the desktop app's records (re-read every ten minutes)."""
     if time.time() - titles["at"] > 600:
         found = {}
-        for path in glob.glob(APP_SESSIONS):
+        for path in app_session_files():
             try:
                 with open(path, encoding="utf-8") as f:
                     rec = json.load(f)
@@ -757,7 +767,7 @@ def rc_id(rec):
 def app_records(limit=25):
     """Recent non-archived sessions from the desktop app's records, newest first."""
     out = []
-    for path in sorted(glob.glob(APP_SESSIONS), key=mtime, reverse=True)[:limit * 2]:
+    for path in sorted(app_session_files(), key=mtime, reverse=True)[:limit * 2]:
         try:
             with open(path, encoding="utf-8") as f:
                 rec = json.load(f)
@@ -1087,6 +1097,13 @@ def open_when_visible(app_id, trial=None):
     bringing the window forward first and sending the link once it is in front (the older order,
     still here as trial {"direct": False}) took about 1.7s. Invisible one-pixel nudges never freed
     a stuck window; restoring and maximizing it did, every time."""
+    if os.name != "nt":  # macOS: the link opens the session and brings Claude forward by itself
+        try:
+            subprocess.Popen(["open", "claude://claude.ai/epitaxy/" + app_id])
+        except OSError:
+            pass
+        last_opened[0] = app_id
+        return
     t0 = time.time()
     trial = trial or {}  # measurements only: {"direct": False, "wait": seconds, "pokes": False}
     direct = trial.get("direct", True)
@@ -1372,7 +1389,7 @@ class Handler(BaseHTTPRequestHandler):
         elif path == "/alarm":  # Windows' own alarm sound, which a phone rings with for a meeting reminder
             try:
                 with open(meetings.ALARM, "rb") as f:
-                    self._send(200, f.read(), "audio/wav")
+                    self._send(200, f.read(), "audio/aiff" if meetings.ALARM.endswith(".aiff") else "audio/wav")
             except OSError:
                 self._send(404, b"{}")
         elif path == "/sound":  # a desk's MapleStory sound: /sound?id=GMS/255/Sound/Game.img/QuestAlert
@@ -1572,8 +1589,10 @@ if __name__ == "__main__":
         # With Tailscale on this computer and on the phone, the office is reachable from anywhere
         # through this computer's Tailscale address, which stays the same.
         try:
-            _ts = next((p for p in (r"C:\Program Files\Tailscale\tailscale.exe",) if os.path.isfile(p)), "tailscale")
-            _out = subprocess.run([_ts, "ip", "-4"], capture_output=True, text=True, timeout=5, creationflags=0x08000000).stdout.strip()
+            _ts = next((p for p in (r"C:\Program Files\Tailscale\tailscale.exe",
+                                    "/Applications/Tailscale.app/Contents/MacOS/Tailscale") if os.path.isfile(p)), "tailscale")
+            _out = subprocess.run([_ts, "ip", "-4"], capture_output=True, text=True, timeout=5,
+                                  creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)).stdout.strip()
             if re.fullmatch(r"100(\.\d{1,3}){3}", _out):
                 _lines += ["", "Anywhere, with Tailscale switched on in the phone:", f"http://{_out}:{PORT}/?key={LAN_KEY}"]
         except (OSError, subprocess.SubprocessError, ValueError):

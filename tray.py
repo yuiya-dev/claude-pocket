@@ -119,6 +119,12 @@ def front(h):
 
 def show(name, port):
     """Brings the office's window to the front, opening one when there is none. Returns what it did."""
+    if os.name != "nt":  # macOS: no tray icon or app window of our own; the default browser shows it
+        try:
+            subprocess.Popen(["open", "http://localhost:%d/" % port])
+            return "browser"
+        except OSError:
+            return "no browser"
     with showing:
         h = window(name)
         if h:
