@@ -3,17 +3,20 @@
 
     powershell -ExecutionPolicy Bypass -File .\install.ps1              install and start the office
     powershell -ExecutionPolicy Bypass -File .\install.ps1 -Startup     also start it when you sign in to Windows
-    powershell -ExecutionPolicy Bypass -File .\install.ps1 -Uninstall   take the hooks and the Startup shortcut out again
+    powershell -ExecutionPolicy Bypass -File .\install.ps1 -NoDesktop   no shortcut on the desktop (Start menu only)
+    powershell -ExecutionPolicy Bypass -File .\install.ps1 -Uninstall   take the hooks and the shortcuts out again
+  (Install.cmd runs the first one when you double-click it.)
 
   What it does:
-    1. Checks that Python 3 and Claude (the desktop app or Claude Code) are installed.
+    1. Checks that Python 3 and Claude (the desktop app or Claude Code) are installed, and offers to
+       install Python with winget when it is missing.
     2. Copies hooks\office_hook.py to %USERPROFILE%\.claude\hooks\.
     3. Adds that hook to %USERPROFILE%\.claude\settings.json for the seven events the office listens to,
        keeping every other setting and hook you already have. The old file is saved as settings.json.bak.
-    4. Starts the office.
+    4. Adds Claude Pocket to the Start menu and the desktop, and starts the office.
   Running it again is safe: it never adds the same hook twice.
 #>
-param([switch]$Startup, [switch]$Uninstall, [switch]$NoStart)
+param([switch]$Startup, [switch]$NoDesktop, [switch]$Uninstall, [switch]$NoStart)
 $ErrorActionPreference = "Stop"
 
 $here     = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -22,9 +25,15 @@ $hookDir  = Join-Path $claude "hooks"
 $hookFile = Join-Path $hookDir "office_hook.py"
 $settings = Join-Path $claude "settings.json"
 $launcher = Join-Path $here "Start Claude Pocket.vbs"
-$startDir = [Environment]::GetFolderPath("Startup")
-if (-not $startDir) { $startDir = Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs\Startup" }
-$shortcut = Join-Path $startDir "Claude Pocket.lnk"
+function Get-Folder($kind, $fallback) {
+  $f = [Environment]::GetFolderPath($kind)
+  if ($f) { return $f } else { return $fallback }
+}
+$programs = Get-Folder "Programs" (Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs")
+$shortcut = Join-Path (Get-Folder "Startup" (Join-Path $programs "Startup")) "Claude Pocket.lnk"
+$menuLink = Join-Path $programs "Claude Pocket.lnk"
+$deskLink = Join-Path (Get-Folder "Desktop" (Join-Path $HOME "Desktop")) "Claude Pocket.lnk"
+$pyFile   = Join-Path $here "python-path.txt"  # the launcher reads it, so Python need not be on PATH
 $events   = "SessionStart", "UserPromptSubmit", "PreToolUse", "PostToolUse", "Notification", "Stop", "SessionEnd"
 
 function Say($text, $color = "Gray") { Write-Host $text -ForegroundColor $color }
@@ -43,6 +52,33 @@ function Read-Settings {
   try { return $text | ConvertFrom-Json }
   catch { Stop-With "Your $settings is not valid JSON, so it was left alone. Fix it (or move it away) and run this again." }
 }
+
+function New-Link($path) {
+  if (-not (Split-Path $path)) { return }
+  New-Item -ItemType Directory -Force (Split-Path $path) | Out-Null
+  $lnk = (New-Object -ComObject WScript.Shell).CreateShortcut($path)
+  $lnk.TargetPath = "wscript.exe"
+  $lnk.Arguments = "`"$launcher`"" + $(if ($path -eq $shortcut) { " quiet" } else { "" })
+  $lnk.WorkingDirectory = $here
+  $lnk.IconLocation = (Join-Path $here "icon.ico") + ",0"
+  $lnk.Description = "Your Claude Code sessions as characters at desks"
+  $lnk.Save()
+}
+
+function Find-Python {
+  foreach ($try in "py -3", "python", "python3") {
+    $cmd, $extra = $try -split " "
+    try {
+      $exe = & $cmd @($extra | Where-Object { $_ }) -c "import sys; print(sys.executable if sys.version_info[0] == 3 else '')" 2>$null
+      if ($LASTEXITCODE -eq 0 -and $exe -and (Test-Path $exe.Trim())) { return $exe.Trim() }
+    } catch { }
+  }
+  return $null
+}
+
+# Files downloaded in a ZIP are marked as coming from the internet, which makes Windows warn every
+# time the launcher runs. These are the files you chose to install, so take the mark off.
+Get-ChildItem $here -Recurse -File | Unblock-File -ErrorAction SilentlyContinue
 
 function Is-OfficeHook($group) {
   foreach ($h in @($group.hooks)) {
@@ -65,27 +101,36 @@ if ($Uninstall) {
     Write-Settings $s
   }
   if (Test-Path $hookFile) { Remove-Item $hookFile }
-  if (Test-Path $shortcut) { Remove-Item $shortcut }
-  Say "Claude Pocket's hooks are removed. Quit the office from its tray icon, then delete this folder if you like." "Green"
+  foreach ($f in $shortcut, $menuLink, $deskLink, $pyFile) { if ($f -and (Test-Path $f)) { Remove-Item $f } }
+  Say "Claude Pocket's hooks and shortcuts are removed. Quit the office from its tray icon, then delete this folder if you like." "Green"
   exit 0
 }
 
 # ---------- 1. Python ----------
-$python = $null
-foreach ($try in "py -3", "python", "python3") {
-  $cmd, $extra = $try -split " "
-  try {
-    $exe = & $cmd @($extra | Where-Object { $_ }) -c "import sys; print(sys.executable if sys.version_info[0] == 3 else '')" 2>$null
-    if ($LASTEXITCODE -eq 0 -and $exe -and (Test-Path $exe.Trim())) { $python = $exe.Trim(); break }
-  } catch { }
+$python = Find-Python
+if (-not $python -and (Get-Command winget -ErrorAction SilentlyContinue)) {
+  Say "Python 3 is not installed. Claude Pocket needs it (nothing else)." "Yellow"
+  $answer = Read-Host "Install Python 3.12 now with winget? [Y/n]"
+  if ($answer -notmatch '^(n|no)$') {
+    winget install --id Python.Python.3.12 --exact --scope user --silent --accept-package-agreements --accept-source-agreements
+    $env:Path = [Environment]::GetEnvironmentVariable("Path", "User") + ";" + [Environment]::GetEnvironmentVariable("Path", "Machine")
+    $python = Find-Python
+    if (-not $python) {  # winget's own place for a per-user install, in case PATH has not caught up
+      $python = Get-ChildItem (Join-Path $env:LOCALAPPDATA "Programs\Python") -Filter python.exe -Recurse -ErrorAction SilentlyContinue |
+        Select-Object -First 1 -ExpandProperty FullName
+    }
+  }
 }
 if (-not $python) {
   Stop-With ("Python 3 is not installed.`n" +
     "Install it with:   winget install Python.Python.3.12`n" +
     "or from https://www.python.org/downloads/ (tick 'Add python.exe to PATH'),`n" +
-    "then open a new PowerShell window and run this again.")
+    "then run this again.")
 }
 Say "Python:  $python" "Green"
+$pythonw = Join-Path (Split-Path $python) "pythonw.exe"
+if (-not (Test-Path $pythonw)) { $pythonw = $python }
+[IO.File]::WriteAllText($pyFile, $pythonw, [Text.Encoding]::Default)  # the launcher (VBScript) reads the ANSI code page
 
 # ---------- 2. Claude ----------
 if (-not (Test-Path $claude)) {
@@ -119,13 +164,11 @@ if ($added) { Write-Settings $s; Say "Settings: added the hook to $added event(s
 else { Say "Settings: the hook was already there" "Green" }
 
 # ---------- 4. optional extras ----------
+New-Link $menuLink
+if ($NoDesktop) { Say "Shortcuts: Claude Pocket is in the Start menu" "Green" }
+else { New-Link $deskLink; Say "Shortcuts: Claude Pocket is in the Start menu and on your desktop" "Green" }
 if ($Startup) {
-  $sh = New-Object -ComObject WScript.Shell
-  $lnk = $sh.CreateShortcut($shortcut)
-  $lnk.TargetPath = "wscript.exe"
-  $lnk.Arguments = "`"$launcher`" quiet"
-  $lnk.WorkingDirectory = $here
-  $lnk.Save()
+  New-Link $shortcut
   Say "Startup: Claude Pocket starts (tray icon only) when you sign in" "Green"
 }
 

@@ -11,17 +11,40 @@ room instead of clicking through sessions.
 It runs entirely on your machine. One Python file, one HTML page, no dependencies to install and no
 build step.
 
+## Install
+
+On Windows 10 or 11, with the [Claude desktop app](https://claude.ai/download) (or Claude Code)
+installed and signed in to your own account. Pick one:
+
+**One command.** Open PowerShell (Start menu → type `PowerShell`) and paste:
+
+```powershell
+irm https://raw.githubusercontent.com/yuiya-dev/claude-pocket/main/get.ps1 | iex
+```
+
+**Or download it.** [Download the ZIP](https://github.com/yuiya-dev/claude-pocket/archive/refs/heads/main.zip),
+unzip it somewhere that stays put (such as `Documents`), open the folder and double-click
+**`Install.cmd`**.
+
+Either way the installer checks for Python (and offers to install it if it's missing), connects
+Claude Pocket to your Claude, adds it to the Start menu and the desktop, and opens it. Then send a
+message in any Claude Code session and its character walks in. [Quick start](#quick-start) has the
+details, and how to update or remove it.
+
 ## Contents
 
 - [What a desk tells you](#what-a-desk-tells-you)
 - [Features](#features)
+- [Install](#install)
 - [Quick start](#quick-start)
+- [Update](#update)
 - [Uninstall](#uninstall)
 - [How it works](#how-it-works)
 - [Requirements](#requirements)
 - [Known limits](#known-limits)
 - [Settings](#settings)
 - [Project layout](#project-layout)
+- [License](#license)
 
 ## What a desk tells you
 
@@ -142,36 +165,41 @@ to turn it on. Taiwan codes (such as `2330`) use the Taiwan exchange's feed, eve
 
 ## Quick start
 
-Windows only. Each step is something you do once.
+What the installer does, step by step, and what to do if something stops it.
 
-1. **Install Python 3** if you don't have it. In PowerShell:
+1. **Claude.** Install the [Claude desktop app](https://claude.ai/download) (or Claude Code), sign
+   in with your own account, open the **Code** tab and start one session. Claude Pocket reads
+   nothing from your account; it only listens to the sessions on this PC. If Claude has never run,
+   the installer stops and says so.
 
-   ```powershell
-   winget install Python.Python.3.12
-   ```
+2. **Python 3.** If it is missing, the installer asks to install it with `winget`. Say **Y**. If
+   `winget` is not available, install Python from [python.org](https://www.python.org/downloads/)
+   (tick **Add python.exe to PATH**) and run the installer again.
 
-   Or use the installer from [python.org](https://www.python.org/downloads/) and tick
-   **Add python.exe to PATH**. Open a new PowerShell window afterwards.
+3. **The hook.** The installer copies `hooks\office_hook.py` into your `.claude\hooks` folder and adds
+   it to your Claude `settings.json`, keeping everything else there (the old file is saved as
+   `settings.json.bak`). This is how sessions report to the office.
 
-2. **Install Claude and sign in.** Install the [Claude desktop app](https://claude.ai/download)
-   (or Claude Code), sign in with your own account, open the **Code** tab and start one session.
-   Claude Pocket reads nothing from your account; it only listens to the sessions on this PC.
-
-3. **Get this folder.** Either `git clone` this repository, or use **Code → Download ZIP** on GitHub
-   and unzip it somewhere that stays put, such as `Documents\claude-pocket`.
-
-4. **Run the installer** from that folder:
+4. **Shortcuts.** **Claude Pocket** goes into the Start menu and onto the desktop. To also start it
+   when you sign in to Windows, run the installer with `-Startup` from the app's folder:
 
    ```powershell
-   powershell -ExecutionPolicy Bypass -File .\install.ps1
+   powershell -ExecutionPolicy Bypass -File .\install.ps1 -Startup
    ```
 
-   It checks for Python and Claude, copies `hooks\office_hook.py` into your `.claude\hooks` folder,
-   adds it to your Claude `settings.json` (keeping everything else there, with a backup in
-   `settings.json.bak`) and starts the office. Add `-Startup` to also start it when you sign in to
-   Windows. Running it again is safe.
+   Add `-NoDesktop` to leave the desktop alone. With the one-command install, set the options
+   first, in the same PowerShell window:
 
-5. **Send a message in any Claude Code session.** Its character walks in.
+   ```powershell
+   $env:CLAUDE_POCKET_ARGS = "-Startup"
+   irm https://raw.githubusercontent.com/yuiya-dev/claude-pocket/main/get.ps1 | iex
+   ```
+
+5. **Send a message in any Claude Code session.** Its character walks in. Sessions that were already
+   open show up after their next message; restarting Claude is not needed.
+
+The one-command install puts the app in `%LOCALAPPDATA%\Programs\Claude Pocket`; the ZIP install
+leaves it where you unzipped it. Running the installer again is always safe.
 
 Optional:
 
@@ -183,9 +211,14 @@ Optional:
   city your time zone is named after.
 - **Stocks or your phone.** See [Settings](#settings).
 
-To start the office later, double-click `Start Claude Pocket.vbs`. Double-clicking it while the
-office is running just brings the window back. To stop it, right-click the tray icon and choose
-**Quit**.
+To open the office later, use the **Claude Pocket** shortcut. Opening it while the office is running
+just brings the window back. To stop it, right-click the tray icon and choose **Quit**.
+
+## Update
+
+Run the one-line command again. It downloads the latest version over the old one and keeps your
+`office.json` and everything the office has saved. With a ZIP install, download the new ZIP, unzip it
+over the old folder (keep your `office.json` if you changed it) and double-click `Install.cmd`.
 
 ## Uninstall
 
@@ -193,8 +226,8 @@ office is running just brings the window back. To stop it, right-click the tray 
 powershell -ExecutionPolicy Bypass -File .\install.ps1 -Uninstall
 ```
 
-This takes the hook out of your Claude settings and removes the Startup shortcut. Then quit the
-office from its tray icon and delete the folder.
+Run it from the app's folder. It takes the hook out of your Claude settings and removes the
+shortcuts. Then quit the office from its tray icon and delete the folder.
 
 ## How it works
 
@@ -257,15 +290,26 @@ start. Windows Firewall asks once to allow Python on private networks.
 | `tray.py` | The tray icon, and the office's own window |
 | `index.html` | The page: markup, styles and script in one file |
 | `office.json` | Settings, see [Settings](#settings) |
-| `install.ps1` | Installs (or with `-Uninstall` removes) the hook, and starts the office |
+| `install.ps1` | Installs (or with `-Uninstall` removes) the hook and shortcuts, and starts the office |
+| `Install.cmd` | Double-click to run `install.ps1` |
+| `get.ps1` | The one-command download and install |
 | `hooks/office_hook.py` | The hook script to copy into `.claude/hooks` |
 | `Start Claude Pocket.vbs` | Launcher for Windows |
 | `maple.json` | The MapleStory monster list |
-| `icon.png`, `icon.svg` | The app's icon (tray and page) |
+| `icon.png`, `icon.svg`, `icon.ico` | The app's icon (tray, page and shortcuts) |
 | `markers/` | The lightbulb and book marker animations; drop in your own to replace them |
 | `NOTES.md` | How it all works, for whoever changes it next |
 
 While it runs, the office writes `state.json`, `hidden.json`, `credits.json`, `merged.json`,
 `todos.json`, `settings.json`, `stocks.json`, `calendar-link.txt`, `meeting-acks.json`, `lan-key.txt`,
-`phone-link.txt`, `sounds/` and `clicks.log` next to the server. They hold your session data, are ignored by
+`phone-link.txt`, `python-path.txt`, `sounds/` and `clicks.log` next to the server. They hold your session data, are ignored by
 git, and are safe to delete.
+
+## License
+
+[MIT](LICENSE): use it, change it and share it freely.
+
+That covers this project's own code and files. Pokémon and MapleStory, their characters and the two
+MapleStory sounds belong to their owners (Nintendo, Game Freak and The Pokémon Company; Nexon). They
+are not included here: the page loads them at run time from public community sites. Claude Pocket is
+a fan project and is not affiliated with or endorsed by any of them, or by Anthropic.

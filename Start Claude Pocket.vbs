@@ -18,7 +18,15 @@ Function Ask(method, path)
 End Function
 
 If Not Ask("GET", "/config") Then
-  sh.Run "pythonw """ & here & "\server.py""", 0, False
+  ' install.ps1 saves the Python it found in python-path.txt; without it, use the one on PATH
+  py = "pythonw"
+  Set fso = CreateObject("Scripting.FileSystemObject")
+  If fso.FileExists(here & "\python-path.txt") Then
+    Set f = fso.OpenTextFile(here & "\python-path.txt")
+    If Not f.AtEndOfStream Then py = Trim(f.ReadLine)
+    f.Close
+  End If
+  sh.Run """" & py & """ """ & here & "\server.py""", 0, False
   For i = 1 To 40
     WScript.Sleep 250
     If Ask("GET", "/config") Then Exit For

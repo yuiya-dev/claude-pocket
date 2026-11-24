@@ -18,3 +18,4 @@ sounds/
 # Your own copies of these, made by you or the office
 stocks.json
 .claude/
+python-path.txt
