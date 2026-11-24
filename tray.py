@@ -150,3 +150,47 @@ def show(name, port):
             if h:
                 return "opened, " + front(h)
         return "opened"
+
+
+def summary(needs_input, done):
+    """One line for a notification: the lightbulbs first, since they wait on you."""
+    names, what, many = (needs_input, "needs you", "need you") if needs_input else (done, "is done", "are done")
+    if not names:
+        return ""
+    if len(names) == 1:
+        return "%s %s %s" % ("💡" if needs_input else "📖", names[0], what)
+    return "%s %s and %d more %s" % ("💡" if needs_input else "📖", names[0], len(names) - 1, many)
+
+
+def attention(name, needs_input, done, focused):
+    """A desk just raised a lightbulb or a book. On Windows the office window's taskbar button
+    flashes until the window is brought forward (nothing when it is already in front, or closed to
+    the tray). On a Mac, where a browser tab cannot flash the Dock, a notification shows instead,
+    unless the office page is the window in front. Returns what it did."""
+    if os.name != "nt":
+        line = summary(needs_input, done)
+        if focused or not line:
+            return "nothing"
+        try:
+            subprocess.Popen(["osascript", "-e", "on run argv\ndisplay notification (item 2 of argv) with title (item 1 of argv)\nend run",
+                              name, line], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            return "notified"
+        except OSError:
+            return "no osascript"
+    import ctypes
+    from ctypes import wintypes
+    h = window(name)
+    if not h:
+        return "no window"
+    u = ctypes.windll.user32
+    u.GetForegroundWindow.restype = wintypes.HWND
+    if u.GetForegroundWindow() == h:
+        return "in front"
+
+    class FLASHWINFO(ctypes.Structure):
+        _fields_ = [("cbSize", wintypes.UINT), ("hwnd", wintypes.HWND), ("dwFlags", wintypes.DWORD),
+                    ("uCount", wintypes.UINT), ("dwTimeout", wintypes.DWORD)]
+    # FLASHW_TRAY (2) | FLASHW_TIMERNOFG (12): flash the taskbar button until the window comes forward
+    info = FLASHWINFO(ctypes.sizeof(FLASHWINFO), h, 2 | 12, 0, 0)
+    u.FlashWindowEx(ctypes.byref(info))
+    return "flashed"

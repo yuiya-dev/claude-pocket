@@ -1429,13 +1429,16 @@ const MARK_SOUND = { needs_input: "GMS/255/Sound/Game.img/QuestAlert", done: "GM
 const markAudio = {}, deskWas = new Map();
 let deskWasReady = false;
 function markSounds() {
-  const raised = new Set();
+  const raised = new Set(), names = { needs_input: [], done: [] };
   for (const s of latest) {
     const st = shown(s), was = deskWas.get(s.id);
-    if (deskWasReady && MARK_SOUND[st] && st !== was) raised.add(st);
+    if (deskWasReady && MARK_SOUND[st] && st !== was) { raised.add(st); names[st].push(nameOf(s)); }
     deskWas.set(s.id, st);
   }
   deskWasReady = true;
+  // On this computer, the server also flashes the office's taskbar button (Windows) or shows a
+  // notification (Mac) when the office is not the window in front. A phone never asks for that.
+  if (raised.size && !APP.remote) post("/notify", { needs_input: names.needs_input, done: names.done, focused: document.hasFocus() }).catch(() => {});
   for (const st of ["needs_input", "done"]) if (raised.has(st)) {  // a lightbulb first if both
     const a = markAudio[st] ||= Object.assign(new Audio("/sound?id=" + encodeURIComponent(MARK_SOUND[st])), { volume: 0.2 });  // quiet: the clips are loud at full volume
     setTimeout(() => { a.currentTime = 0; a.play().catch(() => {}); }, st === "done" && raised.has("needs_input") ? 1200 : 0);

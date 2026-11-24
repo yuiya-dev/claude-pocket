@@ -1484,6 +1484,12 @@ class Handler(BaseHTTPRequestHandler):
             # only ever a session id, and only from this computer: a phone opens Remote Control itself
             if self.local() and re.fullmatch(r"local_[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}", app_id):
                 threading.Thread(target=open_when_visible, args=(app_id, ev.get("trial")), daemon=True).start()
+        elif self.path == "/notify":
+            # the page saw a desk raise a lightbulb or a book: get the user's attention (this computer only)
+            if self.local():
+                names = lambda k: [str(x)[:80] for x in (ev.get(k) or [])[:20] if isinstance(x, str)]
+                threading.Thread(target=tray.attention, daemon=True,
+                                 args=(office["name"], names("needs_input"), names("done"), bool(ev.get("focused")))).start()
         elif self.path == "/clicklog":
             # timing diagnostics for "open in Claude": when the click happened and when the browser lost focus
             with open(os.path.join(ROOT, "clicks.log"), "a", encoding="utf-8") as f:
