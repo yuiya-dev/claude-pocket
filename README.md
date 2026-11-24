@@ -234,6 +234,17 @@ bosses added since, grouped by level.
 
 ![Pokémon picker with tabs, search and a Random button](docs/screenshots/picker.png)
 
+### Settings (the gear)
+
+The ⚙ button at the right of the header opens a small menu. Switch off any header button you
+don't use (To-do, Meetings, Stocks, Add existing, Music, the theme switch, Merged PRs, New
+session), turn the desk sounds or the taskbar flash on or off, mute everything, or set the volume of
+the desk sounds and the music. Your choices are kept per device, so your phone can show less than
+your computer.
+
+When a desk raises a lightbulb or a book while the office is not the window in front, its taskbar
+button flashes until you look (on a Mac, a notification names the desk instead).
+
 ### Rename and mute
 
 The pencil on a desk renames it in the office (the session's own title is left alone). The same
