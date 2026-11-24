@@ -1315,6 +1315,11 @@ $("theme-btn").onclick = async () => { const next = theme === "maple" ? "pokemon
 applyConfig();
 fetch("/config").then(r => r.json()).then(applyConfig).catch(() => {}).then(() => fetch("/theme")).then(r => r.json()).then(r => applyTheme(APP.themes.includes(r.theme) ? r.theme : APP.themes[0])).catch(() => setLogo());
 
+// After an update the server has a newer page: reload, so an open window never keeps running old code.
+setInterval(() => fetch("/config").then(r => r.json()).then(c => {
+  if (c.version && APP.version && c.version !== APP.version) location.reload();
+}).catch(() => {}), 30000);
+
 /* ----- header buttons ----- */
 $("add").onclick = () => { if (APP.remote) openLaunch(); else location.href = "claude://code/new"; };
 

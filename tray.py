@@ -138,7 +138,11 @@ def show(name, port):
         # then a program of its own, and may play the desk sounds before the page has been clicked.
         profile = os.path.join(os.environ.get("LOCALAPPDATA") or ROOT, name, "window")
         args = [exe, "--app=" + url, "--user-data-dir=" + profile, "--no-first-run",
-                "--no-default-browser-check", "--autoplay-policy=no-user-gesture-required"]
+                "--no-default-browser-check", "--autoplay-policy=no-user-gesture-required",
+                # keep the page checking every second while the window is minimized or covered, so a
+                # lightbulb's sound and taskbar flash come at once (browsers slow hidden pages down)
+                "--disable-background-timer-throttling", "--disable-renderer-backgrounding",
+                "--disable-backgrounding-occluded-windows"]
         if not os.path.isdir(profile):
             # The first time, fill the screen: a new window is small enough for the page to fall back
             # to its compact layout. After that the browser reopens it where it was left.

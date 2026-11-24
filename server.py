@@ -1292,6 +1292,23 @@ def apply_event(ev):
         save()
 
 
+_page = {"m": None, "v": ""}
+
+
+def page_version():
+    """A short fingerprint of index.html. The page compares it every 30 seconds and reloads itself
+    when it changes, so an office window left open never keeps running an old page after an update."""
+    p = os.path.join(ROOT, "index.html")
+    try:
+        m = os.stat(p).st_mtime_ns
+        if _page["m"] != m:
+            with open(p, "rb") as f:
+                _page.update(m=m, v=hashlib.sha1(f.read()).hexdigest()[:12])
+    except OSError:
+        pass
+    return _page["v"]
+
+
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, *args):
         pass
@@ -1379,7 +1396,7 @@ class Handler(BaseHTTPRequestHandler):
                 self._send(404, b"{}")
         elif path == "/config":
             # remote: the page is open on another device, where a desk opens Remote Control instead
-            self._send(200, json.dumps(dict(office, remote=not self.local())).encode())
+            self._send(200, json.dumps(dict(office, remote=not self.local(), version=page_version())).encode())
         elif path == "/theme":
             self._send(200, json.dumps({"theme": settings["theme"]}).encode())
         elif path == "/meetings":  # your upcoming meetings and the reminders showing now
